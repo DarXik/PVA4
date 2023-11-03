@@ -1,7 +1,0 @@
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\bin\Debug\Money_app.exe
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\bin\Debug\Money_app.pdb
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\obj\Debug\Money-app.csproj.AssemblyReference.cache
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\obj\Debug\Money-app.csproj.SuggestedBindingRedirects.cache
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\obj\Debug\Money-app.csproj.CoreCompileInputs.cache
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\obj\Debug\Money_app.exe
-C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Money-app\obj\Debug\Money_app.pdb

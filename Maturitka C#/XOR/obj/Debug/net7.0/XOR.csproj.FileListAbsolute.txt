@@ -1,0 +1,14 @@
+C:\Users\pitra\Desktop\Maturitka C#\XOR\bin\Debug\net7.0\XOR.exe
+C:\Users\pitra\Desktop\Maturitka C#\XOR\bin\Debug\net7.0\XOR.deps.json
+C:\Users\pitra\Desktop\Maturitka C#\XOR\bin\Debug\net7.0\XOR.runtimeconfig.json
+C:\Users\pitra\Desktop\Maturitka C#\XOR\bin\Debug\net7.0\XOR.dll
+C:\Users\pitra\Desktop\Maturitka C#\XOR\bin\Debug\net7.0\XOR.pdb
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.AssemblyInfoInputs.cache
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.AssemblyInfo.cs
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.dll
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\refint\XOR.dll
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.pdb
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\XOR.genruntimeconfig.cache
+C:\Users\pitra\Desktop\Maturitka C#\XOR\obj\Debug\net7.0\ref\XOR.dll
