@@ -1,0 +1,7 @@
+C:\Users\pitra\Desktop\PVA4\20_10\bin\Debug\_20_10.exe
+C:\Users\pitra\Desktop\PVA4\20_10\bin\Debug\_20_10.pdb
+C:\Users\pitra\Desktop\PVA4\20_10\obj\Debug\20_10.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\20_10\obj\Debug\20_10.csproj.SuggestedBindingRedirects.cache
+C:\Users\pitra\Desktop\PVA4\20_10\obj\Debug\20_10.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\20_10\obj\Debug\_20_10.exe
+C:\Users\pitra\Desktop\PVA4\20_10\obj\Debug\_20_10.pdb

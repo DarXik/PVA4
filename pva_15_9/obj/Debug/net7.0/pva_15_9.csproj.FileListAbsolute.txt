@@ -1,0 +1,15 @@
+C:\Users\pitra\Desktop\PVA4\pva_15_9\bin\Debug\net7.0\pva_15_9.exe
+C:\Users\pitra\Desktop\PVA4\pva_15_9\bin\Debug\net7.0\pva_15_9.deps.json
+C:\Users\pitra\Desktop\PVA4\pva_15_9\bin\Debug\net7.0\pva_15_9.runtimeconfig.json
+C:\Users\pitra\Desktop\PVA4\pva_15_9\bin\Debug\net7.0\pva_15_9.dll
+C:\Users\pitra\Desktop\PVA4\pva_15_9\bin\Debug\net7.0\pva_15_9.pdb
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.AssemblyInfoInputs.cache
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.AssemblyInfo.cs
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.dll
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\refint\pva_15_9.dll
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.pdb
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\pva_15_9.genruntimeconfig.cache
+C:\Users\pitra\Desktop\PVA4\pva_15_9\obj\Debug\net7.0\ref\pva_15_9.dll
