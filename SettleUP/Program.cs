@@ -24,15 +24,12 @@ namespace SettleUP
                               "\n-[q] add new user " +
                               "\n-[w] delete existing user " +
                               "\n-[e] add transaction " +
-                              "\n-[r] show users' debts \n");
-
-
-            var inputService = Console.ReadKey();
-            Console.WriteLine("\n");
-
+                              "\n-[r] show users' debts" +
+                              "\n-[x] exit");
             while (true)
             {
-                switch (Console.ReadLine())
+                Console.Write("\nService: ");
+                switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.Q:
                         // Console.WriteLine("Add name for new user: ");
@@ -54,6 +51,7 @@ namespace SettleUP
                         Console.Write("\nWho paid: ");
                         var userInput = Console.ReadLine();
                         // User whoPaid = users.Find(user => user.Name == Console.ReadLine());
+
                         User whoPaid = null;
 
                         foreach (User user in users)
@@ -65,33 +63,46 @@ namespace SettleUP
                             }
                         }
 
-                        Console.Write("How much was paid: ");
-                        var amountPaid = Convert.ToInt16(Console.ReadLine());
+                        Console.Write("Amount: ");
+                        var amountPaid = Convert.ToSingle(Console.ReadLine());
                         var amountSplit = amountPaid / users.Count;
 
-
-                        Console.WriteLine($"{whoPaid.Name} paid {amountPaid}");
+                        Console.WriteLine($"{whoPaid.Name} paid {amountPaid} ({amountSplit})");
 
                         foreach (var user in users)
                         {
                             if (user.Name != whoPaid.Name)
                             {
-                                Console.WriteLine($"{user.Name} owns {amountSplit} ");
+                                Console.WriteLine($"{user.Name} owes {amountSplit} ");
                                 whoPaid.AddExpense(user.Name, amountSplit);
                             }
                         }
 
                         break;
 
-                    case ConsoleKey.X:
-                        foreach (var VARIABLE in users)
+                    case ConsoleKey.R:
+
+                        foreach (var user in users)
                         {
-                            Console.WriteLine($"{VARIABLE} paid: ");
-                            foreach (var item in VARIABLE.expenses)
+                            // Console.WriteLine($"\n{user.Name} paid: ");
+
+                            if (user.expenses.Any())
                             {
-                                Console.WriteLine(item);
+                                foreach (var expense in user.expenses)
+                                {
+                                    Console.WriteLine(expense);
+                                }
+
+                            }
+                            else
+                            {
+                                Console.WriteLine($"User {user.Name} didn't pay for anything.");
                             }
                         }
+
+                        break;
+
+                    case ConsoleKey.X:
 
                         return;
                 }
@@ -105,19 +116,19 @@ namespace SettleUP
     class User
     {
         public string Name { get; set; }
-        private int Uid { get; set; }
-        private Random rnd = new Random();
-        private HashSet<int> usedUIDs = new HashSet<int>();
+        // private int Uid { get; set; }
+        // private Random rnd = new Random();
+        // private HashSet<int> usedUIDs = new HashSet<int>();
 
         public User(string name)
         {
             Name = name;
-            GenerateUID();
+            // GenerateUID();
         }
 
-        public Dictionary<string, int> expenses = new Dictionary<string, int>();
+        public readonly Dictionary<string, float> expenses = new Dictionary<string, float>();
 
-        public void AddExpense(string whoOwns, int amountOwned)
+        public void AddExpense(string whoOwns, float amountOwned)
         {
             if (!expenses.ContainsKey(whoOwns))
             {
@@ -129,18 +140,18 @@ namespace SettleUP
             }
         }
 
-        private void GenerateUID()
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                Uid = rnd.Next(100);
-
-                if (!usedUIDs.Contains(Uid))
-                {
-                    usedUIDs.Add(Uid);
-                    return;
-                }
-            }
-        }
+        // private void GenerateUID()
+        // {
+        //     for (int i = 0; i < 100; i++)
+        //     {
+        //         Uid = rnd.Next(100);
+        //
+        //         if (!usedUIDs.Contains(Uid))
+        //         {
+        //             usedUIDs.Add(Uid);
+        //             return;
+        //         }
+        //     }
+        // }
     }
 }
