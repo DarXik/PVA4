@@ -9,76 +9,95 @@ namespace SettleUP
         public static void Main(string[] args)
         {
             // Func<string, User> createUser = (name) => new User(name);
-            List<User> Users = new List<User>();
-            Users.Add(new User("Pitra"));
-            Users.Add(new User("Židlický"));
-            Users.Add(new User("Cvach"));
-            Users.Add(new User("HobzaZmrd"));
+            var users = new List<User>
+            {
+                new User("A"),
+                new User("B"),
+                new User("C"),
+                new User("D")
+            };
 
             Console.WriteLine("Settle up your expenses " +
                               "\n--------------------------------------");
 
-            Console.WriteLine("Zadej kterou operaci chceš provést: " +
-                              "\n-[q] přidání nového uživatele " +
-                              "\n-[w] odebrání uživatele " +
-                              "\n-[e] přidat platbu " +
-                              "\n-[r] zobrazit dluh \n");
+            Console.WriteLine("Choose a service: " +
+                              "\n-[q] add new user " +
+                              "\n-[w] delete existing user " +
+                              "\n-[e] add transaction " +
+                              "\n-[r] show users' debts \n");
 
 
-            var input = Console.ReadKey();
+            var inputService = Console.ReadKey();
             Console.WriteLine("\n");
-            switch (input.Key)
+
+            while (true)
             {
-                case ConsoleKey.Q:
-                    Console.WriteLine("Zadej jméno nového uživatele: ");
-                    var newUser = Console.ReadLine();
-                    Users.Add(new User(newUser));
-                    // Console.WriteLine($"\n Byl přidán uživatel \"{newUser}\"");
-                    foreach (var user in Users)
-                    {
-                        Console.WriteLine(user.Uid);
-                        Console.WriteLine(user.Name);
-                    }
+                switch (Console.ReadLine())
+                {
+                    case ConsoleKey.Q:
+                        // Console.WriteLine("Add name for new user: ");
+                        // var newUser = Console.ReadLine();
+                        // users.Add(new User(newUser));
+                        // // Console.WriteLine($"\n New user was added \"{newUser}\"");
+                        // foreach (var user in users)
+                        // {
+                        //     Console.WriteLine(user.Uid);
+                        //     Console.WriteLine(user.Name);
+                        // }
 
-                    break;
+                        break;
 
-                case ConsoleKey.W:
-                    // Console.WriteLine("Zadej jméno nového uživatele: ");
-                    // var userToBeDeleted = Console.ReadLine();
-                    // Users.Remove(userToBeDeleted);
-                    // Console.WriteLine($"\n Byl přidán uživatel \"{userToBeDeleted}\"");
-                    break;
+                    case ConsoleKey.W:
+                        break;
 
-                case ConsoleKey.E:
+                    case ConsoleKey.E:
+                        Console.Write("\nWho paid: ");
+                        var userInput = Console.ReadLine();
+                        // User whoPaid = users.Find(user => user.Name == Console.ReadLine());
+                        User whoPaid = null;
 
-                    // Console.Write("Uživatelé: ");
-                    // foreach (var user in Users)
-                    // {
-                    //     Console.Write($"{user.Name}, ");
-                    // }
-
-                    Console.Write("\nKdo platil: ");
-                    User whoPaid = Users.Find(user => user.Name == Console.ReadLine());
-
-                    Console.Write("Kolik platil: ");
-                    var amountPaid = Convert.ToInt16(Console.ReadLine());
-                    var amountSplit = amountPaid / Users.Count;
-                    Console.WriteLine(amountSplit);
-                    Console.WriteLine($"{whoPaid.Name} zaplatil {amountPaid}");
-                    foreach (var user in Users)
-                    {
-                        if (user.Name != whoPaid.Name)
+                        foreach (User user in users)
                         {
-                            Console.WriteLine($"{user.Name} dluží {amountSplit} ");
-                            whoPaid.addExpense(user.Name, amountSplit);
+                            if (user.Name == userInput)
+                            {
+                                whoPaid = user;
+                                break;
+                            }
                         }
-                    }
 
-                    foreach (var item in whoPaid.expenses)
-                    {
-                        Console.WriteLine(item);
-                    }
-                    break;
+                        Console.Write("How much was paid: ");
+                        var amountPaid = Convert.ToInt16(Console.ReadLine());
+                        var amountSplit = amountPaid / users.Count;
+
+
+                        Console.WriteLine($"{whoPaid.Name} paid {amountPaid}");
+
+                        foreach (var user in users)
+                        {
+                            if (user.Name != whoPaid.Name)
+                            {
+                                Console.WriteLine($"{user.Name} owns {amountSplit} ");
+                                whoPaid.AddExpense(user.Name, amountSplit);
+                            }
+                        }
+
+                        break;
+
+                    case ConsoleKey.X:
+                        foreach (var VARIABLE in users)
+                        {
+                            Console.WriteLine($"{VARIABLE} paid: ");
+                            foreach (var item in VARIABLE.expenses)
+                            {
+                                Console.WriteLine(item);
+                            }
+                        }
+
+                        return;
+                }
+
+                // Console.ReadKey();
+                // Console.Clear();
             }
         }
     }
@@ -86,7 +105,7 @@ namespace SettleUP
     class User
     {
         public string Name { get; set; }
-        public int Uid { get; set; }
+        private int Uid { get; set; }
         private Random rnd = new Random();
         private HashSet<int> usedUIDs = new HashSet<int>();
 
@@ -98,9 +117,16 @@ namespace SettleUP
 
         public Dictionary<string, int> expenses = new Dictionary<string, int>();
 
-        public void addExpense(string whoOwns, int amountOwned)
+        public void AddExpense(string whoOwns, int amountOwned)
         {
-            expenses.Add(whoOwns, amountOwned);
+            if (!expenses.ContainsKey(whoOwns))
+            {
+                expenses.Add(whoOwns, amountOwned);
+            }
+            else
+            {
+                expenses[whoOwns] += amountOwned;
+            }
         }
 
         private void GenerateUID()
