@@ -6,6 +6,10 @@ namespace SettleUP
 {
     internal class Program
     {
+        public Program()
+        {
+        }
+
         public static void Main(string[] args)
         {
             // Func<string, User> createUser = (name) => new User(name);
@@ -32,19 +36,36 @@ namespace SettleUP
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.Q:
-                        // Console.WriteLine("Add name for new user: ");
-                        // var newUser = Console.ReadLine();
-                        // users.Add(new User(newUser));
-                        // // Console.WriteLine($"\n New user was added \"{newUser}\"");
-                        // foreach (var user in users)
-                        // {
-                        //     Console.WriteLine(user.Uid);
-                        //     Console.WriteLine(user.Name);
-                        // }
+                        Console.Write("\nAdd name for new user: ");
+                        users.Add(new User(Console.ReadLine()));
+
+                        Console.WriteLine("Current users: ");
+                        foreach (var user in users)
+                        {
+                            Console.WriteLine($"-{user.Name}");
+                        }
 
                         break;
 
                     case ConsoleKey.W:
+                        Console.WriteLine("\nCurrent users: ");
+                        foreach (var user in users)
+                        {
+                            Console.WriteLine($"-{user.Name}");
+                        }
+
+                        Console.Write("\nType name of user to be deleted: ");
+                        var userToBeDeleted = Console.ReadLine();
+                        foreach (var user in users)
+                        {
+                            if (user.Name == userToBeDeleted)
+                            {
+                                users.Remove(user);
+                                Console.WriteLine($"User \"{user.Name}\" was removed.");
+                                break;
+                            }
+                        }
+
                         break;
 
                     case ConsoleKey.E:
@@ -81,29 +102,63 @@ namespace SettleUP
                         break;
 
                     case ConsoleKey.R:
-
+                        Console.WriteLine();
                         foreach (var user in users)
                         {
-                            // Console.WriteLine($"\n{user.Name} paid: ");
+                            // Console.WriteLine($"\n{user.Name}:");
+                            //
+                            // if (user.expenses.Any())
+                            // {
+                            //     foreach (var expense in user.expenses)
+                            //     {
+                            //         Console.WriteLine(expense);
+                            //     }
+                            // }
+                            // else
+                            // {
+                            //     Console.WriteLine($"User {user.Name} didn't pay for anything.");
+                            // }
 
                             if (user.expenses.Any())
                             {
-                                foreach (var expense in user.expenses)
+                                foreach (var user2 in users)
                                 {
-                                    Console.WriteLine(expense);
+                                    if (user != user2 && user.expenses.ContainsKey(user2.Name) &&
+                                        user2.expenses.ContainsKey(user.Name))
+                                    {
+                                        var expense1 = user.expenses[user2.Name];
+                                        var expense2 = user2.expenses[user.Name];
+                                        // Console.WriteLine(Math.Abs(expense1 - expense2));
+                                        if (expense1 > expense2)
+                                        {
+                                            Console.WriteLine(
+                                                $"1: {user2.Name} owes {user.Name} {expense1 - expense2}");
+                                        }
+                                        else if (expense1 < expense2)
+                                        {
+                                            Console.WriteLine(
+                                                $"2: {user.Name} owes {user2.Name} {expense2 - expense1}");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($"{user.Name} and {user2.Name} are squared.");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
                                 }
-
                             }
                             else
                             {
-                                Console.WriteLine($"User {user.Name} didn't pay for anything.");
+                                continue;
                             }
                         }
 
                         break;
 
                     case ConsoleKey.X:
-
                         return;
                 }
 
