@@ -95,7 +95,7 @@ namespace SettleUP
                             if (user.Name != whoPaid.Name)
                             {
                                 Console.WriteLine($"{user.Name} owes {amountSplit} ");
-                                whoPaid.AddExpense(user.Name, amountSplit);
+                                user.AddExpense(whoPaid.Name, amountSplit);
                             }
                         }
 
@@ -103,57 +103,60 @@ namespace SettleUP
 
                     case ConsoleKey.R:
                         Console.WriteLine();
+                        var owedAmounts = new Dictionary<string, Dictionary<string, float>>();
                         foreach (var user in users)
                         {
-                            // Console.WriteLine($"\n{user.Name}:");
-                            //
-                            // if (user.expenses.Any())
-                            // {
-                            //     foreach (var expense in user.expenses)
-                            //     {
-                            //         Console.WriteLine(expense);
-                            //     }
-                            // }
-                            // else
-                            // {
-                            //     Console.WriteLine($"User {user.Name} didn't pay for anything.");
-                            // }
-
-                            if (user.expenses.Any())
+                            var expense1 = 0f;
+                            var expense2 = 0f;
+                            foreach (var user2 in users)
                             {
-                                foreach (var user2 in users)
+                                if (user != user2)
                                 {
-                                    if (user != user2 && user.expenses.ContainsKey(user2.Name) &&
-                                        user2.expenses.ContainsKey(user.Name))
+                                    if (user2.expenses.ContainsKey(user.Name))
                                     {
-                                        var expense1 = user.expenses[user2.Name];
-                                        var expense2 = user2.expenses[user.Name];
-                                        // Console.WriteLine(Math.Abs(expense1 - expense2));
-                                        if (expense1 > expense2)
-                                        {
-                                            Console.WriteLine(
-                                                $"1: {user2.Name} owes {user.Name} {expense1 - expense2}");
-                                        }
-                                        else if (expense1 < expense2)
-                                        {
-                                            Console.WriteLine(
-                                                $"2: {user.Name} owes {user2.Name} {expense2 - expense1}");
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine($"{user.Name} and {user2.Name} are squared.");
-                                        }
+                                        expense1 = user2.expenses[user.Name];
                                     }
                                     else
                                     {
-                                        continue;
+                                        expense1 = 0;
+                                    }
+
+                                    if (user.expenses.ContainsKey(user2.Name))
+                                    {
+                                        expense2 = user.expenses[user2.Name];
+                                    }
+                                    else
+                                    {
+                                        expense2 = 0;
+                                    }
+
+                                    var debt = expense2 - expense1;
+                                    if (debt > 0)
+                                    {
+                                        if (!owedAmounts.ContainsKey(user.Name)) // existuje dlužník?
+                                        {
+                                            owedAmounts[user.Name] = new Dictionary<string, float>(); // založí PRÁZDNOU dictionary se jménem dlužníka
+                                        }
+
+                                        owedAmounts[user.Name][user2.Name] = expense2 - expense1; // kolik dluží user - user.Name: key pro inner dictionary -  userovi2 - key: user2 a value exp2 - exp1
                                     }
                                 }
                             }
-                            else
+                        }
+
+                        if (owedAmounts.Any())
+                        {
+                            foreach (var debtor in owedAmounts)
                             {
-                                continue;
+                                foreach (var creditor in debtor.Value)
+                                {
+                                    Console.WriteLine($"{debtor.Key} owes {creditor.Key} {creditor.Value}");
+                                }
                             }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No user owes the others.");
                         }
 
                         break;
