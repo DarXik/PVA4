@@ -6,20 +6,23 @@ namespace SettleUP
 {
     internal class Program
     {
-        public Program()
-        {
-        }
-
         public static void Main(string[] args)
         {
             // Func<string, User> createUser = (name) => new User(name);
             var users = new List<User>
             {
                 new User("A"),
-                new User("B"),
-                new User("C"),
-                new User("D")
+                new User("B")
             };
+
+            void showUsers()
+            {
+                Console.WriteLine("\nCurrent users: ");
+                foreach (var user in users)
+                {
+                    Console.WriteLine($"-{user.Name}");
+                }
+            }
 
             Console.WriteLine("Settle up your expenses " +
                               "\n--------------------------------------");
@@ -29,6 +32,7 @@ namespace SettleUP
                               "\n-[w] delete existing user " +
                               "\n-[e] add transaction " +
                               "\n-[r] show users' debts" +
+                              "\n-[t] print current users" +
                               "\n-[x] exit");
             while (true)
             {
@@ -39,20 +43,12 @@ namespace SettleUP
                         Console.Write("\nAdd name for new user: ");
                         users.Add(new User(Console.ReadLine()));
 
-                        Console.WriteLine("Current users: ");
-                        foreach (var user in users)
-                        {
-                            Console.WriteLine($"-{user.Name}");
-                        }
+                        showUsers();
 
                         break;
 
                     case ConsoleKey.W:
-                        Console.WriteLine("\nCurrent users: ");
-                        foreach (var user in users)
-                        {
-                            Console.WriteLine($"-{user.Name}");
-                        }
+                        showUsers();
 
                         Console.Write("\nType name of user to be deleted: ");
                         var userToBeDeleted = Console.ReadLine();
@@ -69,6 +65,8 @@ namespace SettleUP
                         break;
 
                     case ConsoleKey.E:
+                        showUsers();
+
                         Console.Write("\nWho paid: ");
                         var userInput = Console.ReadLine();
                         // User whoPaid = users.Find(user => user.Name == Console.ReadLine());
@@ -118,7 +116,7 @@ namespace SettleUP
                                     }
                                     else
                                     {
-                                        expense1 = 0;
+                                        expense1 = 0; // this was crucial
                                     }
 
                                     if (user.expenses.ContainsKey(user2.Name))
@@ -135,10 +133,12 @@ namespace SettleUP
                                     {
                                         if (!owedAmounts.ContainsKey(user.Name)) // existuje dlužník?
                                         {
-                                            owedAmounts[user.Name] = new Dictionary<string, float>(); // založí PRÁZDNOU dictionary se jménem dlužníka
+                                            // založí PRÁZDNOU dictionary se jménem dlužníka
+                                            owedAmounts[user.Name] = new Dictionary<string, float>();
                                         }
 
-                                        owedAmounts[user.Name][user2.Name] = expense2 - expense1; // kolik dluží user - user.Name: key pro inner dictionary -  userovi2 - key: user2 a value exp2 - exp1
+                                        // kolik dluží user - user.Name: key pro inner dictionary -  userovi2 - key: user2 a value exp2 - exp1
+                                        owedAmounts[user.Name][user2.Name] = expense2 - expense1;
                                     }
                                 }
                             }
@@ -156,8 +156,13 @@ namespace SettleUP
                         }
                         else
                         {
-                            Console.WriteLine("No user owes the others.");
+                            Console.WriteLine("Neither user owes another.");
                         }
+
+                        break;
+
+                    case ConsoleKey.T:
+                        showUsers();
 
                         break;
 
