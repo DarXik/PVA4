@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pitra\\Desktop\\Maturitka C#\\XOR\\XOR.csproj": {}
+    "C:\\Users\\pitra\\Desktop\\PVA4\\Maturitka C#\\XOR\\XOR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pitra\\Desktop\\Maturitka C#\\XOR\\XOR.csproj": {
+    "C:\\Users\\pitra\\Desktop\\PVA4\\Maturitka C#\\XOR\\XOR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pitra\\Desktop\\Maturitka C#\\XOR\\XOR.csproj",
+        "projectUniqueName": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturitka C#\\XOR\\XOR.csproj",
         "projectName": "XOR",
-        "projectPath": "C:\\Users\\pitra\\Desktop\\Maturitka C#\\XOR\\XOR.csproj",
+        "projectPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturitka C#\\XOR\\XOR.csproj",
         "packagesPath": "C:\\Users\\pitra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pitra\\Desktop\\Maturitka C#\\XOR\\obj\\",
+        "outputPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturitka C#\\XOR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pitra\\AppData\\Roaming\\NuGet\\NuGet.Config"
