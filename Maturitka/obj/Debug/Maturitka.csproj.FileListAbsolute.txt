@@ -1,0 +1,7 @@
+C:\Users\pitra\Desktop\PVA4\Maturitka\bin\Debug\Maturitka.exe
+C:\Users\pitra\Desktop\PVA4\Maturitka\bin\Debug\Maturitka.pdb
+C:\Users\pitra\Desktop\PVA4\Maturitka\obj\Debug\Maturitka.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\Maturitka\obj\Debug\Maturitka.csproj.SuggestedBindingRedirects.cache
+C:\Users\pitra\Desktop\PVA4\Maturitka\obj\Debug\Maturitka.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturitka\obj\Debug\Maturitka.exe
+C:\Users\pitra\Desktop\PVA4\Maturitka\obj\Debug\Maturitka.pdb
