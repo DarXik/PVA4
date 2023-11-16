@@ -7,7 +7,7 @@ namespace Maturitka
     {
         public static void Main(string[] args)
         {
-            IsPrime();
+            // IsPrime();
             // FileManipulation();
         }
 
