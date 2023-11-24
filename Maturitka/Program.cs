@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Maturitka
 {
     internal class Program
     {
+
+
         public static void Main(string[] args)
         {
             // IsPrime();
             // FileManipulation();
+            RndWithoutRep();
         }
 
         private static void IsPrime()
@@ -79,6 +84,56 @@ namespace Maturitka
             }
 
             Console.WriteLine("Další text byl zapsán");
+        }
+
+        private static void RndWithoutRep()
+        {
+            Random random = new Random();
+            List<int> usedNumbers = new List<int>(); // seznam vygen. čísel
+            int min = 1;
+            int max = 100;
+
+            // Generování náhodných čísel bez opakování
+            for (int i = 0; i < 50; i++)
+            {
+                int randomNumber;
+
+                do
+                {
+                    randomNumber = random.Next(min, max + 1);
+                }
+                while (usedNumbers.Contains(randomNumber));
+
+                usedNumbers.Add(randomNumber);
+            }
+
+            foreach (var VARIABLE in usedNumbers)
+            {
+                Console.WriteLine(VARIABLE);
+            }
+
+            // Random random = new Random();
+            // var pole = new int[10];
+            //
+            // for (int i = 0; i < pole.Length; i++)
+            // {
+            //     st1:
+            //     int randomNumber = random.Next(1, 11);
+            //
+            //     if (!pole.Contains(randomNumber))
+            //     {
+            //         pole[i] = randomNumber;
+            //     }
+            //     else
+            //     {
+            //         goto st1;
+            //     }
+            // }
+            //
+            // foreach (var VARIABLE in pole)
+            // {
+            //     Console.WriteLine(VARIABLE);
+            // }
         }
     }
 }
