@@ -26,3 +26,4 @@ C:\Users\pitra\Desktop\PVA4\Maturitka C#\XOR\obj\Debug\net7.0\refint\XOR.dll
 C:\Users\pitra\Desktop\PVA4\Maturitka C#\XOR\obj\Debug\net7.0\XOR.pdb
 C:\Users\pitra\Desktop\PVA4\Maturitka C#\XOR\obj\Debug\net7.0\XOR.genruntimeconfig.cache
 C:\Users\pitra\Desktop\PVA4\Maturitka C#\XOR\obj\Debug\net7.0\ref\XOR.dll
+C:\Users\pitra\Desktop\PVA4\Maturitka C#\XOR\obj\Debug\net7.0\XOR.sourcelink.json
