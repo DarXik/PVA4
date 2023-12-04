@@ -8,8 +8,6 @@ namespace Maturitka
 {
     internal class Program
     {
-
-
         public static void Main(string[] args)
         {
             // IsPrime();
