@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace Maturitka
 {
@@ -13,7 +14,8 @@ namespace Maturitka
         {
             // IsPrime();
             // FileManipulation();
-            RndWithoutRep();
+            // RndWithoutRep();
+            RndString();
         }
 
         private static void IsPrime()
@@ -88,52 +90,67 @@ namespace Maturitka
 
         private static void RndWithoutRep()
         {
-            Random random = new Random();
-            List<int> usedNumbers = new List<int>(); // seznam vygen. čísel
-            int min = 1;
-            int max = 100;
-
-            // Generování náhodných čísel bez opakování
-            for (int i = 0; i < 50; i++)
-            {
-                int randomNumber;
-
-                do
-                {
-                    randomNumber = random.Next(min, max + 1);
-                }
-                while (usedNumbers.Contains(randomNumber));
-
-                usedNumbers.Add(randomNumber);
-            }
-
-            foreach (var VARIABLE in usedNumbers)
-            {
-                Console.WriteLine(VARIABLE);
-            }
-
             // Random random = new Random();
-            // var pole = new int[10];
+            // List<int> usedNumbers = new List<int>(); // seznam vygen. čísel
+            // int min = 1;
+            // int max = 100;
             //
-            // for (int i = 0; i < pole.Length; i++)
+            // // Generování náhodných čísel bez opakování
+            // for (int i = 0; i < 50; i++)
             // {
-            //     st1:
-            //     int randomNumber = random.Next(1, 11);
+            //     int randomNumber;
             //
-            //     if (!pole.Contains(randomNumber))
+            //     do
             //     {
-            //         pole[i] = randomNumber;
+            //         randomNumber = random.Next(min, max + 1);
             //     }
-            //     else
-            //     {
-            //         goto st1;
-            //     }
+            //     while (usedNumbers.Contains(randomNumber));
+            //
+            //     usedNumbers.Add(randomNumber);
             // }
             //
-            // foreach (var VARIABLE in pole)
+            // foreach (var VARIABLE in usedNumbers)
             // {
             //     Console.WriteLine(VARIABLE);
             // }
+
+            Random random = new Random();
+            var pole = new int[10];
+
+            for (int i = 0; i < pole.Length;)
+            {
+                int randomNumber = random.Next(1, 11);
+
+                if (!pole.Contains(randomNumber))
+                {
+                    pole[i] = randomNumber;
+                    i++;
+                }
+            }
+
+            foreach (var VARIABLE in pole)
+            {
+                Console.WriteLine(VARIABLE);
+            }
+        }
+
+        private static void RndString()
+        {
+            var str = new StringBuilder();
+            var rnd = new Random();
+
+            char letter;
+
+            for (int i = 0; i < 7; i++)
+            {
+                double flt = rnd.NextDouble(); // od 0.0 do 1.0
+                int shift = Convert.ToInt32(Math.Floor(25 * flt)); // menší nebo rovno
+
+                letter = Convert.ToChar(shift + 65);
+                str.Append(letter);
+            }
+
+            Console.WriteLine(str.ToString());
         }
     }
 }
