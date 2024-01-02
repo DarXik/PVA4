@@ -1,0 +1,15 @@
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\bin\Debug\net7.0\Prime.exe
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\bin\Debug\net7.0\Prime.deps.json
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\bin\Debug\net7.0\Prime.runtimeconfig.json
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\bin\Debug\net7.0\Prime.dll
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\bin\Debug\net7.0\Prime.pdb
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.csproj.AssemblyReference.cache
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.AssemblyInfoInputs.cache
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.AssemblyInfo.cs
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.csproj.CoreCompileInputs.cache
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.dll
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\refint\Prime.dll
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.pdb
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\Prime.genruntimeconfig.cache
+C:\Users\pitra\OneDrive - Smíchovská střední průmyslová škola\SSPS4\PVA4\Prime\obj\Debug\net7.0\ref\Prime.dll

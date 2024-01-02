@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\Metody\Metody\bin\Debug\Metody.exe
+C:\Users\pitra\Desktop\PVA4\Metody\Metody\bin\Debug\Metody.pdb
+C:\Users\pitra\Desktop\PVA4\Metody\Metody\obj\Debug\Metody.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\Metody\Metody\obj\Debug\Metody.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Metody\Metody\obj\Debug\Metody.exe
+C:\Users\pitra\Desktop\PVA4\Metody\Metody\obj\Debug\Metody.pdb

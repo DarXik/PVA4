@@ -13,7 +13,8 @@ namespace Maturitka
             // IsPrime();
             // FileManipulation();
             // RndWithoutRep();
-            RndString();
+            // RndString();
+            Console.WriteLine(AddNumbers(1, 2));
         }
 
         private static void IsPrime()
@@ -149,6 +150,18 @@ namespace Maturitka
             }
 
             Console.WriteLine(str.ToString());
+        }
+
+        public static int AddNumbers(int a, int b)
+        {
+            return a + b;
+        }
+
+        public int NumC;
+        public void IncreaseNum()
+        {
+            NumC = 3;
+            Console.WriteLine($"Číslo zvýšeno na {NumC}");
         }
     }
 }

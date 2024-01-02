@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\Třídy\Třídy\bin\Debug\Třídy.exe
+C:\Users\pitra\Desktop\PVA4\Třídy\Třídy\bin\Debug\Třídy.pdb
+C:\Users\pitra\Desktop\PVA4\Třídy\Třídy\obj\Debug\Třídy.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\Třídy\Třídy\obj\Debug\Třídy.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Třídy\Třídy\obj\Debug\Třídy.exe
+C:\Users\pitra\Desktop\PVA4\Třídy\Třídy\obj\Debug\Třídy.pdb
