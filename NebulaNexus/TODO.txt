@@ -1,0 +1,41 @@
+﻿Nebula Nexus, vesmírné dobývání
+
+- hierarchie tříd pro planety, hvězdy, lodě apd. - abstrakce, interface
+- každá planeta vlastní zdroje, př. suroviny, energie apd. - různé strategie dobývání - diplomacie, invaze, ekonomická manipulace
+- interakce mezi objekty, př. hráč zaútočí na planetu, to vyvolá stav ovlivňující tu planetu - delegáti, eventy
+- řízení hráče - třída pro hráče a řízení vývoje jeho civilizace, lodí, strategie (možná multiplayer)
+- ukládání stavu hry - serializace a deserializace
+- GUI
+planeta:
+    *
+   ***
+  *****
+   ***
+    *
+
+loď:
+  >
+ [^]
+  V
+
+bitva dvou flotil:
+   O      O
+ >-<    >-<
+   O      O
+
+rozhraní hráče:
+Hráč 1:
+--------------
+Suroviny: 1000
+Lodě: 20
+--------------
+
+mapa vesmíru:
+*********************************************
+* H *
+*   *
+*   *             O
+*   *       < >   *
+*   *             *
+*********************************************
+

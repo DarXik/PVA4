@@ -8,80 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b38354c8-377b-4543-ab81-8e7f69c8096c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/.idea/.idea.Metody/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/.idea/.idea.Metody/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/.idea/.idea.Metody/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/.idea/.idea.Metody/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/.idea/.idea.Metody/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/bin/Debug/Metody.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/bin/Debug/Metody.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/obj/Debug/.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/obj/Debug/Metody.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/obj/Debug/Metody.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/obj/Debug/Metody.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/obj/Debug/Metody.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Metody/Metody/obj/Debug/Metody.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/.idea/.idea.Prime/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/.idea/.idea.Prime/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/.idea/.idea.Prime/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/.idea/.idea.Prime/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/Prime.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/Prime.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/bin/Debug/net7.0/Prime.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/bin/Debug/net7.0/Prime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/bin/Debug/net7.0/Prime.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/bin/Debug/net7.0/Prime.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/bin/Debug/net7.0/Prime.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/Prime.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/ref/Prime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Debug/net7.0/refint/Prime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Prime.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Prime.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/Prime.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Prime/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Třídy/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Třídy/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Třídy/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Třídy/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Třídy/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Třídy.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Třídy.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/Třídy.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/Třídy.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/Třídy.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/Třídy.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/Třídy.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/Třídy.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/Třídy.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/Maturitka.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/Maturitka.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/bin/Debug/Maturitka.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/bin/Debug/Maturitka.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/bin/Debug/Maturitka.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/bin/Debug/Maturitka.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.csproj.SuggestedBindingRedirects.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Maturitka/obj/Debug/Maturitka.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/.idea/.idea.NebulaNexus/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/NebulaNexus.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/NebulaNexus.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/obj/Debug/.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../NebulaNexus/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +91,7 @@
       <updated>1704117040147</updated>
       <workItem from="1704117041671" duration="6675000" />
       <workItem from="1704200740366" duration="64000" />
+      <workItem from="1704906822074" duration="151000" />
     </task>
     <servers />
   </component>

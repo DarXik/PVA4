@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\NebulaNexus.exe
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\NebulaNexus.pdb
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.exe
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.pdb
