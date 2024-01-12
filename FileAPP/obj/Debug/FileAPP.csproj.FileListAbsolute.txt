@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\FileAPP\bin\Debug\FileAPP.exe
+C:\Users\pitra\Desktop\PVA4\FileAPP\bin\Debug\FileAPP.pdb
+C:\Users\pitra\Desktop\PVA4\FileAPP\obj\Debug\FileAPP.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\FileAPP\obj\Debug\FileAPP.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\FileAPP\obj\Debug\FileAPP.exe
+C:\Users\pitra\Desktop\PVA4\FileAPP\obj\Debug\FileAPP.pdb

@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e/NRgdfWH4yJChavthXxW6CK6z9cqzTcbzPsSLhtZf57WlJiFKd65Qxwa0PN62GNwukBIi7SVRT6JkYJMhxEcQ==",
+  "dgSpecHash": "Cy9a0pLphpKq63BWqHwVw4auu29+0vfueIYRwuyY74V5gLBEuZlo3GGQ7+l33tSiXiFKPya1TAtB59fllOufZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturitka C#\\XOR\\XOR.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\pitra\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\pitra\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\pitra\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\pitra\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
