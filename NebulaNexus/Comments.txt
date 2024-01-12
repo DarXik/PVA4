@@ -1,0 +1,31 @@
+﻿// public enum PlanetTypeEnum
+    // {
+    //     Sandy,
+    //     Rocky,
+    //     Watery,
+    //     Gaseous,
+    //     Icy,
+    //     VibraniumRich
+    // }
+
+    // public abstract class PlanetType
+    // {
+    //     public PlanetTypeEnum Type;
+    //     public int AtmosphericPermeability;
+    //     public float MaxTemperature;
+    //     public float MinTemperature;
+    //     public bool WaterAvailability;
+    //     public readonly string[] SurfaceCompositions = new[] {"Sand", "Dirt", "Rock", "Water", "Gas", "Ice", "Vibranium"};
+    // }
+
+    // public class SandyPlanetType : PlanetType
+    // {
+    //     public SandyPlanetType()
+    //     {
+    //         Type = PlanetTypeEnum.Sandy;
+    //         AtmosphericPermeability = 1;
+    //         MaxTemperature = 245f;
+    //         MinTemperature = 50f;
+    //         WaterAvailability = false;
+    //     }
+    // }

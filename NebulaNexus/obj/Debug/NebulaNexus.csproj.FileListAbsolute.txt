@@ -4,3 +4,14 @@ C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.csproj.AssemblyRef
 C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.csproj.CoreCompileInputs.cache
 C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.exe
 C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.pdb
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\Spectre.Console.dll
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Buffers.dll
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Memory.dll
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\Spectre.Console.xml
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Buffers.xml
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Memory.xml
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\pitra\Desktop\PVA4\NebulaNexus\obj\Debug\NebulaNexus.csproj.CopyComplete

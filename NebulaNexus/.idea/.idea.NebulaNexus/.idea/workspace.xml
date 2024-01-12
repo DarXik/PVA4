@@ -8,7 +8,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d299e358-a641-4ced-a159-f6cc82d7ae36" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NebulaNexus.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/Spectre.Console.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/Spectre.Console.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Memory.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Memory.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CopyComplete" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/Spectre.Console.0.48.1-preview.0.11.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/net6.0/Spectre.Console.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/net6.0/Spectre.Console.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/net7.0/Spectre.Console.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/net7.0/Spectre.Console.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/net8.0/Spectre.Console.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/net8.0/Spectre.Console.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/netstandard2.0/Spectre.Console.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/lib/netstandard2.0/Spectre.Console.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/Spectre.Console.0.48.1-preview.0.11/small-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/LICENSE.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/System.Buffers.4.5.1.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/THIRD-PARTY-NOTICES.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/net461/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/net461/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/netcoreapp2.0/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/netstandard1.1/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/netstandard1.1/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/netstandard2.0/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/netstandard2.0/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/lib/uap10.0.16299/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/net45/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/net45/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/netcoreapp2.0/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/netstandard1.1/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/netstandard1.1/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/netstandard2.0/System.Buffers.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/netstandard2.0/System.Buffers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/ref/uap10.0.16299/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/useSharedDesignerContext.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Buffers.4.5.1/version.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/LICENSE.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/System.Memory.4.5.5.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/THIRD-PARTY-NOTICES.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/net461/System.Memory.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/net461/System.Memory.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/netcoreapp2.1/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/netstandard1.1/System.Memory.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/netstandard1.1/System.Memory.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/netstandard2.0/System.Memory.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/lib/netstandard2.0/System.Memory.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/ref/netcoreapp2.1/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/useSharedDesignerContext.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Memory.4.5.5/version.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/LICENSE.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/System.Numerics.Vectors.4.5.0.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/THIRD-PARTY-NOTICES.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/MonoAndroid10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/MonoTouch10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/net46/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/net46/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/netcoreapp2.0/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/netstandard1.0/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/netstandard1.0/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/netstandard2.0/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/netstandard2.0/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/uap10.0.16299/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/xamarinios10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/xamarinmac20/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/xamarintvos10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/lib/xamarinwatchos10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/MonoAndroid10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/MonoTouch10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/net45/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/net45/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/net46/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/net46/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/netcoreapp2.0/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/netstandard1.0/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/netstandard1.0/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/netstandard2.0/System.Numerics.Vectors.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/netstandard2.0/System.Numerics.Vectors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/uap10.0.16299/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/xamarinios10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/xamarinmac20/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/xamarintvos10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/ref/xamarinwatchos10/_._" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/useSharedDesignerContext.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.5.0/version.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/LICENSE.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/System.Runtime.CompilerServices.Unsafe.4.5.3.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/THIRD-PARTY-NOTICES.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/net461/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/net461/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/ref/net461/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/ref/net461/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/useSharedDesignerContext.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.4.5.3/version.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NebulaNexus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NebulaNexus.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,30 +157,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.NebulaNexus.executor": "Run",
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.general",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.NebulaNexus.executor&quot;: &quot;Run&quot;,
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\pitra\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\pitra\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="NebulaNexus" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -83,6 +211,7 @@
       <updated>1704906959740</updated>
       <workItem from="1704906961297" duration="4541000" />
       <workItem from="1704962662732" duration="32000" />
+      <workItem from="1705076665948" duration="6288000" />
     </task>
     <servers />
   </component>
