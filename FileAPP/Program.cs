@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 
 namespace FileAPP
@@ -10,60 +9,55 @@ namespace FileAPP
         {
             while (true)
             {
-                Console.WriteLine("Přejete si vytvořit nový [v], upravit existující [p] nebo jen přečíst [r] soubor? ");
+                Console.WriteLine("Co si přejete udělat? \n--------------------------- \nVytvořit nový soubor [v] \nUpravit soubor [u] \nPřečíst soubor [p] \nUkončit [x]");
+
                 switch (Console.ReadLine())
                 {
                     case "v":
                         CreateFile();
                         break;
-                    case "p":
+                    case "u":
                         EditFile();
                         break;
-                    case "r":
-                        Console.WriteLine("Zadej cestu k existujícímu souboru: ");
-                        string readPath = Console.ReadLine();
-
-                        while (!File.Exists(readPath))
-                        {
-                            Console.WriteLine("Soubor neexistuje");
-                            readPath = Console.ReadLine();
-                        }
-
-                        using (StreamReader reader = new StreamReader(readPath))
-                        {
-                            string content = reader.ReadToEnd();
-                            Console.WriteLine("V souboru je zapsáno: " + content);
-                        }
+                    case "p":
+                        ReadFile();
                         break;
+                    case "x":
+                        return;
                     default:
-                        Console.WriteLine("Bylo zadán neplatný vstup");
+                        Console.WriteLine("\nZadána neplatná operace");
                         break;
                 }
             }
         }
 
-        static void CreateFile()
+        private static void CreateFile()
         {
             Console.WriteLine("Zadej cestu pro nový soubor: ");
-            string writePath = Console.ReadLine();
+            var writePath = Console.ReadLine()?.Trim();
+
             while (!Directory.Exists(writePath))
             {
                 Console.WriteLine("Zadaná cesta neexistuje, zadej ji znovu ...");
-                writePath = Console.ReadLine();
+                writePath = Console.ReadLine()?.Trim();
             }
 
-            Console.WriteLine("Zadej název souboru, vč. přípony: ");
-            string fileName = Console.ReadLine();
-
-            string finalPath = writePath + @"\" + fileName + @".txt"; // dořešit
-            while (File.Exists(finalPath))
+            if (!writePath.EndsWith(@"\"))
             {
-                Console.WriteLine("Již existuje, zkus to znovu ...");
-                fileName = Console.ReadLine();
-                finalPath = writePath + @"\" + fileName;
+                writePath = writePath + @"\";
             }
 
-            Console.WriteLine(writePath);
+            Console.WriteLine("Zadej název souboru (bez přípony): ");
+            var fileName = Console.ReadLine()?.Trim();
+
+            var finalPath = Path.Combine(writePath, fileName + ".txt"); // dořešit
+
+            while (File.Exists(finalPath) || fileName == null)
+            {
+                Console.WriteLine("Již existuje nebo zadán neplatný název, zkus to znovu ...");
+                fileName = Console.ReadLine();
+                finalPath = Path.Combine(writePath, fileName + ".txt");
+            }
 
             Console.WriteLine("Co si přejete do souboru zapsat: ");
             var input = Console.ReadLine();
@@ -79,55 +73,80 @@ namespace FileAPP
             Console.WriteLine(input);
         }
 
-        static void EditFile()
+        private static void EditFile()
         {
-            Console.WriteLine("Zadej cestu k existujícímu souboru: ");
-            string readPath = Console.ReadLine();
+            Console.WriteLine("Zadej cestu k souboru: ");
+            var readPath = Console.ReadLine();
 
             while (!File.Exists(readPath))
             {
-                Console.WriteLine("Soubor neexistuje");
+                Console.WriteLine("Soubor nenalezen, zkus to znovu...");
                 readPath = Console.ReadLine();
             }
 
             using (StreamReader reader = new StreamReader(readPath))
             {
-                string content = reader.ReadToEnd();
-                Console.WriteLine("V souboru je zapsáno: " + content);
+                var content = reader.ReadToEnd();
+                Console.WriteLine("V souboru je zapsáno: \n" + content);
+
+
+                Console.WriteLine("Vyberte operaci: \npřepsat [p] \nupravit [u] \nzpět do menu [x]");
+                var inputRead = Console.ReadLine();
+
+                switch (inputRead)
+                {
+                    case "p":
+                        Console.WriteLine("Co si přejete do souboru zapsat: ");
+                        var inputOverwrite = Console.ReadLine();
+
+                        using (StreamWriter writer = new StreamWriter(readPath))
+                        {
+                            writer.WriteLine(inputOverwrite);
+                            writer.Flush();
+                        }
+
+                        Console.WriteLine("Soubor " + readPath);
+                        Console.WriteLine("Byl přepsán následujícím: ");
+                        Console.WriteLine(inputOverwrite);
+                        break;
+
+                    case "u":
+                        Console.WriteLine("Co si přejete do souboru přidat: ");
+                        var inputAppend = Console.ReadLine();
+
+                        using (StreamWriter append = new StreamWriter(readPath, true))
+                        {
+                            append.WriteLine(inputAppend);
+                        }
+
+                        Console.WriteLine("Do souboru " + readPath);
+                        Console.WriteLine("Bylo přidáno následující: ");
+                        Console.WriteLine(inputAppend);
+                        break;
+                    case "x":
+                        break;
+                    default:
+                        Console.WriteLine("Zadána neplatná operace");
+                        break;
+                }
+            }
+        }
+
+        private static void ReadFile()
+        {
+            Console.WriteLine("Zadej cestu k souboru: ");
+            var readPath = Console.ReadLine();
+
+            while (!File.Exists(readPath))
+            {
+                Console.WriteLine("Soubor nenalezen, zkus to znovu...");
+                readPath = Console.ReadLine();
             }
 
-            Console.WriteLine("Přejete si soubor přepsat [p] nebo upravit [u]? ");
-            string inputRead = Console.ReadLine();
-
-            switch (inputRead)
+            using (StreamReader reader = new StreamReader(readPath))
             {
-                case "p":
-                    Console.WriteLine("Co si přejete do souboru zapsat: ");
-                    var inputOverwrite = Console.ReadLine();
-
-                    using (StreamWriter writer = new StreamWriter(readPath))
-                    {
-                        writer.WriteLine(inputOverwrite);
-                        writer.Flush();
-                    }
-
-                    Console.WriteLine("Soubor s cestou: " + readPath + " byl přepsán následujícím: " + inputOverwrite);
-                    break;
-
-                case "u":
-                    Console.WriteLine("Co si přejete do souboru připojit: ");
-                    var inputAppend = Console.ReadLine();
-
-                    using (StreamWriter append = new StreamWriter(readPath, true))
-                    {
-                        append.WriteLine(inputAppend);
-                    }
-
-                    Console.WriteLine("Do souboru s cestou: " + readPath + " bylo přidáno následující: " + inputAppend);
-                    break;
-                default:
-                    Console.WriteLine("Zadána neplatná operace");
-                    break;
+                var content = reader.ReadToEnd();
+                Console.WriteLine("V souboru je zapsáno: \n" + content);
             }
         }
     }
