@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using Spectre.Console;
+
+// ReSharper disable All
 
 namespace NebulaNexus
 {
@@ -11,20 +14,50 @@ namespace NebulaNexus
         static Star Star1 = new Star("Cepheda", 88575875f, 5421.3f, 14000800090, 99999999999999, "Andromeda", 1);
         static Ship Ship1 = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
 
-        static List<Planet> planetsList = new List<Planet>() {Planet1, Planet2};
+
+        public static List<Planet> planetsList = new List<Planet>() { };
         static List<Star> starsList = new List<Star>() {Star1};
         static List<Planet> knownPlanets = new List<Planet>() {Planet2};
         private static List<Ship> AvailableShips = new List<Ship>() {Ship1};
 
         static Player Player1 = new Player("David", Planet2, Planet2, Ship1, knownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1); // proč musí být po listech?
 
+        static string[] possibleNamesPlanet = {"Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime", "Lunaris Nova", "Astrionex"};
 
         public static void Main(string[] args)
         {
-            Introduction();
+            PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
+            for (int i = 0; i < possibleNamesPlanet.Length; i++)
+            {
+                Planet planet1 = new Planet(possibleNamesPlanet[i], pgManager.GenerateRadius(), pgManager.GenerateType(), pgManager.GeneratePopulation(),
+                    pgManager.GenerateTechnologicalLevel(), pgManager.GenerateMilitaryPower(), pgManager.GenerateDemocracy(), pgManager.GenerateSolarSystem(),
+                    pgManager.GenerateX(), pgManager.GenerateY(), pgManager.GenerateZ(), i + 1);
+
+                planetsList.Add(planet1);
+            }
+
+
+            foreach (var planet in planetsList)
+            {
+                Console.WriteLine($"Planet Name: {planet.Name}");
+                Console.WriteLine($"Radius: {planet.Radius}");
+                Console.WriteLine($"Type: {planet.PlanetType}");
+                Console.WriteLine($"Population: {planet.Population}");
+                Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
+                Console.WriteLine($"Military Power: {planet.MilitaryPower}");
+                Console.WriteLine($"Democracy: {planet.IsDemocratic}");
+                Console.WriteLine($"Solar System: {planet.SolarSystem}");
+                Console.WriteLine($"X Coordinate: {planet.X}");
+                Console.WriteLine($"Y Coordinate: {planet.Y}");
+                Console.WriteLine($"Z Coordinate: {planet.Z}");
+                Console.WriteLine($"Index: {planet.Id}");
+                Console.WriteLine();
+            }
+
+            // Introduction();
         }
 
-        public static void Introduction()
+        private static void Introduction()
         {
             AnsiConsole.Markup("Welcome to [green]Nebula Nexus[/] - space exploration and conquest");
 
@@ -63,7 +96,7 @@ namespace NebulaNexus
             }
         }
 
-        public static void PlayerOptions()
+        private static void PlayerOptions()
         {
             Console.WriteLine("Your player options are: ");
 
@@ -103,7 +136,7 @@ namespace NebulaNexus
             }
         }
 
-        public static void ShowPlayerStats(Player player, List<Ship> availableShips)
+        private static void ShowPlayerStats(Player player, List<Ship> availableShips)
         {
             var table = new Table()
                 .Border(TableBorder.Ascii2)
@@ -161,7 +194,7 @@ namespace NebulaNexus
             Console.WriteLine("\n");
         }
 
-        public static void ShowAllPlanets(List<Planet> planetsList)
+        private static void ShowAllPlanets(List<Planet> planetsList)
         {
             var table = new Table()
                 .Border(TableBorder.Ascii2)
@@ -192,7 +225,7 @@ namespace NebulaNexus
             AnsiConsole.Write(table);
         }
 
-        public static void ShowAllStars(List<Star> starsList)
+        private static void ShowAllStars(List<Star> starsList)
         {
             var table = new Table()
                 .Border(TableBorder.Ascii2)
@@ -221,11 +254,123 @@ namespace NebulaNexus
         }
     }
 
+    public class PlanetGeneratorManager
+    {
+        Random rnd = new Random();
+
+        public long GenerateRadius()
+        {
+            return rnd.Next(4000, 99999 + 1);
+        }
+
+        public string GenerateType()
+        {
+            string[] possibleTypesPlanet =
+            {
+                "Icy", "Earth-like", "Gaseous", "Rocky", "Sandy", "Oceanic", "Mettalic", "Time-disorted", "Lava", "Badland", "Crystalline", "Arid", "Subterranean",
+                "Bioluminescent", "Tropical", "Radioactive", "High-Elevation Plateaus", "Mountainous", "Quicksand", "unknown"
+            };
+            return possibleTypesPlanet[rnd.Next(possibleTypesPlanet.Length)];
+        }
+
+        public long GeneratePopulation()
+        {
+            // byte[] data = new byte[64];
+            // rnd.NextBytes(data);
+            // rnd..NextInt64(); -> .NET 8
+            // return (long) new BigInteger(data);
+            long population = rnd.Next() * rnd.Next(0, 15);
+            return Math.Abs(population);
+        }
+
+        public int GenerateTechnologicalLevel()
+        {
+            return rnd.Next(0, 5 + 1);
+        }
+
+        public int GenerateMilitaryPower()
+        {
+            return rnd.Next(0, 5 + 1);
+        }
+
+        public bool GenerateDemocracy()
+        {
+            return rnd.Next(2) == 1;
+        }
+
+        public string GenerateSolarSystem()
+        {
+            string[] possibleSolarSystems =
+            {
+                "Andromeda", "Nova Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "unknown"
+            };
+
+            return possibleSolarSystems[rnd.Next(possibleSolarSystems.Length)];
+        }
+
+        public float GenerateX()
+        {
+            int modifier_1 = (rnd.Next(2) * 2) - 1; // Either -1 or 1
+
+            float x_coord;
+            do
+            {
+                x_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            } while (Math.Abs(x_coord) <= 1000);
+
+            return x_coord;
+        }
+
+        public float GenerateY()
+        {
+            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
+
+            float y_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            while (Math.Abs(y_coord) <= 1000)
+            {
+                y_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            }
+
+            return y_coord;
+        }
+
+        public float GenerateZ()
+        {
+            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
+
+            float z_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            while (Math.Abs(z_coord) <= 1000)
+            {
+                z_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            }
+
+            return z_coord;
+        }
+    }
 
     public interface IGameObject
     {
         string Name { get; set; }
         int Id { get; set; }
+    }
+
+    public abstract class Coordinates
+    {
+        public float X { get; }
+        public float Y { get; }
+        public float Z { get; }
+
+        public Coordinates(float x, float y, float z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
+
+        public Tuple<float, float, float> GetCoordinates()
+        {
+            return new Tuple<float, float, float>(X, Y, Z);
+        }
     }
 
     public class Player : Coordinates, IGameObject
@@ -244,7 +389,7 @@ namespace NebulaNexus
         public Planet CurrentPlanet;
         public Ship CurrentShip;
 
-        public Player(string name, Planet homePlanet, Planet currentPlanet, Ship currentShip, List<Planet> knownPlanets, double x, double y, double z, int id) : base(x, y, z)
+        public Player(string name, Planet homePlanet, Planet currentPlanet, Ship currentShip, List<Planet> knownPlanets, float x, float y, float z, int id) : base(x, y, z)
         {
             Name = name;
             HomePlanet = homePlanet;
@@ -301,9 +446,9 @@ namespace NebulaNexus
         public float AvailableEnergy;
         public string SolarSystem;
 
-        private const double X = 0.0;
-        private const double Y = 0.0;
-        private const double Z = 0.0;
+        private const float X = 0.0f;
+        private const float Y = 0.0f;
+        private const float Z = 0.0f;
 
         public Star(string name, float mass, float temperature, long age, float availableEnergy, string solarSystem,
             int id) : base(X, Y, Z)
@@ -315,25 +460,6 @@ namespace NebulaNexus
             Id = id + 1000;
             Name = name;
             SolarSystem = solarSystem;
-        }
-    }
-
-    public abstract class Coordinates
-    {
-        public double X { get; }
-        public double Y { get; }
-        public double Z { get; }
-
-        public Coordinates(double x, double y, double z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
-
-        public Tuple<double, double, double> GetCoordinates()
-        {
-            return new Tuple<double, double, double>(X, Y, Z);
         }
     }
 
@@ -350,9 +476,9 @@ namespace NebulaNexus
         public string SolarSystem;
 
         public Planet(string name, long radius, string planetType, long population, int technologicalLevel, int militaryPower, bool isDemocratic, string solarSystem,
-            double x,
-            double y,
-            double z,
+            float x,
+            float y,
+            float z,
             int id) : base(x, y, z)
         {
             PlanetType = planetType;
