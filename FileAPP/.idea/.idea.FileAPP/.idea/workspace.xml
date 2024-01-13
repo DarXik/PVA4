@@ -9,12 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7e8e7ef8-d4d4-4dce-a1f4-9568399753b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FileAPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FileAPP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/FileAPP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/FileAPP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/FileAPP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/FileAPP.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/FileAPP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/FileAPP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/FileAPP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/FileAPP.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +90,7 @@
       <updated>1705051592252</updated>
       <workItem from="1705051593661" duration="4453000" />
       <workItem from="1705071703743" duration="4897000" />
+      <workItem from="1705138535340" duration="598000" />
     </task>
     <servers />
   </component>
