@@ -29,11 +29,6 @@ namespace NebulaNexus
 
             for (int i = 0; i < 10; i++)
             {
-
-                // Planet planet1 = new Planet(pgManager.GenerateName(), pgManager.GenerateRadius(), pgManager.GenerateType(), pgManager.GeneratePopulation(),
-                //     pgManager.GenerateTechnologicalLevel(), pgManager.GenerateMilitaryPower(), pgManager.GenerateDemocracy(), pgManager.GenerateSolarSystem(),
-                //     pgManager.GenerateX(), pgManager.GenerateY(), pgManager.GenerateZ(), i + 1);
-
                 PlanetsList.Add(pgManager.CreatePlanet(i));
             }
             foreach (var planet in PlanetsList)

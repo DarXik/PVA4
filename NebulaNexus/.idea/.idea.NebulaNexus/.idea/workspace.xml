@@ -8,20 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d299e358-a641-4ced-a159-f6cc82d7ae36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Planet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanetGeneratorManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ship.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Star.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FileAPP/.idea/.idea.FileAPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileAPP/.idea/.idea.FileAPP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NebulaNexus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NebulaNexus.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +91,7 @@
       <workItem from="1705076665948" duration="6598000" />
       <workItem from="1705138539516" duration="667000" />
       <workItem from="1705140370437" duration="19138000" />
-      <workItem from="1705241892752" duration="9051000" />
+      <workItem from="1705241892752" duration="10088000" />
     </task>
     <servers />
   </component>
