@@ -1,60 +1,111 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Numerics;
+using System.Linq;
 using Spectre.Console;
-
-// ReSharper disable All
 
 namespace NebulaNexus
 {
     internal class Program
     {
-        static Planet Planet1 = new Planet("Nexus", 9748, "Icy", 1000, 3, 0, true, "Andromeda", 1000, 1000, 1000, 1);
-        static Planet Planet2 = new Planet("Aldoria", 5001, "EarthLike", 10004561, 3, 2, true, "Alpha Centauri", 900, 9000, 100, 2);
+
+        public static List<Planet> PlanetsList = new List<Planet>();
+        private static Planet Planet1;
+
+        // static Planet Planet1 = new Planet("Nexus", 9748, "Icy", 1000, 3, 0, true, "Andromeda", 1000, 1000, 1000, 1);
         static Star Star1 = new Star("Cepheda", 88575875f, 5421.3f, 14000800090, 99999999999999, "Andromeda", 1);
-        static Ship Ship1 = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
+        private static Ship Ship1;
 
+        static List<Star> StarsList = new List<Star>() {Star1};
+        static List<Planet> KnownPlanets = new List<Planet>();
+        private static List<Ship> AvailableShips = new List<Ship>();
 
-        public static List<Planet> planetsList = new List<Planet>() { };
-        static List<Star> starsList = new List<Star>() {Star1};
-        static List<Planet> knownPlanets = new List<Planet>() {Planet2};
-        private static List<Ship> AvailableShips = new List<Ship>() {Ship1};
-
-        static Player Player1 = new Player("David", Planet2, Planet2, Ship1, knownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1); // proč musí být po listech?
-
-        static string[] possibleNamesPlanet = {"Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime", "Lunaris Nova", "Astrionex"};
+        public static Player Player1; // proč musí být po listech?
 
         public static void Main(string[] args)
         {
             PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
-            for (int i = 0; i < possibleNamesPlanet.Length; i++)
+
+
+
+            for (int i = 0; i < 10; i++)
             {
-                Planet planet1 = new Planet(possibleNamesPlanet[i], pgManager.GenerateRadius(), pgManager.GenerateType(), pgManager.GeneratePopulation(),
-                    pgManager.GenerateTechnologicalLevel(), pgManager.GenerateMilitaryPower(), pgManager.GenerateDemocracy(), pgManager.GenerateSolarSystem(),
-                    pgManager.GenerateX(), pgManager.GenerateY(), pgManager.GenerateZ(), i + 1);
 
-                planetsList.Add(planet1);
+                // Planet planet1 = new Planet(pgManager.GenerateName(), pgManager.GenerateRadius(), pgManager.GenerateType(), pgManager.GeneratePopulation(),
+                //     pgManager.GenerateTechnologicalLevel(), pgManager.GenerateMilitaryPower(), pgManager.GenerateDemocracy(), pgManager.GenerateSolarSystem(),
+                //     pgManager.GenerateX(), pgManager.GenerateY(), pgManager.GenerateZ(), i + 1);
+
+                PlanetsList.Add(pgManager.CreatePlanet(i));
             }
-
-
-            foreach (var planet in planetsList)
+            foreach (var planet in PlanetsList)
             {
                 Console.WriteLine($"Planet Name: {planet.Name}");
-                Console.WriteLine($"Radius: {planet.Radius}");
+                // Console.WriteLine($"Radius: {planet.Radius}");
                 Console.WriteLine($"Type: {planet.PlanetType}");
-                Console.WriteLine($"Population: {planet.Population}");
-                Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
-                Console.WriteLine($"Military Power: {planet.MilitaryPower}");
-                Console.WriteLine($"Democracy: {planet.IsDemocratic}");
+                // Console.WriteLine($"Population: {planet.Population}");
+                // Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
+                // Console.WriteLine($"Military Power: {planet.MilitaryPower}");
+                // Console.WriteLine($"Democracy: {planet.IsDemocratic}");
                 Console.WriteLine($"Solar System: {planet.SolarSystem}");
-                Console.WriteLine($"X Coordinate: {planet.X}");
-                Console.WriteLine($"Y Coordinate: {planet.Y}");
-                Console.WriteLine($"Z Coordinate: {planet.Z}");
-                Console.WriteLine($"Index: {planet.Id}");
+                // Console.WriteLine($"X Coordinate: {planet.X}");
+                // Console.WriteLine($"Y Coordinate: {planet.Y}");
+                // Console.WriteLine($"Z Coordinate: {planet.Z}");
+                // Console.WriteLine($"Index: {planet.Id}");
                 Console.WriteLine();
             }
+            // Random randGen = new Random();
+            // var trueChance = 10;
+            // var totalCount = 9999999;
+            // var trueCount = 0;
+            // var falseCount = 0;
+            // for (int i = 0; i < totalCount; i++)
+            // {
+            //     int x = randGen.Next(0, 100) < trueChance ? 1 : 0;
+            //     if (x == 1)
+            //     {
+            //         trueCount++;
+            //     }
+            //     else
+            //     {
+            //         falseCount++;
+            //     }
+            // }
+            //
+            // Console.WriteLine("true " + $"{trueCount:N4}");
+            // Console.WriteLine("false " +  $"{falseCount:N4}");
 
+            // Planet1 = planetsList[0];
+            // KnownPlanets.Add(Planet1);
+            // Player1 = new Player("David", Planet1, Planet1, Ship1, knownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1);
+            // Ship1  = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
+            // AvailableShips.Add(Ship1);
             // Introduction();
+            // FrequencyChecker(50);
+        }
+
+        private static void FrequencyChecker(int range)
+        {
+            PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
+
+            var counts = new Dictionary<string, int>();
+
+            for (int i = 0; i < range; i++)
+            {
+                var generatedType = pgManager.GenerateType();
+
+                if (counts.ContainsKey(generatedType))
+                {
+                    counts[generatedType]++;
+                }
+                else
+                {
+                    counts[generatedType] = 1;
+                }
+            }
+
+            foreach (var kvp in counts.OrderBy(x => x.Value))
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            }
         }
 
         private static void Introduction()
@@ -75,11 +126,11 @@ namespace NebulaNexus
                 {
                     case ConsoleKey.P:
                         Console.WriteLine("\n");
-                        ShowAllPlanets(planetsList);
+                        ShowAllPlanets(PlanetsList);
                         break;
                     case ConsoleKey.S:
                         Console.WriteLine("\n");
-                        ShowAllStars(starsList);
+                        ShowAllStars(StarsList);
                         break;
                     case ConsoleKey.X:
                         Console.WriteLine("\n");
@@ -254,100 +305,6 @@ namespace NebulaNexus
         }
     }
 
-    public class PlanetGeneratorManager
-    {
-        Random rnd = new Random();
-
-        public long GenerateRadius()
-        {
-            return rnd.Next(4000, 99999 + 1);
-        }
-
-        public string GenerateType()
-        {
-            string[] possibleTypesPlanet =
-            {
-                "Icy", "Earth-like", "Gaseous", "Rocky", "Sandy", "Oceanic", "Mettalic", "Time-disorted", "Lava", "Badland", "Crystalline", "Arid", "Subterranean",
-                "Bioluminescent", "Tropical", "Radioactive", "High-Elevation Plateaus", "Mountainous", "Quicksand", "unknown"
-            };
-            return possibleTypesPlanet[rnd.Next(possibleTypesPlanet.Length)];
-        }
-
-        public long GeneratePopulation()
-        {
-            // byte[] data = new byte[64];
-            // rnd.NextBytes(data);
-            // rnd..NextInt64(); -> .NET 8
-            // return (long) new BigInteger(data);
-            long population = rnd.Next() * rnd.Next(0, 15);
-            return Math.Abs(population);
-        }
-
-        public int GenerateTechnologicalLevel()
-        {
-            return rnd.Next(0, 5 + 1);
-        }
-
-        public int GenerateMilitaryPower()
-        {
-            return rnd.Next(0, 5 + 1);
-        }
-
-        public bool GenerateDemocracy()
-        {
-            return rnd.Next(2) == 1;
-        }
-
-        public string GenerateSolarSystem()
-        {
-            string[] possibleSolarSystems =
-            {
-                "Andromeda", "Nova Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "unknown"
-            };
-
-            return possibleSolarSystems[rnd.Next(possibleSolarSystems.Length)];
-        }
-
-        public float GenerateX()
-        {
-            int modifier_1 = (rnd.Next(2) * 2) - 1; // Either -1 or 1
-
-            float x_coord;
-            do
-            {
-                x_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            } while (Math.Abs(x_coord) <= 1000);
-
-            return x_coord;
-        }
-
-        public float GenerateY()
-        {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
-
-            float y_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            while (Math.Abs(y_coord) <= 1000)
-            {
-                y_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            }
-
-            return y_coord;
-        }
-
-        public float GenerateZ()
-        {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
-
-            float z_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            while (Math.Abs(z_coord) <= 1000)
-            {
-                z_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            }
-
-            return z_coord;
-        }
-    }
-
     public interface IGameObject
     {
         string Name { get; set; }
@@ -370,126 +327,6 @@ namespace NebulaNexus
         public Tuple<float, float, float> GetCoordinates()
         {
             return new Tuple<float, float, float>(X, Y, Z);
-        }
-    }
-
-    public class Player : Coordinates, IGameObject
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public int TechnologicalLevel;
-        public int DiplomacyLevel;
-        public int Trustworthiness;
-        public bool IsAlive { get; set; }
-
-        public List<Planet> KnownPlanets { get; set; }
-        public List<Ship> Fleet { get; set; }
-
-        public Planet HomePlanet;
-        public Planet CurrentPlanet;
-        public Ship CurrentShip;
-
-        public Player(string name, Planet homePlanet, Planet currentPlanet, Ship currentShip, List<Planet> knownPlanets, float x, float y, float z, int id) : base(x, y, z)
-        {
-            Name = name;
-            HomePlanet = homePlanet;
-            CurrentShip = currentShip;
-            CurrentPlanet = currentPlanet;
-            Id = id + 2000;
-            TechnologicalLevel = 3;
-            DiplomacyLevel = 0;
-            Trustworthiness = 10;
-            IsAlive = true;
-            KnownPlanets = knownPlanets;
-            Fleet = new List<Ship>();
-        }
-    }
-
-    public class Ship : IGameObject
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public string ShipType { get; set; }
-        public int Speed { get; set; }
-        public double Fuel { get; set; }
-        public bool HasHyperDriver { get; }
-        public bool IsEmpty { get; set; }
-        public int MilitaryPower { get; set; }
-        public int TechnologicalLevel { get; set; }
-        public List<string> Weaponry { get; set; }
-        public Planet CurrentPlanet { get; set; }
-
-        public Ship(string name, string shipType, int speed, double fuel, bool hasHyperDriver, bool isEmpty, int militaryPower, int technologicalLevel, List<string> weaponry,
-            Planet currentPlanet, int id)
-        {
-            Name = name;
-            ShipType = shipType;
-            Id = id;
-            Speed = speed;
-            Fuel = fuel;
-            HasHyperDriver = hasHyperDriver;
-            IsEmpty = isEmpty;
-            MilitaryPower = militaryPower;
-            TechnologicalLevel = technologicalLevel;
-            Weaponry = weaponry;
-            CurrentPlanet = currentPlanet;
-        }
-    }
-
-    public class Star : Coordinates, IGameObject
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public float Mass;
-        public float Temperature;
-        public long Age;
-        public float AvailableEnergy;
-        public string SolarSystem;
-
-        private const float X = 0.0f;
-        private const float Y = 0.0f;
-        private const float Z = 0.0f;
-
-        public Star(string name, float mass, float temperature, long age, float availableEnergy, string solarSystem,
-            int id) : base(X, Y, Z)
-        {
-            Mass = mass;
-            Temperature = temperature;
-            Age = age;
-            AvailableEnergy = availableEnergy;
-            Id = id + 1000;
-            Name = name;
-            SolarSystem = solarSystem;
-        }
-    }
-
-    public class Planet : Coordinates, IGameObject
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public long Radius;
-        public string PlanetType;
-        public long Population;
-        public int TechnologicalLevel;
-        public int MilitaryPower;
-        public bool IsDemocratic;
-        public string SolarSystem;
-
-        public Planet(string name, long radius, string planetType, long population, int technologicalLevel, int militaryPower, bool isDemocratic, string solarSystem,
-            float x,
-            float y,
-            float z,
-            int id) : base(x, y, z)
-        {
-            PlanetType = planetType;
-            Population = population;
-            TechnologicalLevel = technologicalLevel;
-            IsDemocratic = isDemocratic;
-            Id = id;
-            MilitaryPower = militaryPower;
-            Name = name;
-            Radius = radius;
-            SolarSystem = solarSystem;
         }
     }
 }

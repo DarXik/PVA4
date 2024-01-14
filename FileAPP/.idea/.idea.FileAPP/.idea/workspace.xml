@@ -8,11 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e8e7ef8-d4d4-4dce-a1f4-9568399753b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../NebulaNexus/Planet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NebulaNexus/PlanetGeneratorManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NebulaNexus/Player.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NebulaNexus/Ship.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NebulaNexus/Star.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FileAPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FileAPP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/NebulaNexus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/NebulaNexus.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/bin/Debug/NebulaNexus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
@@ -91,6 +98,7 @@
       <workItem from="1705051593661" duration="4453000" />
       <workItem from="1705071703743" duration="4897000" />
       <workItem from="1705138535340" duration="598000" />
+      <workItem from="1705241887387" duration="596000" />
     </task>
     <servers />
   </component>
