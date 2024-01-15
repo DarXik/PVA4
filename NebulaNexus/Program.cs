@@ -7,15 +7,14 @@ namespace NebulaNexus
 {
     internal class Program
     {
-
-        public static List<Planet> PlanetsList = new List<Planet>();
+        private static List<Planet> PlanetsList = new List<Planet>();
         private static Planet Planet1;
 
         // static Planet Planet1 = new Planet("Nexus", 9748, "Icy", 1000, 3, 0, true, "Andromeda", 1000, 1000, 1000, 1);
-        static Star Star1 = new Star("Cepheda", 88575875f, 5421.3f, 14000800090, 99999999999999, "Andromeda", 1);
+        // static Star Star1 = new Star("Cepheda", 88575875f, 5421.3f, 14000800090, 99999999999999, "Andromeda", 1);
         private static Ship Ship1;
 
-        static List<Star> StarsList = new List<Star>() {Star1};
+        static List<Star> StarsList = new List<Star>() {};
         static List<Planet> KnownPlanets = new List<Planet>();
         private static List<Ship> AvailableShips = new List<Ship>();
 
@@ -23,84 +22,79 @@ namespace NebulaNexus
 
         public static void Main(string[] args)
         {
-            PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
-
-
-
-            for (int i = 0; i < 10; i++)
-            {
-                PlanetsList.Add(pgManager.CreatePlanet(i));
-            }
-            foreach (var planet in PlanetsList)
-            {
-                Console.WriteLine($"Planet Name: {planet.Name}");
-                // Console.WriteLine($"Radius: {planet.Radius}");
-                Console.WriteLine($"Type: {planet.PlanetType}");
-                Console.WriteLine($"Population: {planet.Population}");
-                // Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
-                // Console.WriteLine($"Military Power: {planet.MilitaryPower}");
-                // Console.WriteLine($"Democracy: {planet.IsDemocratic}");
-                Console.WriteLine($"Solar System: {planet.SolarSystem}");
-                // Console.WriteLine($"X Coordinate: {planet.X}");
-                // Console.WriteLine($"Y Coordinate: {planet.Y}");
-                // Console.WriteLine($"Z Coordinate: {planet.Z}");
-                // Console.WriteLine($"Index: {planet.Id}");
-                Console.WriteLine();
-            }
-            // Random randGen = new Random();
-            // var trueChance = 10;
-            // var totalCount = 9999999;
-            // var trueCount = 0;
-            // var falseCount = 0;
-            // for (int i = 0; i < totalCount; i++)
-            // {
-            //     int x = randGen.Next(0, 100) < trueChance ? 1 : 0;
-            //     if (x == 1)
-            //     {
-            //         trueCount++;
-            //     }
-            //     else
-            //     {
-            //         falseCount++;
-            //     }
-            // }
+            // PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
             //
-            // Console.WriteLine("true " + $"{trueCount:N4}");
-            // Console.WriteLine("false " +  $"{falseCount:N4}");
+            // for (int i = pgManager.PossiblePlanetNames.Count - 1; i >= 0; i--)
+            // {
+            //     PlanetsList.Add(pgManager.CreatePlanet());
+            // }
 
-            // Planet1 = planetsList[0];
+            // foreach (var planet in PlanetsList)
+            // {
+            //     Console.WriteLine($"Planet Name: {planet.Name}");
+            //     Console.WriteLine($"Radius: {planet.Radius:N0}");
+            //     Console.WriteLine($"Type: {planet.PlanetType}");
+            //     Console.WriteLine($"Population: {planet.Population:N0}");
+            //     Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
+            //     Console.WriteLine($"Military Power: {planet.MilitaryPower}");
+            //     Console.WriteLine($"Democracy: {planet.IsDemocratic}");
+            //     Console.WriteLine($"Solar System: {planet.SolarSystem}");
+            //     Console.WriteLine($"X Coordinate: {planet.X}");
+            //     Console.WriteLine($"Y Coordinate: {planet.Y}");
+            //     Console.WriteLine($"Z Coordinate: {planet.Z}");
+            //     Console.WriteLine($"ID: {planet.Id}");
+            //     Console.WriteLine();
+            // }
+
+            // Planet1 = PlanetsList[0];
             // KnownPlanets.Add(Planet1);
-            // Player1 = new Player("David", Planet1, Planet1, Ship1, knownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1);
+            // Player1 = new Player("David", Planet1, Planet1, Ship1, KnownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1);
             // Ship1  = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
             // AvailableShips.Add(Ship1);
             // Introduction();
-            // FrequencyChecker(50);
+            FrequencyChecker(15000);
         }
 
         private static void FrequencyChecker(int range)
         {
-            PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
+            StarGeneratorManager starManager = new StarGeneratorManager();
 
-            var counts = new Dictionary<string, int>();
-
-            for (int i = 0; i < range; i++)
+            var myList = new List<long>();
+            for (int i = 0; i < 15000; i++)
             {
-                var generatedType = pgManager.GenerateType();
-
-                if (counts.ContainsKey(generatedType))
-                {
-                    counts[generatedType]++;
-                }
-                else
-                {
-                    counts[generatedType] = 1;
-                }
+                var gen = starManager.GenerateAge();
+                myList.Add(gen);
+            }
+            myList.Sort();
+            long count = 0;
+            foreach (var VARIABLE in myList)
+            {
+                count += VARIABLE;
             }
 
-            foreach (var kvp in counts.OrderBy(x => x.Value))
-            {
-                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
-            }
+            var avarage = count / myList.Count;
+            Console.WriteLine($"{count:N0}");
+            Console.WriteLine($"{avarage:N0}");
+            // var counts = new Dictionary<string, int>();
+            //
+            // for (int i = 0; i < range; i++)
+            // {
+            //     var generatedType = starManager.GenerateType();
+            //
+            //     if (counts.ContainsKey(generatedType))
+            //     {
+            //         counts[generatedType]++;
+            //     }
+            //     else
+            //     {
+            //         counts[generatedType] = 1;
+            //     }
+            // }
+            //
+            // foreach (var kvp in counts.OrderBy(x => x.Value))
+            // {
+            //     Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            // }
         }
 
         private static void Introduction()
@@ -257,9 +251,9 @@ namespace NebulaNexus
             {
                 table.AddRow(
                     $"{planet.Name}",
-                    $"{planet.Radius} km",
+                    $"{planet.Radius:N0} km",
                     $"{planet.PlanetType}",
-                    $"{planet.Population}",
+                    $"{planet.Population:N0}",
                     $"{planet.TechnologicalLevel}",
                     $"{planet.IsDemocratic}",
                     $"{planet.SolarSystem}"
@@ -287,10 +281,10 @@ namespace NebulaNexus
             {
                 table.AddRow(
                     $"{star.Name}",
-                    $"{star.Mass.ToString()} kg",
-                    $"{star.Temperature.ToString()} °C",
+                    $"{star.Mass} kg",
+                    $"{star.Temperature} °C",
                     $"{star.Age.ToString()} yrs",
-                    $"{star.AvailableEnergy.ToString()} W",
+                    $"{star.AvailableEnergy} W",
                     $"{star.SolarSystem}"
                 );
             }

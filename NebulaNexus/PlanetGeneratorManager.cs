@@ -7,37 +7,52 @@ namespace NebulaNexus
     public class PlanetGeneratorManager
     {
         Random rnd = new Random();
-        private string generatedType;
 
-        public Planet CreatePlanet(int id)
+        public readonly List<string> PossiblePlanetNames = new List<string>()
         {
-            string[] nameAndSystem = GenerateSolarSystem();
-            generatedType = GenerateType();
-            long generatedRadius = GenerateRadius();
+            "Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime",
+            "Nova", "Astrionex", "Umbraflux", "Astoria", "Epsilon",
+            "Haven", "Maris", "Lagoon", "Echoes", "Pluto", "Voltria", "Spectra", "Xenepha"
+        };
 
-            var planet1 = new Planet(nameAndSystem[0], generatedRadius, generatedType, GeneratePopulation(generatedRadius),
-                GenerateTechnologicalLevel(), GenerateMilitaryPower(),
-                GenerateDemocracy(), nameAndSystem[1],
-                GenerateX(), GenerateY(), GenerateZ(), id);
+        public Planet CreatePlanet()
+        {
+            // pokud dvojitý solar system, tak jméno s prefixem
+            // pokud radius menší, tak menší populace
+            // pokud větší tak větší, plus některé typy neumožňují populaci
+            var nameAndSystem = GenerateSolarSystem();
+            var generatedType = GenerateType();
+            var generatedRadius = GenerateRadius();
+            var generatedPopulation = GeneratePopulation(generatedRadius, generatedType);
+            var generatedTechLevel = GenerateTechnologicalLevel(generatedPopulation);
+            var generatedMiliLevel = GenerateMilitaryPower(generatedTechLevel);
+            var generatedDemocracy = GenerateDemocracy(generatedTechLevel, generatedMiliLevel);
+
+
+            var planet1 = new Planet(
+                nameAndSystem[0], generatedRadius, generatedType,
+                generatedPopulation, generatedTechLevel, generatedMiliLevel,
+                generatedDemocracy, nameAndSystem[1],
+                GenerateCoord(generatedType), GenerateCoord(generatedType), GenerateCoord(generatedType),
+                GenerateId());
 
             return planet1;
         }
 
+        private HashSet<int> usedIds = new HashSet<int>();
+        private int currentId = 1;
+        private int GenerateId()
+        {
+            usedIds.Add(currentId);
+            currentId++;
+            return usedIds.Last();
+        }
         private string GenerateName(bool doubleWordSystem, string systemPrefix)
         {
-            var possiblePlanetNames = new List<string>()
-            {
-                "Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime",
-                "Nova", "Astrionex", "Umbraflux", "Astoria", "Epsilon",
-                "Haven", "Maris", "Lagoon", "Echoes", "Pluto", "Voltria", "Spectra", "Xenepha"
-            };
+            var randomIndex = rnd.Next(PossiblePlanetNames.Count());
+            var chosenItem = PossiblePlanetNames[randomIndex];
 
-            int randomIndex = rnd.Next(possiblePlanetNames.Count());
-            var splitList = possiblePlanetNames[randomIndex].Split(' ');
-            string chosenItem = possiblePlanetNames[randomIndex];
-
-            possiblePlanetNames.Remove(chosenItem);
-
+            PossiblePlanetNames.RemoveAt(randomIndex);
             if (doubleWordSystem && systemPrefix.Length > 0) // dvojitý název
             {
                 return systemPrefix + " " + chosenItem;
@@ -47,38 +62,35 @@ namespace NebulaNexus
                 return chosenItem;
             }
         }
-
         private string[] GenerateSolarSystem()
         {
-            string[] NameAndSystem = new string[2];
+            var nameAndSystem = new string[2];
             string[] possibleSolarSystems =
             {
                 "Andromeda", "Nova Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "Nova System", "Umbraflora Haven", "Galaxion", "unknown"
             };
 
-            int randomIndex = rnd.Next(possibleSolarSystems.Length);
+            var randomIndex = rnd.Next(possibleSolarSystems.Length);
             var splitArray = possibleSolarSystems[randomIndex].Split(' ');
 
             if (splitArray.Length > 1) // dvojitý název
             {
-                NameAndSystem[0] = GenerateName(true, splitArray[0]);
-                NameAndSystem[1] = possibleSolarSystems[randomIndex];
+                nameAndSystem[0] = GenerateName(true, splitArray[0]);
+                nameAndSystem[1] = possibleSolarSystems[randomIndex];
             }
             else
             {
-                NameAndSystem[0] = GenerateName(false, splitArray[0]);
-                NameAndSystem[1] = possibleSolarSystems[randomIndex];
+                nameAndSystem[0] = GenerateName(false, splitArray[0]);
+                nameAndSystem[1] = possibleSolarSystems[randomIndex];
             }
 
-            return NameAndSystem;
+            return nameAndSystem;
         }
-
         private long GenerateRadius()
         {
-            return rnd.Next(3000, 99999 + 1);
+            return rnd.Next(3000, 70000 + 1);
         }
-
-        public string GenerateType()
+        private string GenerateType()
         {
             string[] possiblePlanetTypes =
             {
@@ -112,12 +124,11 @@ namespace NebulaNexus
 
             return possiblePlanetTypes[selectedIndex];
         }
-
-        private long GeneratePopulation(long radius)
+        private long GeneratePopulation(long radius, string planetType)
         {
             long population = 0;
 
-            if (generatedType == "Radioactive" || generatedType == "Lava" || generatedType == "Arid" || generatedType == "Gaseous")
+            if (planetType == "Radioactive" || planetType == "Lava" || planetType == "Arid" || planetType == "Gaseous")
             {
                 population = 0;
             }
@@ -133,61 +144,119 @@ namespace NebulaNexus
                 }
             }
 
-            return Math.Abs(population- (population %10));
+            return Math.Abs(population - (population % 10));
         }
-
-        private int GenerateTechnologicalLevel()
+        private int GenerateTechnologicalLevel(long population)
         {
-            return rnd.Next(0, 5 + 1);
-        }
-
-        public int GenerateMilitaryPower()
-        {
-            return rnd.Next(0, 5 + 1);
-        }
-
-        public bool GenerateDemocracy()
-        {
-            return rnd.Next(2) == 1;
-        }
-
-        public float GenerateX()
-        {
-            int modifier_1 = (rnd.Next(2) * 2) - 1; // Either -1 or 1
-
-            float x_coord;
-            do
+            if (population > 90000000)
             {
-                x_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            } while (Math.Abs(x_coord) <= 1000);
-
-            return x_coord;
-        }
-
-        public float GenerateY()
-        {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
-
-            float y_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            while (Math.Abs(y_coord) <= 1000)
+                return rnd.Next(1, 150 + 1) <= 25 ? 5 : rnd.Next(1, 5);
+            }
+            else if (population > 0)
             {
-                y_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+                return rnd.Next(0, 5 + 1);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        private int GenerateMilitaryPower(int techLevel)
+        {
+            if (techLevel > 2)
+            {
+                return rnd.Next(2, 5 + 1);
+            }
+            else
+            {
+                if (techLevel != 0)
+                {
+                    return rnd.Next(0, 2 + 1);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+        private bool GenerateDemocracy(int techLevel, int miliLevel)
+        {
+            int democracyChance;
+            if (techLevel > 0 && miliLevel > 0)
+            {
+                if (techLevel > miliLevel)
+                {
+                    democracyChance = 80;
+                }
+                else if (miliLevel == 5 && techLevel < 4)
+                {
+                    democracyChance = 30;
+                }
+                // else if (Math.Abs(techLevel - miliLevel) > Math.Min(techLevel, miliLevel) * 40 / 100)
+                else if (miliLevel - techLevel > 2)
+                {
+                    democracyChance = 49;
+                }
+                else
+                {
+                    democracyChance = 65;
+                }
+            }
+            else if (techLevel == 0 && miliLevel == 0)
+            {
+                return false;
+            }
+            else if (techLevel == miliLevel)
+            {
+                democracyChance = 52;
+            }
+            else
+            {
+                democracyChance = 65;
             }
 
-            return y_coord;
-        }
-
-        public float GenerateZ()
-        {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
-
-            float z_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-            while (Math.Abs(z_coord) <= 1000)
+            var trueCount = 0;
+            var falseCount = 0;
+            for (int i = 0; i < 1000; i++)
             {
-                z_coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+                int x = rnd.Next(0, 100) < democracyChance ? 1 : 0;
+                if (x == 1)
+                {
+                    trueCount++;
+                }
+                else
+                {
+                    falseCount++;
+                }
             }
 
-            return z_coord;
+            if (trueCount > falseCount)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private float GenerateCoord(string planetType)
+        {
+            if (planetType.ToLower() != "unknown")
+            {
+                int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
+
+                float coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+                while (Math.Abs(coord) <= 1000)
+                {
+                    coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+                }
+
+                return coord;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
