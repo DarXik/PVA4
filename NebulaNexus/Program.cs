@@ -36,7 +36,7 @@ namespace NebulaNexus
                 Console.WriteLine($"Planet Name: {planet.Name}");
                 // Console.WriteLine($"Radius: {planet.Radius}");
                 Console.WriteLine($"Type: {planet.PlanetType}");
-                // Console.WriteLine($"Population: {planet.Population}");
+                Console.WriteLine($"Population: {planet.Population}");
                 // Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
                 // Console.WriteLine($"Military Power: {planet.MilitaryPower}");
                 // Console.WriteLine($"Democracy: {planet.IsDemocratic}");

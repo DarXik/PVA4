@@ -7,32 +7,36 @@ namespace NebulaNexus
     public class PlanetGeneratorManager
     {
         Random rnd = new Random();
-
+        private string generatedType;
 
         public Planet CreatePlanet(int id)
         {
-            string[] NameAndSystem = GenerateSolarSystem();
+            string[] nameAndSystem = GenerateSolarSystem();
+            generatedType = GenerateType();
+            long generatedRadius = GenerateRadius();
 
-            Planet planet1 = new Planet(NameAndSystem[0], GenerateRadius(), GenerateType(), GeneratePopulation(),
+            var planet1 = new Planet(nameAndSystem[0], generatedRadius, generatedType, GeneratePopulation(generatedRadius),
                 GenerateTechnologicalLevel(), GenerateMilitaryPower(),
-                GenerateDemocracy(), NameAndSystem[1],
+                GenerateDemocracy(), nameAndSystem[1],
                 GenerateX(), GenerateY(), GenerateZ(), id);
 
             return planet1;
         }
 
-        public string GenerateName(bool doubleWordSystem, string systemPrefix)
+        private string GenerateName(bool doubleWordSystem, string systemPrefix)
         {
-            var PossiblePlanetNames = new List<string>()
-                {"Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime",
-                    "Nova", "Astrionex", "Umbraflux", "Astoria", "Epsilon",
-                    "Haven", "Maris", "Lagoon", "Echoes", "Pluto", "Voltria", "Spectra", "Xenepha"};
+            var possiblePlanetNames = new List<string>()
+            {
+                "Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime",
+                "Nova", "Astrionex", "Umbraflux", "Astoria", "Epsilon",
+                "Haven", "Maris", "Lagoon", "Echoes", "Pluto", "Voltria", "Spectra", "Xenepha"
+            };
 
-            int randomIndex = rnd.Next(PossiblePlanetNames.Count());
-            var splitList = PossiblePlanetNames[randomIndex].Split(' ');
-            string chosenItem = PossiblePlanetNames[randomIndex];
+            int randomIndex = rnd.Next(possiblePlanetNames.Count());
+            var splitList = possiblePlanetNames[randomIndex].Split(' ');
+            string chosenItem = possiblePlanetNames[randomIndex];
 
-            PossiblePlanetNames.Remove(chosenItem);
+            possiblePlanetNames.Remove(chosenItem);
 
             if (doubleWordSystem && systemPrefix.Length > 0) // dvojitý název
             {
@@ -44,7 +48,7 @@ namespace NebulaNexus
             }
         }
 
-        public string[] GenerateSolarSystem()
+        private string[] GenerateSolarSystem()
         {
             string[] NameAndSystem = new string[2];
             string[] possibleSolarSystems =
@@ -69,9 +73,9 @@ namespace NebulaNexus
             return NameAndSystem;
         }
 
-        public long GenerateRadius()
+        private long GenerateRadius()
         {
-            return rnd.Next(4000, 99999 + 1);
+            return rnd.Next(3000, 99999 + 1);
         }
 
         public string GenerateType()
@@ -109,13 +113,30 @@ namespace NebulaNexus
             return possiblePlanetTypes[selectedIndex];
         }
 
-        public long GeneratePopulation()
+        private long GeneratePopulation(long radius)
         {
-            long population = rnd.Next() * rnd.Next(0, 15);
-            return Math.Abs(population);
+            long population = 0;
+
+            if (generatedType == "Radioactive" || generatedType == "Lava" || generatedType == "Arid" || generatedType == "Gaseous")
+            {
+                population = 0;
+            }
+            else
+            {
+                if (radius < 8000)
+                {
+                    population = rnd.Next(0, 950000000);
+                }
+                else
+                {
+                    population = rnd.Next() * rnd.Next(0, 10);
+                }
+            }
+
+            return Math.Abs(population- (population %10));
         }
 
-        public int GenerateTechnologicalLevel()
+        private int GenerateTechnologicalLevel()
         {
             return rnd.Next(0, 5 + 1);
         }
