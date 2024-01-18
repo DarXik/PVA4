@@ -8,6 +8,10 @@ namespace NebulaNexus
     internal class Program
     {
         private static List<Planet> PlanetsList = new List<Planet>();
+        public static string[] possibleSolarSystems =
+        {
+            "Andromeda", "Nova Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "Nova System", "Umbraflora Haven", "Galaxion", "unknown"
+        };
         private static Planet Planet1;
 
         // static Planet Planet1 = new Planet("Nexus", 9748, "Icy", 1000, 3, 0, true, "Andromeda", 1000, 1000, 1000, 1);
@@ -281,7 +285,7 @@ namespace NebulaNexus
             {
                 table.AddRow(
                     $"{star.Name}",
-                    $"{star.Mass} kg",
+                    $"{star.Radius} kg",
                     $"{star.Temperature} °C",
                     $"{star.Age.ToString()} yrs",
                     $"{star.AvailableEnergy} W",

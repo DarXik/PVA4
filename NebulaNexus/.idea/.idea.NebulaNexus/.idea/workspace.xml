@@ -12,11 +12,7 @@
       <change beforePath="$PROJECT_DIR$/PlanetGeneratorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlanetGeneratorManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Star.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Star.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +96,9 @@
       <workItem from="1705241892752" duration="10088000" />
       <workItem from="1705304397794" duration="2790000" />
       <workItem from="1705340677423" duration="2551000" />
+      <workItem from="1705515716325" duration="3000" />
+      <workItem from="1705516845895" duration="2145000" />
+      <workItem from="1705604662216" duration="1039000" />
     </task>
     <servers />
   </component>

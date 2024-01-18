@@ -9,20 +9,20 @@ namespace NebulaNexus
         public string Name { get; set; }
         public int Id { get; set; }
         public string Type;
-        public float Mass;
+        public long Radius;
         public float Temperature;
         public long Age;
-        public float AvailableEnergy;
+        public long AvailableEnergy;
         public string SolarSystem;
 
         private new const float X = 0.0f;
         private new const float Y = 0.0f;
         private new const float Z = 0.0f;
 
-        public Star(string name, string type, float mass, float temperature, long age, float availableEnergy, string solarSystem,
+        public Star(string name, string type, long radius, float temperature, long age, long availableEnergy, string solarSystem,
             int id) : base(X, Y, Z)
         {
-            Mass = mass;
+            Radius = radius;
             Temperature = temperature;
             Age = age;
             AvailableEnergy = availableEnergy;
@@ -55,11 +55,26 @@ namespace NebulaNexus
 
         public Star CreateStar()
         {
-            var star1 = new Star()
+            // var star1 = new Star()
+            return null;
         }
+
+        public string GenerateSolarSystem()
+        {
+            var randomIndex = rnd.Next(Program.possibleSolarSystems.Length);
+            var splitArray = Program.possibleSolarSystems[randomIndex].Split(' ');
+
+            return Program.possibleSolarSystems[randomIndex];
+        }
+
         public long GenerateAge()
         {
             return rnd.Next(100, 25000); // in mills. of years
+        }
+
+        public long GenerateRadius()
+        {
+            return rnd.Next(1, 100);
         }
 
         public string GenerateType()

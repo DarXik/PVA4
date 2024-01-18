@@ -65,23 +65,19 @@ namespace NebulaNexus
         private string[] GenerateSolarSystem()
         {
             var nameAndSystem = new string[2];
-            string[] possibleSolarSystems =
-            {
-                "Andromeda", "Nova Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "Nova System", "Umbraflora Haven", "Galaxion", "unknown"
-            };
 
-            var randomIndex = rnd.Next(possibleSolarSystems.Length);
-            var splitArray = possibleSolarSystems[randomIndex].Split(' ');
+            var randomIndex = rnd.Next(Program.possibleSolarSystems.Length);
+            var splitArray = Program.possibleSolarSystems[randomIndex].Split(' ');
 
             if (splitArray.Length > 1) // dvojitý název
             {
                 nameAndSystem[0] = GenerateName(true, splitArray[0]);
-                nameAndSystem[1] = possibleSolarSystems[randomIndex];
+                nameAndSystem[1] = Program.possibleSolarSystems[randomIndex];
             }
             else
             {
                 nameAndSystem[0] = GenerateName(false, splitArray[0]);
-                nameAndSystem[1] = possibleSolarSystems[randomIndex];
+                nameAndSystem[1] = Program.possibleSolarSystems[randomIndex];
             }
 
             return nameAndSystem;
