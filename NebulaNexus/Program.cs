@@ -26,12 +26,34 @@ namespace NebulaNexus
 
         public static void Main(string[] args)
         {
-            // PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
-            //
-            // for (int i = pgManager.PossiblePlanetNames.Count - 1; i >= 0; i--)
-            // {
-            //     PlanetsList.Add(pgManager.CreatePlanet());
-            // }
+            PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
+            StarGeneratorManager sgManager = new StarGeneratorManager();
+
+            for (int i = pgManager.PossiblePlanetNames.Count - 1; i >= 0; i--)
+            {
+                PlanetsList.Add(pgManager.CreatePlanet());
+            }
+
+            for (int i = 0; i < possibleSolarSystems.Length; i++)
+            {
+                var star1 = sgManager.CreateStar();
+
+                bool alreadyExists = false;
+
+                foreach (var star in StarsList)
+                {
+                    if (star.SolarSystem == star1.SolarSystem)
+                    {
+                        alreadyExists = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyExists)
+                {
+                    StarsList.Add(star1);
+                }
+            }
 
             // foreach (var planet in PlanetsList)
             // {
@@ -50,56 +72,59 @@ namespace NebulaNexus
             //     Console.WriteLine();
             // }
 
+
             // Planet1 = PlanetsList[0];
             // KnownPlanets.Add(Planet1);
             // Player1 = new Player("David", Planet1, Planet1, Ship1, KnownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1);
             // Ship1  = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
             // AvailableShips.Add(Ship1);
-            // Introduction();
-            FrequencyChecker(15000);
+
+
+            Introduction();
+            // FrequencyChecker(15000);
         }
 
-        private static void FrequencyChecker(int range)
-        {
-            StarGeneratorManager starManager = new StarGeneratorManager();
-
-            var myList = new List<long>();
-            for (int i = 0; i < 15000; i++)
-            {
-                var gen = starManager.GenerateAge();
-                myList.Add(gen);
-            }
-            myList.Sort();
-            long count = 0;
-            foreach (var VARIABLE in myList)
-            {
-                count += VARIABLE;
-            }
-
-            var avarage = count / myList.Count;
-            Console.WriteLine($"{count:N0}");
-            Console.WriteLine($"{avarage:N0}");
-            // var counts = new Dictionary<string, int>();
-            //
-            // for (int i = 0; i < range; i++)
-            // {
-            //     var generatedType = starManager.GenerateType();
-            //
-            //     if (counts.ContainsKey(generatedType))
-            //     {
-            //         counts[generatedType]++;
-            //     }
-            //     else
-            //     {
-            //         counts[generatedType] = 1;
-            //     }
-            // }
-            //
-            // foreach (var kvp in counts.OrderBy(x => x.Value))
-            // {
-            //     Console.WriteLine($"{kvp.Key}: {kvp.Value}");
-            // }
-        }
+        // private static void FrequencyChecker(int range)
+        // {
+        //     Star starManager = new Star();
+        //
+        //     var myList = new List<long>();
+        //     for (int i = 0; i < 15000; i++)
+        //     {
+        //         var gen = starManager.GenerateAge();
+        //         myList.Add(gen);
+        //     }
+        //     myList.Sort();
+        //     long count = 0;
+        //     foreach (var VARIABLE in myList)
+        //     {
+        //         count += VARIABLE;
+        //     }
+        //
+        //     var avarage = count / myList.Count;
+        //     Console.WriteLine($"{count:N0}");
+        //     Console.WriteLine($"{avarage:N0}");
+        //     // var counts = new Dictionary<string, int>();
+        //     //
+        //     // for (int i = 0; i < range; i++)
+        //     // {
+        //     //     var generatedType = starManager.GenerateType();
+        //     //
+        //     //     if (counts.ContainsKey(generatedType))
+        //     //     {
+        //     //         counts[generatedType]++;
+        //     //     }
+        //     //     else
+        //     //     {
+        //     //         counts[generatedType] = 1;
+        //     //     }
+        //     // }
+        //     //
+        //     // foreach (var kvp in counts.OrderBy(x => x.Value))
+        //     // {
+        //     //     Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+        //     // }
+        // }
 
         private static void Introduction()
         {
@@ -273,28 +298,39 @@ namespace NebulaNexus
         {
             var table = new Table()
                 .Border(TableBorder.Ascii2)
-                // .BorderColor(Color.Silver)
-                .AddColumn(new TableColumn("[maroon]Name[/]"))
-                .AddColumn(new TableColumn("[maroon]Mass[/]"))
+                .AddColumn(new TableColumn("[maroon]Star Name[/]"))
+                .AddColumn(new TableColumn("[maroon]Radius[/]"))
+                .AddColumn(new TableColumn("[maroon]Type[/]"))
+                .AddColumn(new TableColumn("[maroon]Age[/]"))
                 .AddColumn(new TableColumn("[maroon]Temperature[/]"))
-                .AddColumn(new TableColumn("Age"))
-                .AddColumn(new TableColumn("Available Energy"))
-                .AddColumn(new TableColumn("Solar System"));
+                .AddColumn(new TableColumn("[maroon]Mass[/]"))
+                .AddColumn(new TableColumn("[maroon]Available Energy[/]"))
+                .AddColumn(new TableColumn("[maroon]Solar System[/]"))
+                .AddColumn(new TableColumn("[maroon]X Coordinate[/]"))
+                .AddColumn(new TableColumn("[maroon]Y Coordinate[/]"))
+                .AddColumn(new TableColumn("[maroon]Z Coordinate[/]"))
+                .AddColumn(new TableColumn("[maroon]ID[/]"));
 
             foreach (var star in starsList)
             {
                 table.AddRow(
                     $"{star.Name}",
-                    $"{star.Radius} kg",
-                    $"{star.Temperature} °C",
-                    $"{star.Age.ToString()} yrs",
-                    $"{star.AvailableEnergy} W",
-                    $"{star.SolarSystem}"
+                    $"{star.Radius:N0} km",
+                    $"{star.Type}",
+                    $"{star.Age:N0} yrs",
+                    $"{star.Temperature}°C",
+                    $"{star.Mass:g2} kg",
+                    $"{star.AvailableEnergy:e2} W",
+                    $"{star.SolarSystem}",
+                    $"{star.X}",
+                    $"{star.Y}",
+                    $"{star.Z}",
+                    $"{star.Id}"
                 );
             }
 
-            // table.Collapse();
             AnsiConsole.Write(table);
+
         }
     }
 
