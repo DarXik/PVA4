@@ -12,7 +12,8 @@ namespace NebulaNexus
         public bool IsDemocratic;
         public string SolarSystem;
 
-        public Planet(string name, long radius, string planetType, long population, int technologicalLevel, int militaryPower, bool isDemocratic, string solarSystem,
+        public Planet(string name, long radius, string planetType, long population, int technologicalLevel,
+            int militaryPower, bool isDemocratic, string solarSystem,
             float x,
             float y,
             float z,

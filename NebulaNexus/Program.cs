@@ -26,8 +26,10 @@ namespace NebulaNexus
 
         public static void Main(string[] args)
         {
-            PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
-            StarGeneratorManager sgManager = new StarGeneratorManager();
+            var pgManager = new PlanetGeneratorManager();
+            var sgManager = new StarGeneratorManager();
+
+            // podívat se na ID generation, neopakovaletnost v celém kódu
 
             for (int i = pgManager.PossiblePlanetNames.Count - 1; i >= 0; i--)
             {
@@ -78,10 +80,7 @@ namespace NebulaNexus
             // Player1 = new Player("David", Planet1, Planet1, Ship1, KnownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1);
             // Ship1  = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
             // AvailableShips.Add(Ship1);
-
-
             Introduction();
-            // FrequencyChecker(15000);
         }
 
         // private static void FrequencyChecker(int range)
@@ -315,11 +314,11 @@ namespace NebulaNexus
             {
                 table.AddRow(
                     $"{star.Name}",
-                    $"{star.Radius:N0} km",
+                    star.Radius > 0 ? $"{star.Radius:N0} km" : "Undefined",
                     $"{star.Type}",
                     $"{star.Age:N0} yrs",
                     $"{star.Temperature}°C",
-                    $"{star.Mass:g2} kg",
+                    $"{star.Mass:e2} kg",
                     $"{star.AvailableEnergy:e2} W",
                     $"{star.SolarSystem}",
                     $"{star.X}",

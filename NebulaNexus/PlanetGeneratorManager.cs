@@ -94,13 +94,6 @@ namespace NebulaNexus
                 "Quicksand", "Subterranean", "Gaseous", "Arid", "Radioactive", "Lava", "Badland", "Bioluminescent", "Time-disorted", "unknown"
             };
 
-            // var lastIndex = possiblePlanetTypes.Length - 1;
-            // var randomIndex = rnd.Next(0, lastIndex + 1);
-            //
-            // return possiblePlanetTypes[randomIndex];
-            // possiblePlanetTypes = possiblePlanetTypes.OrderBy(type => rnd.Next()).ToArray();
-
-
             var weights = Enumerable.Range(1, possiblePlanetTypes.Length - 1 + 1).Reverse().ToArray();
             var randomWeight = rnd.Next(1, weights.Sum() + 1);
 
