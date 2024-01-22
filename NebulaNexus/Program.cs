@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Spectre.Console;
 
 namespace NebulaNexus
@@ -8,28 +9,20 @@ namespace NebulaNexus
     internal class Program
     {
         private static List<Planet> PlanetsList = new List<Planet>();
-        public static string[] possibleSolarSystems =
+        private static List<Planet> KnownPlanets = new List<Planet>();
+        private static List<Star> StarsList = new List<Star>();
+        private static List<Ship> AvailableShips = new List<Ship>();
+        private static Player Player1;
+
+        public static readonly string[] possibleSolarSystems =
         {
             "Andromeda", "Nova Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "Nova System", "Umbraflora Haven", "Galaxion", "unknown"
         };
-        private static Planet Planet1;
-
-        // static Planet Planet1 = new Planet("Nexus", 9748, "Icy", 1000, 3, 0, true, "Andromeda", 1000, 1000, 1000, 1);
-        // static Star Star1 = new Star("Cepheda", 88575875f, 5421.3f, 14000800090, 99999999999999, "Andromeda", 1);
-        private static Ship Ship1;
-
-        static List<Star> StarsList = new List<Star>() {};
-        static List<Planet> KnownPlanets = new List<Planet>();
-        private static List<Ship> AvailableShips = new List<Ship>();
-
-        public static Player Player1; // proč musí být po listech?
 
         public static void Main(string[] args)
         {
             var pgManager = new PlanetGeneratorManager();
             var sgManager = new StarGeneratorManager();
-
-            // podívat se na ID generation, neopakovaletnost v celém kódu
 
             for (int i = pgManager.PossiblePlanetNames.Count - 1; i >= 0; i--)
             {
@@ -57,73 +50,55 @@ namespace NebulaNexus
                 }
             }
 
-            // foreach (var planet in PlanetsList)
-            // {
-            //     Console.WriteLine($"Planet Name: {planet.Name}");
-            //     Console.WriteLine($"Radius: {planet.Radius:N0}");
-            //     Console.WriteLine($"Type: {planet.PlanetType}");
-            //     Console.WriteLine($"Population: {planet.Population:N0}");
-            //     Console.WriteLine($"Technological Level: {planet.TechnologicalLevel}");
-            //     Console.WriteLine($"Military Power: {planet.MilitaryPower}");
-            //     Console.WriteLine($"Democracy: {planet.IsDemocratic}");
-            //     Console.WriteLine($"Solar System: {planet.SolarSystem}");
-            //     Console.WriteLine($"X Coordinate: {planet.X}");
-            //     Console.WriteLine($"Y Coordinate: {planet.Y}");
-            //     Console.WriteLine($"Z Coordinate: {planet.Z}");
-            //     Console.WriteLine($"ID: {planet.Id}");
-            //     Console.WriteLine();
-            // }
 
-
-            // Planet1 = PlanetsList[0];
-            // KnownPlanets.Add(Planet1);
-            // Player1 = new Player("David", Planet1, Planet1, Ship1, KnownPlanets, Planet1.X, Planet1.Y, Planet1.Z, 1);
-            // Ship1  = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Planet1, 1);
-            // AvailableShips.Add(Ship1);
+            GeneratePlayer();
             Introduction();
+
+
+            // var list1 = new List<double>();
+            //
+            // for (int j = 0; j < 100; j++)
+            // {
+            //     var tempList = new List<BigInteger>();
+            //     for (int i = 0; i < 10000; i++)
+            //     {
+            //         var tempStar = sgManager.GenerateMass(1);
+            //
+            //         tempList.Add(tempStar);
+            //     }
+            //
+            //     tempList.Sort();
+            //     tempList.Reverse();
+            //     int counter = 0;
+            //     foreach (var temp in tempList)
+            //     {
+            //         if (temp == 0)
+            //         {
+            //             counter++;
+            //         }
+            //     }
+            //
+            //     BigInteger sum = 0;
+            //     foreach (var t in tempList)
+            //     {
+            //         sum += t;
+            //     }
+            //
+            //     double percentage = ((double) counter / tempList.Count) * 100;
+            //     Console.WriteLine(sum / tempList.Count);
+            //     Console.WriteLine($"Počet nul: {counter} -> {percentage}%");
+            //
+            //     list1.Add(percentage);
+            // }
+            //
+            // double sum1 = 0;
+            // foreach (var VARIABLE in list1)
+            // {
+            //     sum1 += VARIABLE;
+            // }
+            // Console.WriteLine($"Finální průměr: {sum1 / list1.Count}%");
         }
 
-        // private static void FrequencyChecker(int range)
-        // {
-        //     Star starManager = new Star();
-        //
-        //     var myList = new List<long>();
-        //     for (int i = 0; i < 15000; i++)
-        //     {
-        //         var gen = starManager.GenerateAge();
-        //         myList.Add(gen);
-        //     }
-        //     myList.Sort();
-        //     long count = 0;
-        //     foreach (var VARIABLE in myList)
-        //     {
-        //         count += VARIABLE;
-        //     }
-        //
-        //     var avarage = count / myList.Count;
-        //     Console.WriteLine($"{count:N0}");
-        //     Console.WriteLine($"{avarage:N0}");
-        //     // var counts = new Dictionary<string, int>();
-        //     //
-        //     // for (int i = 0; i < range; i++)
-        //     // {
-        //     //     var generatedType = starManager.GenerateType();
-        //     //
-        //     //     if (counts.ContainsKey(generatedType))
-        //     //     {
-        //     //         counts[generatedType]++;
-        //     //     }
-        //     //     else
-        //     //     {
-        //     //         counts[generatedType] = 1;
-        //     //     }
-        //     // }
-        //     //
-        //     // foreach (var kvp in counts.OrderBy(x => x.Value))
-        //     // {
-        //     //     Console.WriteLine($"{kvp.Key}: {kvp.Value}");
-        //     // }
-        // }
 
         private static void Introduction()
         {
@@ -151,7 +126,7 @@ namespace NebulaNexus
                         break;
                     case ConsoleKey.X:
                         Console.WriteLine("\n");
-                        break;
+                        return;
                     case ConsoleKey.O:
                         Console.WriteLine("\n");
                         PlayerOptions();
@@ -162,6 +137,35 @@ namespace NebulaNexus
                         break;
                 }
             }
+        }
+
+        private static void GeneratePlayer()
+        {
+            var possiblePlayerNames = new List<string>()
+            {
+                "HanSolo",
+                "GalaxyGiggler",
+                "JediJester",
+                "NebulaNinja",
+                "QuasarQuipster",
+                "AstroChuckle",
+                "WarpWhisperer",
+                "Snicker",
+                "Astrid",
+                "Cale"
+            };
+
+            foreach (var planet in PlanetsList)
+            {
+                if (planet.Population > 0 && planet.IsDemocratic && planet.TechnologicalLevel > 2)
+                {
+                    Player1 = new Player(possiblePlayerNames[new Random().Next(possiblePlayerNames.Count)], planet, KnownPlanets);
+                    KnownPlanets.Add(Player1.HomePlanet);
+                    break;
+                }
+            }
+            // Ship1 = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Player1.CurrentPlanet, 1);
+            // AvailableShips.Add(Ship1);
         }
 
         private static void PlayerOptions()
@@ -209,12 +213,12 @@ namespace NebulaNexus
             var table = new Table()
                 .Border(TableBorder.Ascii2)
                 // .BorderColor(Color.Silver)
-                .AddColumn(new TableColumn("[olive]Name[/]"))
-                .AddColumn(new TableColumn("[olive]Technological Level[/]"))
-                .AddColumn(new TableColumn("[olive]Diplomacy Level[/]"))
-                .AddColumn(new TableColumn("Trustworthiness"))
-                .AddColumn(new TableColumn("Home Planet"))
-                .AddColumn(new TableColumn("Home Solar System"));
+                .AddColumn(new TableColumn("[wheat4]Name[/]"))
+                .AddColumn(new TableColumn("[wheat4]Technological Level[/]"))
+                .AddColumn(new TableColumn("[wheat4]Diplomacy Level[/]"))
+                .AddColumn(new TableColumn("[wheat4]Trustworthiness[/]"))
+                .AddColumn(new TableColumn("[wheat4]Home Planet[/]"))
+                .AddColumn(new TableColumn("[wheat4]Home Solar System[/]"));
 
 
             table.AddRow(
@@ -270,10 +274,15 @@ namespace NebulaNexus
                 .AddColumn(new TableColumn("[olive]Name[/]"))
                 .AddColumn(new TableColumn("[olive]Radius[/]"))
                 .AddColumn(new TableColumn("[olive]Planet Type[/]"))
-                .AddColumn(new TableColumn("Population"))
-                .AddColumn(new TableColumn("Technological Level"))
-                .AddColumn(new TableColumn("Democratic"))
-                .AddColumn(new TableColumn("Solar System"));
+                .AddColumn(new TableColumn("[olive]Population[/]"))
+                .AddColumn(new TableColumn("[olive]Technological Level[/]"))
+                .AddColumn(new TableColumn("[olive]Military Power[/]"))
+                .AddColumn(new TableColumn("[olive]Democratic[/]"))
+                .AddColumn(new TableColumn("[olive]Solar System[/]"))
+                .AddColumn(new TableColumn("[olive]X Coordinate[/]"))
+                .AddColumn(new TableColumn("[olive]Y Coordinate[/]"))
+                .AddColumn(new TableColumn("[olive]Z Coordinate[/]"))
+                .AddColumn(new TableColumn("[olive]ID[/]"));
 
             foreach (var planet in planetsList)
             {
@@ -283,8 +292,13 @@ namespace NebulaNexus
                     $"{planet.PlanetType}",
                     $"{planet.Population:N0}",
                     $"{planet.TechnologicalLevel}",
+                    $"{planet.MilitaryPower}",
                     $"{planet.IsDemocratic}",
-                    $"{planet.SolarSystem}"
+                    $"{planet.SolarSystem}",
+                    $"{planet.Coordinates.X}",
+                    $"{planet.Coordinates.Y}",
+                    $"{planet.Coordinates.Z}",
+                    $"{planet.Id}"
                 );
             }
 
@@ -317,44 +331,23 @@ namespace NebulaNexus
                     star.Radius > 0 ? $"{star.Radius:N0} km" : "Undefined",
                     $"{star.Type}",
                     $"{star.Age:N0} yrs",
-                    $"{star.Temperature}°C",
+                    star.Temperature > 0 ? $"{star.Temperature}°C" : "Undefined",
                     $"{star.Mass:e2} kg",
                     $"{star.AvailableEnergy:e2} W",
                     $"{star.SolarSystem}",
-                    $"{star.X}",
-                    $"{star.Y}",
-                    $"{star.Z}",
+                    $"{star.Coordinates.X}",
+                    $"{star.Coordinates.Y}",
+                    $"{star.Coordinates.Z}",
                     $"{star.Id}"
                 );
             }
 
             AnsiConsole.Write(table);
-
-        }
-    }
-
-    public interface IGameObject
-    {
-        string Name { get; set; }
-        int Id { get; set; }
-    }
-
-    public abstract class Coordinates
-    {
-        public float X { get; }
-        public float Y { get; }
-        public float Z { get; }
-
-        public Coordinates(float x, float y, float z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
         }
 
-        public Tuple<float, float, float> GetCoordinates()
+        private static void TravelToPlanet()
         {
-            return new Tuple<float, float, float>(X, Y, Z);
+
         }
     }
 }

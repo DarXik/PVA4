@@ -15,32 +15,34 @@ namespace NebulaNexus
             "Sylvaar", "Helios Nocturna", "Astralis Althara", "Ignisar", "Vega", "Polaris"
         };
 
-        private HashSet<int> usedIds = new HashSet<int>();
-
-        private int currentId = 1;
-
         public Star CreateStar()
         {
             var starName = GenerateName();
             var starType = GenerateType();
             var starSolarSystem = Program.possibleSolarSystems[rnd.Next(Program.possibleSolarSystems.Length)];
-            var starId = GenerateId();
             var starTemp = GenerateTemperature(starType.ElementAt(0).Value);
             var starRadius = GenerateRadius(starType.ElementAt(0).Value);
-            var starAge = (long) rnd.Next(100, 1400) * 10000000; // 1bil-14bil yrs
+            var starAge = GenerateAge();
             var starMass = GenerateMass(starType.ElementAt(0).Value);
             var starAvailableEnergy = GenerateEnergy(starRadius, starTemp);
 
 
             return new Star(starName, starType.ElementAt(0).Key, starMass, starRadius, starTemp,
-                starAge, starAvailableEnergy, starSolarSystem, starId);
+                starAge, starAvailableEnergy, starSolarSystem);
         }
 
-        private BigInteger GenerateMass(int value)
+        private long GenerateAge()
+        {
+            // cca 1bil-14bil yrs
+            return (long) rnd.Next(1000, 14000) * rnd.Next(999999, 1009999);
+        }
+
+        public BigInteger GenerateMass(int value)
         {
             // return rnd.NextDouble() * 2 * Math.Pow(10, 30) > 0 ? rnd.NextDouble() * 2 * Math.Pow(10, 30) : 0.1 * 2 * Math.Pow(10, 30);
+            // var sunMass = (BigInteger) (rnd.NextDouble() * (2 * Math.Pow(10, 30) - double.Epsilon) + double.Epsilon);
 
-            var sunMass = (BigInteger) (rnd.NextDouble() * (2 * Math.Pow(10, 30) - double.Epsilon) + double.Epsilon);
+            var sunMass = (BigInteger) (rnd.NextDouble() * (2 * Math.Pow(10, 30) - 1e-10) + 1e-10);
 
             if (value == -1)
             {
@@ -51,7 +53,8 @@ namespace NebulaNexus
             else if (value == 1)
             {
                 // normal - 0.1 - 10 of Sun
-                return sunMass * (BigInteger) (0.1 + rnd.NextDouble() * 9.9);
+                // return sunMass * (BigInteger) (0.1 + rnd.NextDouble() * 9.9);
+                return sunMass * (BigInteger) (1 + rnd.NextDouble() * 99) / 10;
             }
             else if (value == 2)
             {
@@ -66,11 +69,11 @@ namespace NebulaNexus
             else if (value == 4)
             {
                 // white dwarfs - 0.6 - 1.4 of Sun
-                return sunMass * (BigInteger) (0.6 + rnd.NextDouble() * 0.8);
+                return sunMass * (BigInteger) (6 + rnd.NextDouble() * 8) / 10;
             }
             else
             {
-                return 1;
+                return 0;
             }
         }
 
@@ -79,7 +82,7 @@ namespace NebulaNexus
             if (value == -1)
             {
                 // black hole - 0
-                return 0;
+                return -1;
             }
             else if (value == 1)
             {
@@ -103,7 +106,7 @@ namespace NebulaNexus
             }
             else
             {
-                return 1;
+                return 0;
             }
         }
 
@@ -117,34 +120,27 @@ namespace NebulaNexus
             else if (value == 1)
             {
                 // normal - 400k - 5mil
-                return rnd.Next(400, 5000) * 1000;
+                return rnd.Next(400, 5000) * 999;
             }
             else if (value == 2)
             {
                 // giant - 45mil - 450mil
-                return rnd.Next(45, 450) * 1000000;
+                return rnd.Next(45, 450) * 999999;
             }
             else if (value == 3)
             {
                 // subgiant - 5mil - 45mil
-                return rnd.Next(5, 45) * 1000000;
+                return rnd.Next(5, 45) * 999999;
             }
             else if (value == 4)
             {
                 // white dwarfs - 100k - 600k
-                return rnd.Next(100, 600) * 1000;
+                return rnd.Next(100, 600) * 999;
             }
             else
             {
-                return 1;
+                return 0;
             }
-        }
-
-        private int GenerateId()
-        {
-            usedIds.Add(currentId);
-            currentId++;
-            return usedIds.Last();
         }
 
         private object GenerateEnergy(long radius, double temp)
@@ -159,7 +155,7 @@ namespace NebulaNexus
             }
         }
 
-        private Dictionary<string, int> GenerateType()
+        public Dictionary<string, int> GenerateType()
         {
             var possibleStarTypes = new Dictionary<string, int>
             {

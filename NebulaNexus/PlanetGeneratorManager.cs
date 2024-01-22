@@ -33,20 +33,11 @@ namespace NebulaNexus
                 nameAndSystem[0], generatedRadius, generatedType,
                 generatedPopulation, generatedTechLevel, generatedMiliLevel,
                 generatedDemocracy, nameAndSystem[1],
-                GenerateCoord(generatedType), GenerateCoord(generatedType), GenerateCoord(generatedType),
-                GenerateId());
+                GenerateCoord(generatedType), GenerateCoord(generatedType), GenerateCoord(generatedType));
 
             return planet1;
         }
 
-        private HashSet<int> usedIds = new HashSet<int>();
-        private int currentId = 1;
-        private int GenerateId()
-        {
-            usedIds.Add(currentId);
-            currentId++;
-            return usedIds.Last();
-        }
         private string GenerateName(bool doubleWordSystem, string systemPrefix)
         {
             var randomIndex = rnd.Next(PossiblePlanetNames.Count());
@@ -62,6 +53,7 @@ namespace NebulaNexus
                 return chosenItem;
             }
         }
+
         private string[] GenerateSolarSystem()
         {
             var nameAndSystem = new string[2];
@@ -82,10 +74,12 @@ namespace NebulaNexus
 
             return nameAndSystem;
         }
+
         private long GenerateRadius()
         {
             return rnd.Next(3000, 70000 + 1);
         }
+
         private string GenerateType()
         {
             string[] possiblePlanetTypes =
@@ -113,6 +107,7 @@ namespace NebulaNexus
 
             return possiblePlanetTypes[selectedIndex];
         }
+
         private long GeneratePopulation(long radius, string planetType)
         {
             long population = 0;
@@ -135,6 +130,7 @@ namespace NebulaNexus
 
             return Math.Abs(population - (population % 10));
         }
+
         private int GenerateTechnologicalLevel(long population)
         {
             if (population > 90000000)
@@ -150,6 +146,7 @@ namespace NebulaNexus
                 return 0;
             }
         }
+
         private int GenerateMilitaryPower(int techLevel)
         {
             if (techLevel > 2)
@@ -168,6 +165,7 @@ namespace NebulaNexus
                 }
             }
         }
+
         private bool GenerateDemocracy(int techLevel, int miliLevel)
         {
             int democracyChance;
@@ -228,6 +226,7 @@ namespace NebulaNexus
                 return false;
             }
         }
+
         private float GenerateCoord(string planetType)
         {
             if (planetType.ToLower() != "unknown")

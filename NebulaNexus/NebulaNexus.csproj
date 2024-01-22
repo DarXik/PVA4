@@ -57,6 +57,8 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Coordinate.cs" />
+        <Compile Include="IGameObject.cs" />
         <Compile Include="Planet.cs" />
         <Compile Include="PlanetGeneratorManager.cs" />
         <Compile Include="Player.cs" />
@@ -65,6 +67,7 @@
         <Compile Include="Ship.cs" />
         <Compile Include="Star.cs" />
         <Compile Include="StarGeneratorManager.cs" />
+        <Compile Include="UniqueID.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="Comments.txt" />

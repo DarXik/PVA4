@@ -2,38 +2,32 @@ using System.Numerics;
 
 namespace NebulaNexus
 {
-    public class Star : Coordinates, IGameObject
+    public class Star : IGameObject
     {
-        public string Name { get; set; }
-        public int Id { get; set; }
+        public string Name { get; }
+        public int Id { get; }
         public string Type;
-        public long Radius;
+        public long Radius { get; }
         public BigInteger Mass;
         public double Temperature;
         public long Age;
         public object AvailableEnergy;
-        public string SolarSystem;
+        public string SolarSystem { get; }
+        public Coordinate Coordinates { get; }
 
-        private new const float X = 0.0f;
-        private new const float Y = 0.0f;
-        private new const float Z = 0.0f;
-
-        // public static Star Instance;
-
-        public Star(string name, string type, BigInteger mass, long radius, double temperature, long age, object availableEnergy, string solarSystem,
-            int id) : base(X, Y, Z)
+        public Star(string name, string type, BigInteger mass, long radius, double temperature, long age,
+            object availableEnergy, string solarSystem)
         {
             Mass = mass;
             Radius = radius;
-            Temperature = temperature - 273.15;
+            Temperature = temperature;
             Age = age;
             AvailableEnergy = availableEnergy;
-            Id = id + 1000;
+            Id = UniqueID.GenerateID();
             Name = name;
             Type = type;
             SolarSystem = solarSystem;
-
-            // Instance = this;
+            Coordinates = new Coordinate(0, 0, 0);
         }
     }
 }
