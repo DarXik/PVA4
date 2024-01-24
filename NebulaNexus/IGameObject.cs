@@ -1,4 +1,6 @@
-﻿namespace NebulaNexus
+﻿using System.Numerics;
+
+namespace NebulaNexus
 {
     public interface IGameObject
     {

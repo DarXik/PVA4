@@ -10,11 +10,11 @@ namespace NebulaNexus
         public int TechnologicalLevel;
         public int MilitaryPower;
         public bool IsDemocratic;
-        public string SolarSystem { get; }
+        public SolarSystem SolarSystem { get; set; }
         public Coordinate Coordinates { get; }
 
         public Planet(string name, long radius, string planetType, long population, int technologicalLevel,
-            int militaryPower, bool isDemocratic, string solarSystem, float x, float y, float z)
+            int militaryPower, bool isDemocratic, float x, float y, float z)
         {
             PlanetType = planetType;
             Population = population;
@@ -24,7 +24,7 @@ namespace NebulaNexus
             MilitaryPower = militaryPower;
             Name = name;
             Radius = radius;
-            SolarSystem = solarSystem;
+            // SolarSystem = solarSystem;
             Coordinates = new Coordinate(x, y, z);
         }
     }

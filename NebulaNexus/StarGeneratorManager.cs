@@ -12,23 +12,27 @@ namespace NebulaNexus
         private readonly List<string> PossibleStarNames = new List<string>()
         {
             "Cepheda", "Luminar", "Proxima", "Antares", "Celestial Ember", "Xylos",
-            "Sylvaar", "Helios Nocturna", "Astralis Althara", "Ignisar", "Vega", "Polaris"
+            "Sylvaar", "Helios Nocturna", "Althara", "Ignisar", "Vega", "Polaris"
         };
 
         public Star CreateStar()
         {
             var starName = GenerateName();
             var starType = GenerateType();
-            var starSolarSystem = Program.possibleSolarSystems[rnd.Next(Program.possibleSolarSystems.Length)];
+            // var starSolarSystem = Program.PossibleSolarSystems[rnd.Next(Program.PossibleSolarSystems.Length)];
             var starTemp = GenerateTemperature(starType.ElementAt(0).Value);
             var starRadius = GenerateRadius(starType.ElementAt(0).Value);
             var starAge = GenerateAge();
             var starMass = GenerateMass(starType.ElementAt(0).Value);
             var starAvailableEnergy = GenerateEnergy(starRadius, starTemp);
 
-
             return new Star(starName, starType.ElementAt(0).Key, starMass, starRadius, starTemp,
-                starAge, starAvailableEnergy, starSolarSystem);
+                starAge, starAvailableEnergy);
+        }
+
+        public void RemoveName(string name)
+        {
+            PossibleStarNames.Remove(name);
         }
 
         private long GenerateAge()
@@ -37,7 +41,7 @@ namespace NebulaNexus
             return (long) rnd.Next(1000, 14000) * rnd.Next(999999, 1009999);
         }
 
-        public BigInteger GenerateMass(int value)
+        private BigInteger GenerateMass(int value)
         {
             // return rnd.NextDouble() * 2 * Math.Pow(10, 30) > 0 ? rnd.NextDouble() * 2 * Math.Pow(10, 30) : 0.1 * 2 * Math.Pow(10, 30);
             // var sunMass = (BigInteger) (rnd.NextDouble() * (2 * Math.Pow(10, 30) - double.Epsilon) + double.Epsilon);
@@ -155,7 +159,7 @@ namespace NebulaNexus
             }
         }
 
-        public Dictionary<string, int> GenerateType()
+        private Dictionary<string, int> GenerateType()
         {
             var possibleStarTypes = new Dictionary<string, int>
             {
@@ -165,8 +169,8 @@ namespace NebulaNexus
                 {"White Dwarf", 4},
                 {"Black Hole", -1}
             };
-
-            double[] probabilities = {0.6, 0.15, 0.15, 0.05, 0.05}; // šance pro každý typ
+            // víc to pohrotit zhlediska planet type a population
+            double[] probabilities = {0.8, 0.115, 0.065, 0.05, 0.025}; // šance pro každý typ
 
             var totalProbability = probabilities.Sum();
 
@@ -192,7 +196,6 @@ namespace NebulaNexus
         {
             var randomIndex = rnd.Next(PossibleStarNames.Count());
             var chosenItem = PossibleStarNames[randomIndex];
-            PossibleStarNames.RemoveAt(randomIndex);
             return chosenItem;
         }
     }
