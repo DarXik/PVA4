@@ -27,5 +27,10 @@ namespace NebulaNexus
             // SolarSystem = solarSystem;
             Coordinates = new Coordinate(x, y, z);
         }
+
+        public override string ToString() // pro selection u travel
+        {
+            return Name;
+        }
     }
 }

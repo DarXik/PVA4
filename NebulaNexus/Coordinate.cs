@@ -6,7 +6,7 @@
         public object Y { get; set; }
         public object Z { get; set; }
 
-        public Coordinate(float x, float y, float z)
+        public Coordinate(object x, object y, object z)
         {
             X = x;
             Y = y;

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Spectre.Console;
 
 namespace NebulaNexus
 {
-    internal class Program
+    internal class Program : Debugger
     {
         private static List<Planet> PlanetsList = new List<Planet>();
         private static List<Planet> KnownPlanets = new List<Planet>();
@@ -14,13 +15,12 @@ namespace NebulaNexus
         private static List<SolarSystem> SolarSystemsList = new List<SolarSystem>();
         private static Player Player1;
 
-        public static void Main(string[] args)
+        public static Task Main(string[] args)
         {
             Setup();
 
-
             GeneratePlayer();
-            Introduction();
+            return Introduction();
 
             // var list1 = new List<double>();
             //
@@ -79,7 +79,7 @@ namespace NebulaNexus
                 PlanetsList.Add(pgManager.CreatePlanet());
             }
 
-            Console.WriteLine($"planets: {PlanetsList.Count}");
+            Debugger.GeneratedPlanets = PlanetsList.Count;
 
             // STARS
             for (int i = 0; i < SolarSystemGenerator.PossibleSolarSystems.Count;)
@@ -105,12 +105,12 @@ namespace NebulaNexus
                 // }
             }
 
-            Console.WriteLine($"stars: {StarsList.Count}");
+            Debugger.GeneratedStars = StarsList.Count;
 
             // SOLAR SYSTEMS
             foreach (var star in StarsList)
             {
-                var solarSystem = ssManger.GenerateSolarSystem(GetPlanet.GetPlanets(PlanetsList), star);
+                var solarSystem = ssManger.GenerateSolarSystem(SolarSystemGenerator.AssignPlanets(PlanetsList), star);
                 SolarSystemsList.Add(solarSystem);
             }
 
@@ -132,48 +132,61 @@ namespace NebulaNexus
                 }
             }
 
-            Console.WriteLine($"systems: {SolarSystemsList.Count}");
+            Debugger.GeneratedSystems = SolarSystemsList.Count;
         }
 
-        private static void Introduction()
+        private static async Task Introduction()
         {
-            AnsiConsole.Markup("Welcome to [green]Nebula Nexus[/] - space exploration and conquest");
-
+            // AnsiConsole.Markup("Welcome to [green]Nebula Nexus[/] - space exploration and conquest");
+            AnsiConsole.Write(
+                new FigletText("Nebula Nexus")
+                    .LeftJustified()
+                    .Color(Color.Purple));
 
             while (true)
             {
-                Console.WriteLine("\n");
-                Console.WriteLine("These are you options to continue: ");
-                Console.WriteLine("Press [p] to show all planets");
-                Console.WriteLine("Press [s] to show all stars");
-                Console.WriteLine("Press [l] to show all solar systems");
-                Console.WriteLine("Press [x] for exit and save");
-                Console.WriteLine("Press [o] for player options");
+                var option1 = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("\n These are you options to continue: ")
+                        .PageSize(4)
+                        .HighlightStyle("bold purple")
+                        .AddChoices(
+                            "show all planets",
+                            "show all stars",
+                            "show all solar systems",
+                            "player options",
+                            "exit and save",
+                            "debug"
+                        ));
 
 
-                switch (Console.ReadKey().Key)
+                switch (option1)
                 {
-                    case ConsoleKey.P:
+                    case "show all planets":
                         ShowPlanets(PlanetsList);
                         break;
-                    case ConsoleKey.S:
+                    case "show all stars":
                         Console.WriteLine("\n");
                         ShowAllStars(StarsList);
                         break;
-                    case ConsoleKey.L:
+                    case "show all solar systems":
                         Console.WriteLine("\n");
                         ShowAllSolarSystems(SolarSystemsList);
                         break;
-                    case ConsoleKey.X:
+                    case "exit and save":
                         Console.WriteLine("\n");
                         return;
-                    case ConsoleKey.O:
+                    case "player options":
                         Console.WriteLine("\n");
-                        PlayerOptions();
+                        await PlayerOptions();
+                        break;
+                    case "debug":
+                        ShowDebug();
+                        Console.WriteLine("\n");
                         break;
                     default:
                         Console.WriteLine("\n");
-                        Console.WriteLine("This key does nothing.. try again");
+                        Console.WriteLine("This does nothing.. try again");
                         break;
                 }
             }
@@ -205,22 +218,22 @@ namespace NebulaNexus
                 }
             }
 
-            // for (int i = 0; i < 3;)
-            // {
-            //     var newPlanet = PlanetsList[new Random().Next(PlanetsList.Count)];
-            //     if (!KnownPlanets.Contains(newPlanet))
-            //     {
-            //         KnownPlanets.Add(newPlanet);
-            //         i++;
-            //     }
-            // }
+            for (int i = 0; i < 4;)
+            {
+                var newPlanet = PlanetsList[new Random().Next(PlanetsList.Count)];
+                if (!KnownPlanets.Contains(newPlanet))
+                {
+                    KnownPlanets.Add(newPlanet);
+                    i++;
+                }
+            }
 
 
             // Ship1 = new Ship("Galactic Cruiser", "Exploration Vessel", 900, 0.72, true, false, 0, 5, null, Player1.CurrentPlanet, 1);
             // AvailableShips.Add(Ship1);
         }
 
-        private static void PlayerOptions()
+        private static async Task PlayerOptions()
         {
             Console.WriteLine("Your player options are: ");
 
@@ -245,7 +258,7 @@ namespace NebulaNexus
                         Console.WriteLine("\n");
                         break;
                     case ConsoleKey.T:
-                        TravelToPlanet();
+                        await PlanetTraveller.TravelToPlanet(KnownPlanets, SolarSystemsList, Player1);
                         Console.WriteLine("\n");
                         break;
                     case ConsoleKey.E:
@@ -253,7 +266,7 @@ namespace NebulaNexus
                         break;
                     case ConsoleKey.X:
                         Console.WriteLine("\n");
-                        Introduction();
+                        await Introduction();
                         return;
                     default:
                         Console.WriteLine("\n");
@@ -392,9 +405,9 @@ namespace NebulaNexus
                 .AddColumn(new TableColumn("[maroon]Mass[/]"))
                 .AddColumn(new TableColumn("[maroon]Available Energy[/]"))
                 .AddColumn(new TableColumn("[maroon]Solar System[/]"))
-                .AddColumn(new TableColumn("[maroon]X Coordinate[/]"))
-                .AddColumn(new TableColumn("[maroon]Y Coordinate[/]"))
-                .AddColumn(new TableColumn("[maroon]Z Coordinate[/]"))
+                .AddColumn(new TableColumn("[maroon]X Coord.[/]"))
+                .AddColumn(new TableColumn("[maroon]Y Coord.[/]"))
+                .AddColumn(new TableColumn("[maroon]Z Coord.[/]"))
                 .AddColumn(new TableColumn("[maroon]ID[/]"));
 
             foreach (var star in starsList)
@@ -432,31 +445,149 @@ namespace NebulaNexus
                 .AddColumn(new TableColumn("[aqua]Main Star Name[/]"))
                 .AddColumn(new TableColumn("[aqua]Main Star Radius[/]"))
                 .AddColumn(new TableColumn("[aqua]Solar System ID[/]"));
-            var counter = 0;
             foreach (var solarSystem in systemsList)
             {
                 table.AddRow(
                     $"{solarSystem.Name}",
-                    $"{solarSystem.Coordinates.X}",
-                    $"{solarSystem.Coordinates.Y}",
-                    $"{solarSystem.Coordinates.Z}",
+                    $"{solarSystem.Coordinates.X:N0}",
+                    $"{solarSystem.Coordinates.Y:N0}",
+                    $"{solarSystem.Coordinates.Z:N0}",
                     $"{Convert.ToDecimal(solarSystem.Radius)} light yrs",
-                    $"{solarSystem.RadiusKm} km",
+                    $"{solarSystem.RadiusKm:N0} km",
                     $"{string.Join(", ", solarSystem.Planets.Select(planet => planet.Name))}",
                     $"{solarSystem.MainStar.Name}",
                     solarSystem.MainStar.Radius > 0 ? $"{solarSystem.MainStar.Radius:N0} km" : "Undefined",
                     $"{solarSystem.Id}"
                 );
-                counter += solarSystem.Planets.Count;
             }
 
             AnsiConsole.Write(table);
-            Console.WriteLine(counter);
+        }
+    }
+
+    public static class PlanetTraveller
+    {
+        public static async Task TravelToPlanet(List<Planet> planetsList, List<SolarSystem> systemsList, Player player)
+        {
+            Console.WriteLine("\n");
+
+            var destinationOption = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("Choose to travel to either planet or solar system or choose random")
+                    .PageSize(3)
+                    .AddChoices("Known planet", "Known system", "Random"));
+
+            switch (destinationOption.ToLower())
+            {
+                case "known planet":
+                    AnsiConsole.Markup($"You chose to travel to a known planet \n");
+                    var planetPrompt =
+                        new SelectionPrompt<Planet>()
+                            .Title("Choose from known planets: ")
+                            .PageSize(3);
+
+                    foreach (var planet in planetsList)
+                    {
+                        planetPrompt.AddChoice(planet);
+                    }
+
+                    var chosenPlanet = AnsiConsole.Prompt(planetPrompt);
+                    AnsiConsole.Markup($"Chosen planet: [fuchsia]{chosenPlanet}[/]");
+                    Console.WriteLine("\n");
+
+                    await TravelToPlanetAsync(chosenPlanet);
+
+                    player.CurrentPlanet = chosenPlanet;
+                    break;
+                case "known system":
+                    break;
+                case "random":
+                    break;
+            }
         }
 
-        private static void TravelToPlanet()
+        private static async Task TravelToPlanetAsync(Planet chosenPlanet)
         {
-            var desiredPlanet = Console.ReadLine();
+            await AnsiConsole.Status()
+                .Spinner(Spinner.Known.Dots)
+                .StartAsync("Calculating directions...", async ctx =>
+                {
+                    await Task.Delay(2000);
+                    ctx.Spinner(Spinner.Known.Arrow3);
+                    ctx.SpinnerStyle(Style.Parse("red"));
+                    ctx.Status("Directions obtained.");
+
+                    AnsiConsole.MarkupLine("[bold green]Directions obtained.[/]");
+                });
+
+            await AnsiConsole.Status()
+                .StartAsync("Checking remaining fuel", async ctx =>
+                {
+                    await Task.Delay(1000);
+                    ctx.Status("Fuel checked.");
+
+                    AnsiConsole.MarkupLine("[bold green]Fuel checked.[/]");
+                });
+            await AnsiConsole.Status()
+                .StartAsync("Initializing Hyperdrive...", async ctx =>
+                {
+                    await Task.Delay(2500);
+                    ctx.Status("Hyperdrive initialized.");
+
+                    AnsiConsole.MarkupLine("[bold green]Hyperdrive initialized.[/]");
+                });
+            await AnsiConsole.Status()
+                .StartAsync("Preparing to jump to Hyperspace...", async ctx =>
+                {
+                    await Task.Delay(1500);
+                    ctx.Status("Ready to jump.");
+
+                    AnsiConsole.MarkupLine("[bold green]Ready to jump.[/]");
+                    await Task.Delay(1500);
+                    ctx.Status("Jumping to Hyperspace!");
+                    AnsiConsole.MarkupLine("[bold aqua]Jumping to Hyperspace![/]");
+                    await Task.Delay(500);
+                    ctx.Status("Ready to travel.");
+                });
+
+            await AnsiConsole.Progress()
+                .Columns(new TaskDescriptionColumn(), new RemainingTimeColumn())
+                .StartAsync(async ctx =>
+                {
+                    var task1 = ctx.AddTask($"Travelling to [fuchsia]{chosenPlanet}[/]");
+                    while (!ctx.IsFinished)
+                    {
+                        await Task.Delay(25);
+                        task1.Increment(1);
+                    }
+                });
+
+            AnsiConsole.Markup(
+                $"You travelled to {chosenPlanet.PlanetType} planet [fuchsia]{chosenPlanet}[/] in [dodgerblue1]{chosenPlanet.SolarSystem.Name}[/] system, " +
+                $"current population is [yellow]{chosenPlanet.Population:N0}[/] people " +
+                $"and the planet is {(chosenPlanet.IsDemocratic ? "[green]democratic[/]" : "[red]not democratic[/]")}.");
+        }
+    }
+
+    public abstract class Debugger
+    {
+        protected static readonly List<int> AssignedPlanetsModifier = new List<int>();
+        protected static int GeneratedPlanets;
+        protected static int GeneratedStars;
+        protected static int GeneratedSystems;
+
+        public static void ShowDebug()
+        {
+            Console.WriteLine("Used modifier for assigning planets: ");
+            foreach (var modifier in AssignedPlanetsModifier)
+            {
+                Console.Write(modifier + " ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Number of generated planets: {GeneratedPlanets}");
+            Console.WriteLine($"Number of generated stars: {GeneratedStars}");
+            Console.WriteLine($"Number of generated systems: {GeneratedSystems}");
         }
     }
 }

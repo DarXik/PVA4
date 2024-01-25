@@ -10,13 +10,13 @@ namespace NebulaNexus
 
         public readonly List<string> PossiblePlanetNames = new List<string>()
         {
-            "Aetheria", "Aldoria", "Arden", "Astoria", "Astrionex",
+            "Aetheria", "Aldoria", "Arden", "Astoria", "Astrionex", "Aurora",
             "Bespin", "Celestaria", "Crest", "Dagobah", "Elysium",
-            "Eos", "Emberlyn", "Endor", "Epsilon", "Gala",
-            "HB", "Haven", "Iris", "K-10", "Kashyyk",
+            "Eos", "Emberlyn", "Endor", "Epsilon", "Gala", "Galeos",
+            "HB", "Haven", "Iris", "K-10", "Kashyyk", "Korp",
             "Lagoon", "Larkspire", "Lunarastra", "Lunaris Prime", "Maris",
             "Mars", "Nova", "Nexus", "Nyx", "Orion",
-            "Orionis", "Phantasmagora", "Pluto", "Rigel", "Solarnyx",
+            "Orionis", "Phantasmagora", "Pluto", "Rigel", "Rufus", "Romeo", "Solarnyx",
             "Spectra", "Sylvaris", "Umbraflux", "Voltria", "Xenepha",
             "Zephyron", "Zyra"
         };
