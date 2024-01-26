@@ -34,32 +34,32 @@ namespace SettleUP
                         Console.Write("\nAdd name for new user: ");
                         users.Add(new User(Console.ReadLine()));
 
-                        showUsers();
+                        ShowUsers();
 
                         break;
 
                     case ConsoleKey.W:
-                        showUsers();
+                        ShowUsers();
 
-                        removeUser();
+                        RemoveUser();
 
                         break;
 
                     case ConsoleKey.E:
-                        showUsers();
+                        ShowUsers();
 
-                        addTransaction();
+                        AddTransaction();
 
                         break;
 
                     case ConsoleKey.R:
                         Console.WriteLine();
-                        sortDebts();
+                        SortDebts();
 
                         break;
 
                     case ConsoleKey.T:
-                        showUsers();
+                        ShowUsers();
 
                         break;
 
@@ -68,7 +68,7 @@ namespace SettleUP
                 }
             }
 
-            void showUsers()
+            void ShowUsers()
             {
                 Console.WriteLine("\nCurrent users: ");
                 foreach (var user in users)
@@ -77,7 +77,7 @@ namespace SettleUP
                 }
             }
 
-            void addTransaction()
+            void AddTransaction()
             {
                 Console.Write("\nWho paid: ");
                 var userInput = Console.ReadLine();
@@ -99,7 +99,7 @@ namespace SettleUP
                 }
             }
 
-            void removeUser()
+            void RemoveUser()
             {
                 Console.Write("\nType name of user to be deleted: ");
                 var userToBeDeleted = Console.ReadLine();
@@ -114,7 +114,7 @@ namespace SettleUP
                 }
             }
 
-            void sortDebts()
+            void SortDebts()
             {
                 var owedAmounts = new Dictionary<string, Dictionary<string, float>>();
 
@@ -126,12 +126,12 @@ namespace SettleUP
                     {
                         if (user != user2)
                         {
-                            if (user2.expenses.TryGetValue(user.Name, out var expense))
+                            if (user2.Expenses.TryGetValue(user.Name, out var expense))
                             {
                                 expense1 = expense;
                             }
 
-                            if (user.expenses.TryGetValue(user2.Name, out var userExpense))
+                            if (user.Expenses.TryGetValue(user2.Name, out var userExpense))
                             {
                                 expense2 = userExpense;
                             }
@@ -180,17 +180,17 @@ namespace SettleUP
             Name = name;
         }
 
-        public readonly Dictionary<string, float> expenses = new Dictionary<string, float>();
+        public readonly Dictionary<string, float> Expenses = new Dictionary<string, float>();
 
         public void AddExpense(string whoOwns, float amountOwned)
         {
-            if (!expenses.ContainsKey(whoOwns))
+            if (!Expenses.ContainsKey(whoOwns))
             {
-                expenses.Add(whoOwns, amountOwned);
+                Expenses.Add(whoOwns, amountOwned);
             }
             else
             {
-                expenses[whoOwns] += amountOwned;
+                Expenses[whoOwns] += amountOwned;
             }
         }
     }

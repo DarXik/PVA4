@@ -1,7 +1,6 @@
 C:\Users\pitra\Desktop\PVA4\SettleUP\bin\Debug\SettleUP.exe
 C:\Users\pitra\Desktop\PVA4\SettleUP\bin\Debug\SettleUP.pdb
 C:\Users\pitra\Desktop\PVA4\SettleUP\obj\Debug\SettleUP.csproj.AssemblyReference.cache
-C:\Users\pitra\Desktop\PVA4\SettleUP\obj\Debug\SettleUP.csproj.SuggestedBindingRedirects.cache
 C:\Users\pitra\Desktop\PVA4\SettleUP\obj\Debug\SettleUP.csproj.CoreCompileInputs.cache
 C:\Users\pitra\Desktop\PVA4\SettleUP\obj\Debug\SettleUP.exe
 C:\Users\pitra\Desktop\PVA4\SettleUP\obj\Debug\SettleUP.pdb
