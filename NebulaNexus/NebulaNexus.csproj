@@ -58,9 +58,11 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Coordinate.cs" />
+        <Compile Include="Debugger.cs" />
         <Compile Include="IGameObject.cs" />
         <Compile Include="Planet.cs" />
         <Compile Include="PlanetGeneratorManager.cs" />
+        <Compile Include="PlanetTraveller.cs" />
         <Compile Include="Player.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
