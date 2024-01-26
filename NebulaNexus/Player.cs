@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 namespace NebulaNexus
 {
-    public class Player : Coordinates, IGameObject
+    public class Player : IGameObject
     {
-        public string Name { get; set; }
-        public int Id { get; set; }
+        public string Name { get; }
+        public int Id { get; }
         public int TechnologicalLevel;
         public int DiplomacyLevel;
         public int Trustworthiness;
@@ -14,18 +14,18 @@ namespace NebulaNexus
         public List<Planet> KnownPlanets { get; set; }
         public List<Ship> Fleet { get; set; }
 
-        public Planet HomePlanet;
+        public Planet HomePlanet { get; }
         public Planet CurrentPlanet;
         public Ship CurrentShip;
 
-        public Player(string name, Planet homePlanet, Planet currentPlanet, Ship currentShip, List<Planet> knownPlanets, float x, float y, float z, int id) : base(x, y, z)
+        public Player(string name, Planet homePlanet, List<Planet> knownPlanets)
         {
             Name = name;
             HomePlanet = homePlanet;
-            CurrentShip = currentShip;
-            CurrentPlanet = currentPlanet;
-            Id = id + 2000;
-            TechnologicalLevel = 3;
+            CurrentShip = null;
+            CurrentPlanet = homePlanet;
+            Id = UniqueID.GenerateID();
+            TechnologicalLevel = homePlanet.TechnologicalLevel;
             DiplomacyLevel = 0;
             Trustworthiness = 10;
             IsAlive = true;

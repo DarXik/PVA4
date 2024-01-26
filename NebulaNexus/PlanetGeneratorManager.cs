@@ -10,17 +10,19 @@ namespace NebulaNexus
 
         public readonly List<string> PossiblePlanetNames = new List<string>()
         {
-            "Nexus", "Aldoria", "Celestaria", "Orionis", "Lunaris Prime",
-            "Nova", "Astrionex", "Umbraflux", "Astoria", "Epsilon",
-            "Haven", "Maris", "Lagoon", "Echoes", "Pluto", "Voltria", "Spectra", "Xenepha"
+            "Aetheria", "Aldoria", "Arden", "Astoria", "Astrionex", "Aurora",
+            "Bespin", "Celestaria", "Crest", "Dagobah", "Elysium",
+            "Eos", "Emberlyn", "Endor", "Epsilon", "Gala", "Galeos",
+            "HB", "Haven", "Iris", "K-10", "Kashyyk", "Korp",
+            "Lagoon", "Larkspire", "Lunarastra", "Lunaris Prime", "Maris",
+            "Mars", "Nova", "Nexus", "Nyx", "Orion",
+            "Orionis", "Phantasmagora", "Pluto", "Rigel", "Rufus", "Romeo", "Solarnyx",
+            "Spectra", "Sylvaris", "Umbraflux", "Voltria", "Xenepha",
+            "Zephyron", "Zyra"
         };
 
         public Planet CreatePlanet()
         {
-            // pokud dvojitý solar system, tak jméno s prefixem
-            // pokud radius menší, tak menší populace
-            // pokud větší tak větší, plus některé typy neumožňují populaci
-            var nameAndSystem = GenerateSolarSystem();
             var generatedType = GenerateType();
             var generatedRadius = GenerateRadius();
             var generatedPopulation = GeneratePopulation(generatedRadius, generatedType);
@@ -30,62 +32,56 @@ namespace NebulaNexus
 
 
             var planet1 = new Planet(
-                nameAndSystem[0], generatedRadius, generatedType,
-                generatedPopulation, generatedTechLevel, generatedMiliLevel,
-                generatedDemocracy, nameAndSystem[1],
-                GenerateCoord(generatedType), GenerateCoord(generatedType), GenerateCoord(generatedType),
-                GenerateId());
+                GenerateName(), generatedRadius, generatedType,
+                generatedPopulation, generatedTechLevel, generatedMiliLevel, generatedDemocracy,
+                GenerateCoord(generatedType), GenerateCoord(generatedType), GenerateCoord(generatedType));
 
             return planet1;
         }
 
-        private HashSet<int> usedIds = new HashSet<int>();
-        private int currentId = 1;
-        private int GenerateId()
+        // bool doubleWordSystem, string systemPrefix
+        private string GenerateName()
         {
-            usedIds.Add(currentId);
-            currentId++;
-            return usedIds.Last();
+            var chosenName = PossiblePlanetNames[rnd.Next(PossiblePlanetNames.Count)];
+            //
+            PossiblePlanetNames.Remove(chosenName);
+            // if (doubleWordSystem && systemPrefix.Length > 0) // dvojitý název
+            // {
+            //     return systemPrefix + " " + chosenName;
+            // }
+            // else
+            // {
+            return chosenName;
+            // }
         }
-        private string GenerateName(bool doubleWordSystem, string systemPrefix)
-        {
-            var randomIndex = rnd.Next(PossiblePlanetNames.Count());
-            var chosenItem = PossiblePlanetNames[randomIndex];
 
-            PossiblePlanetNames.RemoveAt(randomIndex);
-            if (doubleWordSystem && systemPrefix.Length > 0) // dvojitý název
-            {
-                return systemPrefix + " " + chosenItem;
-            }
-            else
-            {
-                return chosenItem;
-            }
-        }
-        private string[] GenerateSolarSystem()
-        {
-            var nameAndSystem = new string[2];
+        // DOŘEŠIT
+        // private string[] GenerateSolarSystem()
+        // {
+        //     var nameAndSystem = new string[2];
+        //
+        //     var randomIndex = rnd.Next(Program.PossibleSolarSystems.Length);
+        //     var splitArray = Program.PossibleSolarSystems[randomIndex].Split(' ');
+        //
+        //     if (splitArray.Length > 1) // dvojitý název
+        //     {
+        //         nameAndSystem[0] = GenerateName(true, splitArray[0]);
+        //         nameAndSystem[1] = Program.PossibleSolarSystems[randomIndex];
+        //     }
+        //     else
+        //     {
+        //         nameAndSystem[0] = GenerateName(false, splitArray[0]);
+        //         nameAndSystem[1] = Program.PossibleSolarSystems[randomIndex];
+        //     }
+        //
+        //     return nameAndSystem;
+        // }
 
-            var randomIndex = rnd.Next(Program.possibleSolarSystems.Length);
-            var splitArray = Program.possibleSolarSystems[randomIndex].Split(' ');
-
-            if (splitArray.Length > 1) // dvojitý název
-            {
-                nameAndSystem[0] = GenerateName(true, splitArray[0]);
-                nameAndSystem[1] = Program.possibleSolarSystems[randomIndex];
-            }
-            else
-            {
-                nameAndSystem[0] = GenerateName(false, splitArray[0]);
-                nameAndSystem[1] = Program.possibleSolarSystems[randomIndex];
-            }
-
-            return nameAndSystem;
-        }
         private long GenerateRadius()
         {
             return rnd.Next(3000, 70000 + 1);
         }
+
         private string GenerateType()
         {
             string[] possiblePlanetTypes =
@@ -93,13 +89,6 @@ namespace NebulaNexus
                 "Earth-like", "High-Elevation Plateaus", "Mountainous", "Oceanic", "Icy", "Sandy", "Tropical", "Rocky", "Mettalic", "Crystalline",
                 "Quicksand", "Subterranean", "Gaseous", "Arid", "Radioactive", "Lava", "Badland", "Bioluminescent", "Time-disorted", "unknown"
             };
-
-            // var lastIndex = possiblePlanetTypes.Length - 1;
-            // var randomIndex = rnd.Next(0, lastIndex + 1);
-            //
-            // return possiblePlanetTypes[randomIndex];
-            // possiblePlanetTypes = possiblePlanetTypes.OrderBy(type => rnd.Next()).ToArray();
-
 
             var weights = Enumerable.Range(1, possiblePlanetTypes.Length - 1 + 1).Reverse().ToArray();
             var randomWeight = rnd.Next(1, weights.Sum() + 1);
@@ -120,6 +109,7 @@ namespace NebulaNexus
 
             return possiblePlanetTypes[selectedIndex];
         }
+
         private long GeneratePopulation(long radius, string planetType)
         {
             long population = 0;
@@ -142,6 +132,7 @@ namespace NebulaNexus
 
             return Math.Abs(population - (population % 10));
         }
+
         private int GenerateTechnologicalLevel(long population)
         {
             if (population > 90000000)
@@ -157,6 +148,7 @@ namespace NebulaNexus
                 return 0;
             }
         }
+
         private int GenerateMilitaryPower(int techLevel)
         {
             if (techLevel > 2)
@@ -175,6 +167,7 @@ namespace NebulaNexus
                 }
             }
         }
+
         private bool GenerateDemocracy(int techLevel, int miliLevel)
         {
             int democracyChance;
@@ -235,24 +228,26 @@ namespace NebulaNexus
                 return false;
             }
         }
+
         private float GenerateCoord(string planetType)
         {
-            if (planetType.ToLower() != "unknown")
-            {
-                int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
+            // if (planetType.ToLower() != "unknown")
+            // {
+            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
 
-                float coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-                while (Math.Abs(coord) <= 1000)
-                {
-                    coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
-                }
-
-                return coord;
-            }
-            else
+            float coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            while (Math.Abs(coord) <= 1000)
             {
-                return 0;
+                coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
             }
+
+            return coord;
+            //     }
+            //     else
+            //     {
+            //         return -1;
+            //     }
+            // }
         }
     }
 }
