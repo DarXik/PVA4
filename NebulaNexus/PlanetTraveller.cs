@@ -46,18 +46,18 @@ namespace NebulaNexus
                             .Title("Choose from available systems: ")
                             .PageSize(3);
 
-                    foreach (var planet in planetsList)
-                    {
-                        systemPrompt.AddChoice(planet.SolarSystem.Name);
-                    }
-
-                    var chosenSystem = AnsiConsole.Prompt(systemPrompt);
-                    AnsiConsole.Markup($"Chosen planet: [fuchsia]{chosenSystem.SolarSystem.Name}[/]");
-                    Console.WriteLine("\n");
-
-                    await TravelToPlanetAsync(chosenPlanet);
-
-                    player.CurrentPlanet = chosenPlanet;
+                    // foreach (var planet in planetsList)
+                    // {
+                    //     systemPrompt.AddChoice(planet.SolarSystem.Name);
+                    // }
+                    //
+                    // var chosenSystem = AnsiConsole.Prompt(systemPrompt);
+                    // AnsiConsole.Markup($"Chosen planet: [fuchsia]{chosenSystem.SolarSystem.Name}[/]");
+                    // Console.WriteLine("\n");
+                    //
+                    // await TravelToPlanetAsync(chosenPlanet);
+                    //
+                    // player.CurrentPlanet = chosenPlanet;
 
                     break;
                 case "random":

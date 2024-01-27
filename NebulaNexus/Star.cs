@@ -13,10 +13,11 @@ namespace NebulaNexus
         public long Age;
         public object AvailableEnergy;
         public SolarSystem SolarSystem { get; set; }
-        public Coordinate Coordinates { get; }
+        public Coordinate LocalCoordinates { get; }
+        public Coordinate GlobalCoordinates { get; }
 
-        public Star(string name, string type, BigInteger mass, long radius, double temperature, long age,
-            object availableEnergy)
+        public Star(string name, string type, BigInteger mass, long radius,
+            double temperature, long age, object availableEnergy, SolarSystem solarSystem)
         {
             Mass = mass;
             Radius = radius;
@@ -26,8 +27,9 @@ namespace NebulaNexus
             Id = UniqueID.GenerateID();
             Name = name;
             Type = type;
-            // SolarSystem = solarSystem;
-            Coordinates = new Coordinate(0, 0, 0);
+            SolarSystem = solarSystem;
+            LocalCoordinates = new Coordinate(0, 0, 0);
+            GlobalCoordinates = SolarSystem.Coordinates;
         }
     }
 }

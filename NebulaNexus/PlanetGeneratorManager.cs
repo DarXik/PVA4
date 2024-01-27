@@ -29,53 +29,37 @@ namespace NebulaNexus
             var generatedTechLevel = GenerateTechnologicalLevel(generatedPopulation);
             var generatedMiliLevel = GenerateMilitaryPower(generatedTechLevel);
             var generatedDemocracy = GenerateDemocracy(generatedTechLevel, generatedMiliLevel);
+            var generatedSystem = GenerateSolarSystem();
 
 
             var planet1 = new Planet(
-                GenerateName(), generatedRadius, generatedType,
+                GenerateName(generatedSystem), generatedRadius, generatedType, generatedSystem,
                 generatedPopulation, generatedTechLevel, generatedMiliLevel, generatedDemocracy,
-                GenerateCoord(generatedType), GenerateCoord(generatedType), GenerateCoord(generatedType));
+                GenerateCoord(), GenerateCoord(), GenerateCoord());
 
             return planet1;
         }
 
-        // bool doubleWordSystem, string systemPrefix
-        private string GenerateName()
+        private string GenerateName(SolarSystem system)
         {
             var chosenName = PossiblePlanetNames[rnd.Next(PossiblePlanetNames.Count)];
-            //
+            var splitName = system.Name.Split();
+
             PossiblePlanetNames.Remove(chosenName);
-            // if (doubleWordSystem && systemPrefix.Length > 0) // dvojitý název
-            // {
-            //     return systemPrefix + " " + chosenName;
-            // }
-            // else
-            // {
-            return chosenName;
-            // }
+            if (splitName.Length > 1)
+            {
+                return splitName[0] + " " + chosenName;
+            }
+            else
+            {
+                return chosenName;
+            }
         }
 
-        // DOŘEŠIT
-        // private string[] GenerateSolarSystem()
-        // {
-        //     var nameAndSystem = new string[2];
-        //
-        //     var randomIndex = rnd.Next(Program.PossibleSolarSystems.Length);
-        //     var splitArray = Program.PossibleSolarSystems[randomIndex].Split(' ');
-        //
-        //     if (splitArray.Length > 1) // dvojitý název
-        //     {
-        //         nameAndSystem[0] = GenerateName(true, splitArray[0]);
-        //         nameAndSystem[1] = Program.PossibleSolarSystems[randomIndex];
-        //     }
-        //     else
-        //     {
-        //         nameAndSystem[0] = GenerateName(false, splitArray[0]);
-        //         nameAndSystem[1] = Program.PossibleSolarSystems[randomIndex];
-        //     }
-        //
-        //     return nameAndSystem;
-        // }
+        private SolarSystem GenerateSolarSystem()
+        {
+            return Program.SolarSystemsList[rnd.Next(Program.SolarSystemsList.Count)];
+        }
 
         private long GenerateRadius()
         {
@@ -229,25 +213,17 @@ namespace NebulaNexus
             }
         }
 
-        private float GenerateCoord(string planetType)
+        private int GenerateCoord()
         {
-            // if (planetType.ToLower() != "unknown")
-            // {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1; // Either -1 or 1
+            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1;
 
-            float coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+            int coord = (int) (rnd.NextDouble() + rnd.Next(1, 3) * rnd.Next(1000, 25000) * modifier_1);
             while (Math.Abs(coord) <= 1000)
             {
-                coord = (float) (rnd.NextDouble() * rnd.Next(1000, 10000) * modifier_1);
+                coord = (int) (rnd.NextDouble() + rnd.Next(1, 3) * rnd.Next(1000, 25000) * modifier_1);
             }
 
             return coord;
-            //     }
-            //     else
-            //     {
-            //         return -1;
-            //     }
-            // }
         }
     }
 }

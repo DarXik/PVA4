@@ -15,9 +15,12 @@ namespace NebulaNexus
         private static HashSet<Planet> usedPlanets = new HashSet<Planet>();
         private Random rnd = new Random();
 
-        public SolarSystem GenerateSolarSystem(List<Planet> planets, Star star)
+        StarGeneratorManager sgManager = new StarGeneratorManager();
+        public SolarSystem GenerateSolarSystem()
         {
-            return new SolarSystem(GenerateName(), GenerateRadius(), planets, star, GenerateCoord(), GenerateCoord(), GenerateCoord());
+            var solarSystem = new SolarSystem(GenerateName(), GenerateRadius(), GenerateCoord(), GenerateCoord(), GenerateCoord());
+            solarSystem.MainStar = sgManager.CreateStar(solarSystem);
+            return solarSystem;
         }
 
         private string GenerateName()
@@ -35,10 +38,13 @@ namespace NebulaNexus
             return (BigInteger) (((rnd.NextDouble() + 0.4) * Math.Pow(10, rnd.Next(10, 15))) * modifier_1 * 10000);
         }
 
-        private float GenerateRadius()
+        private long GenerateRadius()
         {
-            return (float) ((rnd.NextDouble() + 0.4) * Math.Pow(10, -rnd.Next(2, 5)));
-            // return (float) rnd.NextDouble();
+            var maxValue = 1.51e12;
+            var minValue = 5.1e4;
+            var value = (minValue + rnd.NextDouble() * (maxValue - minValue));
+            Console.WriteLine(value);
+            return (long) value;
         }
 
         public static List<Planet> AssignPlanets(List<Planet> planets)

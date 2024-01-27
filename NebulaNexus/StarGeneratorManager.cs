@@ -11,15 +11,17 @@ namespace NebulaNexus
 
         private readonly List<string> PossibleStarNames = new List<string>()
         {
-            "Cepheda", "Luminar", "Proxima", "Antares", "Celestial Ember", "Xylos",
-            "Sylvaar", "Helios Nocturna", "Althara", "Ignisar", "Vega", "Polaris"
+            "Astraquill", "Althara", "Antares", "Celestial Ember", "Cepheda",
+            "Celestial Mirage", "Cosmosis", "Helios Nocturna", "Ignisar", "Kyber Nexus",
+            "Luminar", "Nebuluxe Harmony", "Novastar", "Polar", "Proxima",
+            "Serenade", "Sithraxis", "Sun", "Sylvaar", "Vega", "Xylos"
         };
 
-        public Star CreateStar()
+
+        public Star CreateStar(SolarSystem solarSystem)
         {
             var starName = GenerateName();
             var starType = GenerateType();
-            // var starSolarSystem = Program.PossibleSolarSystems[rnd.Next(Program.PossibleSolarSystems.Length)];
             var starTemp = GenerateTemperature(starType.ElementAt(0).Value);
             var starRadius = GenerateRadius(starType.ElementAt(0).Value);
             var starAge = GenerateAge();
@@ -27,12 +29,7 @@ namespace NebulaNexus
             var starAvailableEnergy = GenerateEnergy(starRadius, starTemp);
 
             return new Star(starName, starType.ElementAt(0).Key, starMass, starRadius, starTemp,
-                starAge, starAvailableEnergy);
-        }
-
-        public void RemoveName(string name)
-        {
-            PossibleStarNames.Remove(name);
+                starAge, starAvailableEnergy, solarSystem);
         }
 
         private long GenerateAge()
@@ -196,6 +193,7 @@ namespace NebulaNexus
         {
             var randomIndex = rnd.Next(PossibleStarNames.Count());
             var chosenItem = PossibleStarNames[randomIndex];
+            PossibleStarNames.Remove(chosenItem);
             return chosenItem;
         }
     }

@@ -10,26 +10,19 @@ namespace NebulaNexus
         public string Name { get; }
         public int Id { get; }
         public Coordinate Coordinates { get; }
-        public float Radius { get; }
-        public BigInteger RadiusKm;
+        public float RadiusLY { get; }
+        public long Radius { get; }
         public List<Planet> Planets { get; set; }
-        public Star MainStar { get; }
+        public Star MainStar { get; set; }
 
-        public SolarSystem(string name, float radius, List<Planet> planets, Star mainStar, BigInteger x, BigInteger y, BigInteger z)
+        public SolarSystem(string name, long radius, BigInteger x, BigInteger y, BigInteger z)
         {
-            Planets = planets;
-            MainStar = mainStar;
-            mainStar.SolarSystem = this; // potřebuje setter u Star ??
+            Planets = new List<Planet>();
             Name = name;
             Id = UniqueID.GenerateID();
             Coordinates = new Coordinate(x, y, z);
             Radius = radius;
-            RadiusKm = (BigInteger) (Radius * 9.461 * Math.Pow(10, 12));
-
-            foreach (var planet in Planets)
-            {
-                planet.SolarSystem = this;
-            }
+            RadiusLY = (float) (radius / 9.461e12);
         }
     }
 }

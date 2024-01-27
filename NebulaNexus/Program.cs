@@ -6,14 +6,15 @@ using Spectre.Console;
 
 namespace NebulaNexus
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class Program : Debugger
     {
-        private static List<Planet> PlanetsList = new List<Planet>();
-        private static List<Planet> KnownPlanets = new List<Planet>();
-        private static List<Star> StarsList = new List<Star>();
-        private static List<Ship> AvailableShips = new List<Ship>();
-        private static List<SolarSystem> SolarSystemsList = new List<SolarSystem>();
-        private static Player Player1;
+        public static List<Planet> PlanetsList = new List<Planet>();
+        public static List<Planet> KnownPlanets = new List<Planet>();
+        public static List<Star> StarsList = new List<Star>();
+        public static List<Ship> AvailableShips = new List<Ship>();
+        public static List<SolarSystem> SolarSystemsList = new List<SolarSystem>();
+        public static Player Player1;
 
         public static Task Main(string[] args)
         {
@@ -70,69 +71,52 @@ namespace NebulaNexus
         private static void Setup()
         {
             var pgManager = new PlanetGeneratorManager();
-            var sgManager = new StarGeneratorManager();
             var ssManger = new SolarSystemGenerator();
+            var numberOfSystems = SolarSystemGenerator.PossibleSolarSystems.Count;
+
+
+            // SOLAR SYSTEMS
+            for (var index = 0; index < numberOfSystems; index++)
+            {
+                var solarSystem = ssManger.GenerateSolarSystem();
+                SolarSystemsList.Add(solarSystem);
+            }
 
             // PLANETS
             for (int i = pgManager.PossiblePlanetNames.Count - 1; i >= 0; i--)
             {
-                PlanetsList.Add(pgManager.CreatePlanet());
+                var planet = pgManager.CreatePlanet();
+                SolarSystemsList[SolarSystemsList.FindIndex(system => system == planet.SolarSystem)].Planets.Add(planet);
+                PlanetsList.Add(planet);
             }
 
-            Debugger.GeneratedPlanets = PlanetsList.Count;
-
-            // STARS
-            for (int i = 0; i < SolarSystemGenerator.PossibleSolarSystems.Count;)
+            foreach (var star in SolarSystemsList)
             {
-                var star1 = sgManager.CreateStar();
-                StarsList.Add(star1);
-                sgManager.RemoveName(star1.Name);
-                i++;
-                // bool alreadyExists = false;
-                //
-                // foreach (var star in StarsList)
-                // {
-                //     if (star.SolarSystem == star1.SolarSystem)
-                //     {
-                //         alreadyExists = true;
-                //         break;
-                //     }
-                // }
-                //
-                // if (!alreadyExists)
-                // {
-                //
-                // }
+                StarsList.Add(star.MainStar);
             }
 
-            Debugger.GeneratedStars = StarsList.Count;
 
-            // SOLAR SYSTEMS
-            foreach (var star in StarsList)
-            {
-                var solarSystem = ssManger.GenerateSolarSystem(SolarSystemGenerator.AssignPlanets(PlanetsList), star);
-                SolarSystemsList.Add(solarSystem);
-            }
+            GeneratedSystems = SolarSystemsList.Count;
+            GeneratedStars = StarsList.Count;
+            GeneratedPlanets = PlanetsList.Count;
 
-            foreach (var planet in PlanetsList)
-            {
-                if (planet.SolarSystem == null)
-                {
-                    var list = SolarSystemsList.OrderBy(ss => ss.Planets.Count).ToList();
-                    foreach (var ss in SolarSystemsList)
-                    {
-                        if (ss.Planets.Count > 0)
-                        {
-                            var smallestSystem = list.First();
-                            planet.SolarSystem = smallestSystem;
-                            smallestSystem.Planets.Add(planet);
-                            break;
-                        }
-                    }
-                }
-            }
-
-            Debugger.GeneratedSystems = SolarSystemsList.Count;
+            // foreach (var planet in PlanetsList)
+            // {
+            //     if (planet.SolarSystem == null)
+            //     {
+            //         var list = SolarSystemsList.OrderBy(ss => ss.Planets.Count).ToList();
+            //         foreach (var ss in SolarSystemsList)
+            //         {
+            //             if (ss.Planets.Count > 0)
+            //             {
+            //                 var smallestSystem = list.First();
+            //                 planet.SolarSystem = smallestSystem;
+            //                 smallestSystem.Planets.Add(planet);
+            //                 break;
+            //             }
+            //         }
+            //     }
+            // }
         }
 
         private static async Task Introduction()
@@ -163,7 +147,7 @@ namespace NebulaNexus
                 switch (option1)
                 {
                     case "show all planets":
-                        ShowPlanets(PlanetsList);
+                        ShowAllPlanets(PlanetsList);
                         break;
                     case "show all stars":
                         Console.WriteLine("\n");
@@ -254,7 +238,7 @@ namespace NebulaNexus
                         ShowPlayerStats(Player1, AvailableShips);
                         break;
                     case ConsoleKey.P:
-                        ShowPlanets(KnownPlanets);
+                        ShowAllPlanets(KnownPlanets);
                         Console.WriteLine("\n");
                         break;
                     case ConsoleKey.T:
@@ -334,7 +318,7 @@ namespace NebulaNexus
             Console.WriteLine("\n");
         }
 
-        private static void ShowPlanets(List<Planet> planetsList)
+        private static void ShowAllPlanets(List<Planet> planetsList)
         {
             Console.WriteLine("\n");
             var table = new Table()
@@ -364,8 +348,8 @@ namespace NebulaNexus
                     $"{planet.TechnologicalLevel}",
                     $"{planet.MilitaryPower}",
                     $"{planet.IsDemocratic}",
-                    $"{planet.SolarSystem?.Name}",
-                    $"{planet.SolarSystem?.MainStar.Name}",
+                    $"{planet.SolarSystem.Name}",
+                    $"{planet.SolarSystem.MainStar.Name}",
                     $"{planet.Coordinates.X}",
                     $"{planet.Coordinates.Y}",
                     $"{planet.Coordinates.Z}",
@@ -373,7 +357,6 @@ namespace NebulaNexus
                 );
             }
 
-            table.Columns[4].Width(10);
             // table.Collapse();
             AnsiConsole.Write(table);
             // foreach (Planet planet in planetsList)
@@ -421,9 +404,9 @@ namespace NebulaNexus
                     $"{star.Mass:e2} kg",
                     $"{star.AvailableEnergy:e2} W",
                     $"{star.SolarSystem.Name}",
-                    $"{star.Coordinates.X}",
-                    $"{star.Coordinates.Y}",
-                    $"{star.Coordinates.Z}",
+                    $"{star.LocalCoordinates.X}",
+                    $"{star.LocalCoordinates.Y}",
+                    $"{star.LocalCoordinates.Z}",
                     $"{star.Id}"
                 );
             }
@@ -444,16 +427,16 @@ namespace NebulaNexus
                 .AddColumn(new TableColumn("[aqua]Planets[/]"))
                 .AddColumn(new TableColumn("[aqua]Main Star Name[/]"))
                 .AddColumn(new TableColumn("[aqua]Main Star Radius[/]"))
-                .AddColumn(new TableColumn("[aqua]Solar System ID[/]"));
+                .AddColumn(new TableColumn("[aqua]ID[/]"));
             foreach (var solarSystem in systemsList)
             {
                 table.AddRow(
                     $"{solarSystem.Name}",
-                    $"{solarSystem.Coordinates.X:N0}",
-                    $"{solarSystem.Coordinates.Y:N0}",
-                    $"{solarSystem.Coordinates.Z:N0}",
-                    $"{Convert.ToDecimal(solarSystem.Radius)} light yrs",
-                    $"{solarSystem.RadiusKm:N0} km",
+                    $"{solarSystem.Coordinates.X:E2}",
+                    $"{solarSystem.Coordinates.Y:E2}",
+                    $"{solarSystem.Coordinates.Z:E2}",
+                    $"{Convert.ToDecimal(solarSystem.RadiusLY)} Lyrs",
+                    $"{solarSystem.Radius:N0} km",
                     $"{string.Join(", ", solarSystem.Planets.Select(planet => planet.Name))}",
                     $"{solarSystem.MainStar.Name}",
                     solarSystem.MainStar.Radius > 0 ? $"{solarSystem.MainStar.Radius:N0} km" : "Undefined",
@@ -461,6 +444,7 @@ namespace NebulaNexus
                 );
             }
 
+            table.Columns[9].Width(8);
             AnsiConsole.Write(table);
         }
     }

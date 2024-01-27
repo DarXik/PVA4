@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\FileApp_SecondTerm\bin\Debug\FileApp_SecondTerm.exe
+C:\Users\pitra\Desktop\PVA4\FileApp_SecondTerm\bin\Debug\FileApp_SecondTerm.pdb
+C:\Users\pitra\Desktop\PVA4\FileApp_SecondTerm\obj\Debug\FileApp_SecondTerm.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\FileApp_SecondTerm\obj\Debug\FileApp_SecondTerm.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\FileApp_SecondTerm\obj\Debug\FileApp_SecondTerm.exe
+C:\Users\pitra\Desktop\PVA4\FileApp_SecondTerm\obj\Debug\FileApp_SecondTerm.pdb
