@@ -15,14 +15,19 @@ namespace NebulaNexus
         public List<Planet> Planets { get; set; }
         public Star MainStar { get; set; }
 
-        public SolarSystem(string name, long radius, BigInteger x, BigInteger y, BigInteger z)
+        public SolarSystem(string name, long radius, Coordinate coordinates)
         {
             Planets = new List<Planet>();
             Name = name;
             Id = UniqueID.GenerateID();
-            Coordinates = new Coordinate(x, y, z);
+            Coordinates = coordinates;
             Radius = radius;
             RadiusLY = (float) (radius / 9.461e12);
         }
+        public override string ToString() // pro selection u travel
+        {
+            return Name;
+        }
+
     }
 }

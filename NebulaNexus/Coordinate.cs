@@ -2,11 +2,11 @@
 {
     public struct Coordinate
     {
-        public object X { get; set; }
-        public object Y { get; set; }
-        public object Z { get; set; }
+        public long X { get; }
+        public long Y { get; }
+        public long Z { get; }
 
-        public Coordinate(object x, object y, object z)
+        public Coordinate(long x, long y, long z)
         {
             X = x;
             Y = y;

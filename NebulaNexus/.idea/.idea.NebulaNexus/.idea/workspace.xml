@@ -8,12 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d299e358-a641-4ced-a159-f6cc82d7ae36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Debugger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanetTraveller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coordinate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Coordinate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debugger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Debugger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NebulaNexus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NebulaNexus.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NebulaNexus.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/NebulaNexus.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlanetGeneratorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlanetGeneratorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlanetTraveller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlanetTraveller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarSystemGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarSystemGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarGeneratorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StarGeneratorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +38,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41914444499f4996a3e6af79cf6c1fdb574b98/96/69d728ca/Int64.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1addff2ba8961ff5b126eccd89e14b2210f5a49ffd2beddb86acab54b9cc9d/ProgressColumn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/23fe0fd87d459f7fb3e6272d3222722c4b011684b632594ece6ed517426f5ab/SpinnerColumn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a9a48ba1fd5b525bac494305a96c4ba9f227dc7a457787349c9ab3ee1a965/ElapsedTimeColumn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5a6fe6d36c696e1571ecdf52c1dc5d2bce8bd87ebe9cbdf1c8a46c0b531e9/ProgressBar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89c606816d31112b37f6a0dedd5b2d97b5d5efa653fb9288b496d4845f32/ProgressBarColumn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/933987c1b964c16f50d171b99eeeee1ba2cdf7772b012176cd0cb246d4c1b34/DefaultProgressRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ab8af03df4a5dd8e07532713c86bc9aa75decf28fadbbf86c57e3de7349f/ProgressBarColumnExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/caba2aa82f20ac431015eb619681fcee58d3827ab873da9e7dd6ff37694e84/AnsiConsoleExtensions.Progress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce4fa6201c715d1319d168eccd4d882f6659438631d3edba89c59d0aa512840/RemainingTimeColumn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee75199bd7f4e4a2bb293543ad2c1253b9c56264e6fdffab4899034b7719/AnsiConsole.Progress.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -116,6 +139,9 @@
       <workItem from="1706195607869" duration="10081000" />
       <workItem from="1706253780015" duration="65000" />
       <workItem from="1706253882263" duration="1256000" />
+      <workItem from="1706350177752" duration="56000" />
+      <workItem from="1706376489423" duration="5609000" />
+      <workItem from="1706441739803" duration="15051000" />
     </task>
     <servers />
   </component>

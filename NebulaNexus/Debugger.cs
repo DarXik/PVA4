@@ -12,7 +12,7 @@ namespace NebulaNexus
         protected static int GeneratedStars;
         protected static int GeneratedSystems;
 
-        public static void ShowDebug()
+        protected static void ShowDebug()
         {
             Console.WriteLine();
 
@@ -27,7 +27,7 @@ namespace NebulaNexus
 
             var localIDs = UniqueID.IDs.OrderBy(x => x);
 
-            foreach (var id in UniqueID.IDs)
+            foreach (var id in localIDs)
             {
                 AnsiConsole.Markup($"[yellow4]{id}[/]|");
             }

@@ -13,13 +13,27 @@ namespace NebulaNexus
         };
 
         private static HashSet<Planet> usedPlanets = new HashSet<Planet>();
-        private Random rnd = new Random();
+        private static int seed = (int)DateTime.Now.Ticks;
+        private Random rnd = new Random(seed);
 
         StarGeneratorManager sgManager = new StarGeneratorManager();
+        PlanetGeneratorManager pgManager = new PlanetGeneratorManager();
+
         public SolarSystem GenerateSolarSystem()
         {
-            var solarSystem = new SolarSystem(GenerateName(), GenerateRadius(), GenerateCoord(), GenerateCoord(), GenerateCoord());
+            var radius = GenerateRadius();
+            var solarSystem = new SolarSystem(GenerateName(), radius, GenerateCoord());
             solarSystem.MainStar = sgManager.CreateStar(solarSystem);
+
+
+            if (pgManager.PossiblePlanetNames.Count > 0)
+            {
+                for (int i = 0; i < rnd.Next(1, pgManager.PossiblePlanetNames.Count / 2); i++)
+                {
+                    solarSystem.Planets.Add(pgManager.CreatePlanet(solarSystem));
+                }
+            }
+
             return solarSystem;
         }
 
@@ -30,12 +44,13 @@ namespace NebulaNexus
             return chosenName;
         }
 
-        private BigInteger GenerateCoord()
+        private Coordinate GenerateCoord()
         {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1;
+            var x = ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
+            var y = ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
+            var z = ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
 
-            // return (long) ((long) (M.ath.Pow(2, rnd.Next(30, 50))) *  * modifier_1);
-            return (BigInteger) (((rnd.NextDouble() + 0.4) * Math.Pow(10, rnd.Next(10, 15))) * modifier_1 * 10000);
+            return new Coordinate(x, y, z);
         }
 
         private long GenerateRadius()
@@ -43,7 +58,6 @@ namespace NebulaNexus
             var maxValue = 1.51e12;
             var minValue = 5.1e4;
             var value = (minValue + rnd.NextDouble() * (maxValue - minValue));
-            Console.WriteLine(value);
             return (long) value;
         }
 

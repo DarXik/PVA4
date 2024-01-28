@@ -7,7 +7,8 @@ namespace NebulaNexus
 {
     public class StarGeneratorManager
     {
-        Random rnd = new Random();
+        private static int seed = (int) DateTime.Now.Ticks;
+        private Random rnd = new Random(seed);
 
         private readonly List<string> PossibleStarNames = new List<string>()
         {

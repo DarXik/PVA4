@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace NebulaNexus
 {
     public class PlanetGeneratorManager
     {
-        Random rnd = new Random();
+        private static int seed = (int) DateTime.Now.Ticks;
+        private Random rnd = new Random(seed);
 
         public readonly List<string> PossiblePlanetNames = new List<string>()
         {
@@ -21,7 +23,7 @@ namespace NebulaNexus
             "Zephyron", "Zyra"
         };
 
-        public Planet CreatePlanet()
+        public Planet CreatePlanet(SolarSystem solarSystem)
         {
             var generatedType = GenerateType();
             var generatedRadius = GenerateRadius();
@@ -29,14 +31,14 @@ namespace NebulaNexus
             var generatedTechLevel = GenerateTechnologicalLevel(generatedPopulation);
             var generatedMiliLevel = GenerateMilitaryPower(generatedTechLevel);
             var generatedDemocracy = GenerateDemocracy(generatedTechLevel, generatedMiliLevel);
-            var generatedSystem = GenerateSolarSystem();
 
 
             var planet1 = new Planet(
-                GenerateName(generatedSystem), generatedRadius, generatedType, generatedSystem,
-                generatedPopulation, generatedTechLevel, generatedMiliLevel, generatedDemocracy,
-                GenerateCoord(), GenerateCoord(), GenerateCoord());
-
+                GenerateName(solarSystem), generatedRadius, generatedType, solarSystem,
+                generatedPopulation, generatedTechLevel, generatedMiliLevel, generatedDemocracy)
+            {
+                Coordinates = GenerateCoord(solarSystem, generatedRadius)
+            };
             return planet1;
         }
 
@@ -56,14 +58,9 @@ namespace NebulaNexus
             }
         }
 
-        private SolarSystem GenerateSolarSystem()
+        private int GenerateRadius()
         {
-            return Program.SolarSystemsList[rnd.Next(Program.SolarSystemsList.Count)];
-        }
-
-        private long GenerateRadius()
-        {
-            return rnd.Next(3000, 70000 + 1);
+            return rnd.Next(3000, 70001);
         }
 
         private string GenerateType()
@@ -213,17 +210,13 @@ namespace NebulaNexus
             }
         }
 
-        private int GenerateCoord()
+        private Coordinate GenerateCoord(SolarSystem solarSystem, int radius)
         {
-            int modifier_1 = rnd.Next(0, 2) == 0 ? -1 : 1;
+            var coordX = (long) (rnd.NextDouble() * solarSystem.Radius + solarSystem.Coordinates.X) + radius;
+            var coordY = (long) (rnd.NextDouble() * solarSystem.Radius + solarSystem.Coordinates.Y) + radius;
+            var coordZ = (long) (rnd.NextDouble() * solarSystem.Radius + solarSystem.Coordinates.Z) + radius;
 
-            int coord = (int) (rnd.NextDouble() + rnd.Next(1, 3) * rnd.Next(1000, 25000) * modifier_1);
-            while (Math.Abs(coord) <= 1000)
-            {
-                coord = (int) (rnd.NextDouble() + rnd.Next(1, 3) * rnd.Next(1000, 25000) * modifier_1);
-            }
-
-            return coord;
+            return new Coordinate(coordX, coordY, coordZ);
         }
     }
 }
