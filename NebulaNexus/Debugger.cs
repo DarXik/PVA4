@@ -26,7 +26,7 @@ namespace NebulaNexus
             Console.WriteLine($"Number of generated systems: {GeneratedSystems}");
 
             var localIDs = UniqueID.IDs.OrderBy(x => x);
-
+            Console.WriteLine("ids: " + localIDs.Count());
             foreach (var id in localIDs)
             {
                 AnsiConsole.Markup($"[yellow4]{id}[/]|");

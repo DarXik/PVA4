@@ -13,8 +13,8 @@ namespace NebulaNexus
                 .Border(TableBorder.Ascii2)
                 // .BorderColor(Color.Silver)
                 .AddColumn(new TableColumn("[wheat4]Name[/]"))
-                .AddColumn(new TableColumn("[wheat4]Technological Level[/]"))
-                .AddColumn(new TableColumn("[wheat4]Diplomacy Level[/]"))
+                .AddColumn(new TableColumn("[wheat4]Tech. Lvl[/]"))
+                .AddColumn(new TableColumn("[wheat4]Diplomacy Lvl[/]"))
                 .AddColumn(new TableColumn("[wheat4]Trustworthiness[/]"))
                 .AddColumn(new TableColumn("[wheat4]Home Planet[/]"))
                 .AddColumn(new TableColumn("[wheat4]Current Planet[/]"));
@@ -52,7 +52,7 @@ namespace NebulaNexus
                     $"{ship.Name}",
                     $"{ship.ShipType}",
                     $"{ship.Speed} km/h",
-                    $"{ship.Fuel * 100} %",
+                    $"{ship.Fuel} %",
                     $"{ship.MilitaryPower}",
                     $"{ship.TechnologicalLevel}",
                     $"Planet: {ship.CurrentPlanet.Name}"

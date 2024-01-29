@@ -60,10 +60,10 @@ namespace NebulaNexus
         private static async Task Introduction()
         {
             // AnsiConsole.Markup("Welcome to [green]Nebula Nexus[/] - space exploration and conquest");
-            AnsiConsole.Write(
-                new FigletText("Nebula Nexus")
-                    .LeftJustified()
-                    .Color(Color.Purple));
+            // AnsiConsole.Write(
+            //     new FigletText("Nebula Nexus")
+            //         .LeftJustified()
+            //         .Color(Color.Purple));
 
             while (true)
             {

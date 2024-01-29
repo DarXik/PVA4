@@ -12,16 +12,13 @@ namespace NebulaNexus
 
         public readonly List<string> PossiblePlanetNames = new List<string>()
         {
-            "Aetheria", "Aldoria", "Arden", "Astoria", "Astrionex", "Aurora",
-            "Bespin", "Celestaria", "Crest", "Dagobah", "Elysium",
-            "Eos", "Emberlyn", "Endor", "Epsilon", "Gala", "Galeos",
-            "HB", "Haven", "Iris", "K-10", "Kashyyk", "Korp",
-            "Lagoon", "Larkspire", "Lunarastra", "Lunaris Prime", "Maris",
-            "Mars", "Nova", "Nexus", "Nyx", "Orion",
-            "Orionis", "Phantasmagora", "Pluto", "Rigel", "Rufus", "Romeo", "Solarnyx",
-            "Spectra", "Sylvaris", "Umbraflux", "Voltria", "Xenepha",
-            "Zephyron", "Zyra"
+            "Aetheria", "Aldoria", "Arden", "Astoria", "Astralis", "Astrionex", "Aurora", "Aurorion", "Bespin", "Celestaria", "Celestria", "Crest", "Dagobah", "Elysium", "Eos",
+            "Emberlyn", "Endor", "Epsilon", "Gala", "Galeos", "Galactis", "HB", "Haven", "Iris", "K-10", "Kashyyk", "Korp", "Lagoon", "Larkspire", "Lunarastra", "Lunaris",
+            "Lunaris Prime", "Maris", "Mars", "Nova", "Nebulon", "Nexus", "Nyx", "Orion", "Orionis", "Phantasmagora", "Pluto", "Rigel", "Rufus", "Romeo", "Solarnyx", "Solstice",
+            "Spectra", "Sylvaris", "Umbraflux", "Voltria", "Xenepha", "Zephyron", "Zephyria", "Zyra", "Aquila", "Borealis", "Calypso", "Cygnus", "Draco", "Fornax", "Lyra",
+            "Oberon", "Triton", "Vega", "L-3", "Lambda-1", "Epsilon Eridani b", "Dream Land", "Dara", "Akira Nami", "Hoth", "Naboo", "Exegol", "Gloas" , "Gliese 876 d"
         };
+
 
         public Planet CreatePlanet(SolarSystem solarSystem)
         {
@@ -210,11 +207,22 @@ namespace NebulaNexus
             }
         }
 
-        private Coordinate GenerateCoord(SolarSystem solarSystem, int radius)
+        private Coordinate GenerateCoord(SolarSystem solarSystem, int planetRadius)
         {
-            var coordX = (long) (rnd.NextDouble() * solarSystem.Radius + solarSystem.Coordinates.X) + radius;
-            var coordY = (long) (rnd.NextDouble() * solarSystem.Radius + solarSystem.Coordinates.Y) + radius;
-            var coordZ = (long) (rnd.NextDouble() * solarSystem.Radius + solarSystem.Coordinates.Z) + radius;
+            var coordX = (long)
+                         (rnd.NextDouble() * (CoordinateGenerator.CheckCoordinates(solarSystem, "x")[1] - planetRadius -
+                                              CoordinateGenerator.CheckCoordinates(solarSystem, "x")[0])) +
+                         CoordinateGenerator.CheckCoordinates(solarSystem, "x")[0];
+
+            var coordY = (long)
+                         (rnd.NextDouble() * (CoordinateGenerator.CheckCoordinates(solarSystem, "y")[1] - planetRadius -
+                                              CoordinateGenerator.CheckCoordinates(solarSystem, "y")[0])) +
+                         CoordinateGenerator.CheckCoordinates(solarSystem, "y")[0];
+
+            var coordZ = (long)
+                         (rnd.NextDouble() * (CoordinateGenerator.CheckCoordinates(solarSystem, "z")[1] - planetRadius -
+                                              CoordinateGenerator.CheckCoordinates(solarSystem, "z")[0])) +
+                         CoordinateGenerator.CheckCoordinates(solarSystem, "z")[0];
 
             return new Coordinate(coordX, coordY, coordZ);
         }

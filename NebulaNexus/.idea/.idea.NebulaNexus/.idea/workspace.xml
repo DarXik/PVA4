@@ -8,23 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d299e358-a641-4ced-a159-f6cc82d7ae36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Shower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Coordinate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Coordinate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Debugger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Debugger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NebulaNexus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NebulaNexus.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NebulaNexus.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/NebulaNexus.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Planet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlanetGeneratorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlanetGeneratorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanetTraveller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlanetTraveller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ship.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarSystemGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarSystemGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StarGeneratorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StarGeneratorManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
@@ -38,6 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41914444499f4996a3e6af79cf6c1fdb574b98/96/69d728ca/Int64.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41914444499f4996a3e6af79cf6c1fdb574b98/d2/6070f8ca/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1addff2ba8961ff5b126eccd89e14b2210f5a49ffd2beddb86acab54b9cc9d/ProgressColumn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/23fe0fd87d459f7fb3e6272d3222722c4b011684b632594ece6ed517426f5ab/SpinnerColumn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a9a48ba1fd5b525bac494305a96c4ba9f227dc7a457787349c9ab3ee1a965/ElapsedTimeColumn.cs" root0="SKIP_HIGHLIGHTING" />
@@ -63,31 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.NebulaNexus.executor&quot;: &quot;Run&quot;,
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.431918&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.NebulaNexus.executor": "Debug",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.431918",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\pitra\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\pitra\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\pitra\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="NebulaNexus" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -142,6 +136,8 @@
       <workItem from="1706350177752" duration="56000" />
       <workItem from="1706376489423" duration="5609000" />
       <workItem from="1706441739803" duration="15051000" />
+      <workItem from="1706534646079" duration="4923000" />
+      <workItem from="1706555028564" duration="5669000" />
     </task>
     <servers />
   </component>

@@ -23,7 +23,7 @@ namespace NebulaNexus
             ShipType = shipType;
             Id = id;
             Speed = speed;
-            Fuel = fuel;
+            Fuel = fuel * 100;
             HasHyperDriver = hasHyperDriver;
             IsEmpty = isEmpty;
             MilitaryPower = militaryPower;
