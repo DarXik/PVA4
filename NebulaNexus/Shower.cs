@@ -72,37 +72,36 @@ namespace NebulaNexus
                 .Border(TableBorder.Ascii2)
                 // .BorderColor(Color.Silver)
                 .AddColumn(new TableColumn("[olive]Name[/]"))
-                .AddColumn(new TableColumn("[olive]Radius[/]"))
-                .AddColumn(new TableColumn("[olive]Planet Type[/]"))
-                .AddColumn(new TableColumn("[olive]Population[/]"))
-                .AddColumn(new TableColumn("[olive]Tech. Lvl[/]"))
-                .AddColumn(new TableColumn("[olive]Military Pwr" +
-                                           "[/]"))
-                .AddColumn(new TableColumn("[olive]Democratic[/]"))
-                .AddColumn(new TableColumn("[olive]Solar System[/]"))
                 .AddColumn(new TableColumn("[olive]X Coordinate[/]"))
                 .AddColumn(new TableColumn("[olive]Y Coordinate[/]"))
                 .AddColumn(new TableColumn("[olive]Z Coordinate[/]"))
+                // .AddColumn(new TableColumn("[olive]Radius[/]"))
+                // .AddColumn(new TableColumn("[olive]Planet Type[/]"))
+                // .AddColumn(new TableColumn("[olive]Population[/]"))
+                // .AddColumn(new TableColumn("[olive]Tech. Lvl[/]"))
+                // .AddColumn(new TableColumn("[olive]Military Pwr[/]"))
+                // .AddColumn(new TableColumn("[olive]Democratic[/]"))
+                .AddColumn(new TableColumn("[olive]Solar System[/]"))
                 .AddColumn(new TableColumn("[olive]ID[/]"));
 
             foreach (var planet in planetsList)
             {
                 table.AddRow(
                     $"{planet.Name}",
-                    $"{planet.Radius:N0} km",
-                    $"{planet.PlanetType}",
-                    $"{planet.Population:N0}",
-                    $"{planet.TechnologicalLevel}",
-                    $"{planet.MilitaryPower}",
-                    $"{planet.IsDemocratic}",
-                    $"{planet.SolarSystem.Name}",
+                    // $"{planet.Radius:N0} km",
+                    // $"{planet.PlanetType}",
+                    // $"{planet.Population:N0}",
+                    // $"{planet.TechnologicalLevel}",
+                    // $"{planet.MilitaryPower}",
+                    // $"{planet.IsDemocratic}",
                     $"{planet.Coordinates.X:N0}",
                     $"{planet.Coordinates.Y:N0}",
                     $"{planet.Coordinates.Z:N0}",
+                    $"{planet.SolarSystem.Name}",
                     $"{planet.Id}"
                 );
             }
-
+            table.Columns[0].Width(20);
             // table.Collapse();
             AnsiConsole.Write(table);
             // foreach (Planet planet in planetsList)
@@ -159,14 +158,14 @@ namespace NebulaNexus
             var table = new Table()
                 .Border(TableBorder.Ascii2)
                 .AddColumn(new TableColumn("[aqua]Solar System Name[/]"))
-                .AddColumn(new TableColumn("[aqua]X Coord.[/]"))
-                .AddColumn(new TableColumn("[aqua]Y Coord.[/]"))
-                .AddColumn(new TableColumn("[aqua]Z Coord.[/]"))
+                .AddColumn(new TableColumn("[aqua]X Coordinate[/]"))
+                .AddColumn(new TableColumn("[aqua]Y Coordinate[/]"))
+                .AddColumn(new TableColumn("[aqua]Z Coordinate[/]"))
                 // .AddColumn(new TableColumn("[aqua]Radius[/]"))
                 .AddColumn(new TableColumn("[aqua]Radius (km)[/]"))
                 .AddColumn(new TableColumn("[aqua]Planets[/]"))
-                .AddColumn(new TableColumn("[aqua]Main Star Name[/]"))
-                .AddColumn(new TableColumn("[aqua]Main Star Radius[/]"))
+                // .AddColumn(new TableColumn("[aqua]Main Star Name[/]"))
+                // .AddColumn(new TableColumn("[aqua]Main Star Radius[/]"))
                 .AddColumn(new TableColumn("[aqua]ID[/]"));
             foreach (var solarSystem in systemsList)
             {
@@ -178,13 +177,13 @@ namespace NebulaNexus
                     // $"{Convert.ToDecimal(solarSystem.RadiusLY)} Lyrs",
                     $"{solarSystem.Radius:N0} km",
                     $"{string.Join(", ", solarSystem.Planets.Select(planet => planet.Name))}",
-                    $"{solarSystem.MainStar.Name}",
-                    solarSystem.MainStar.Radius > 0 ? $"{solarSystem.MainStar.Radius:N0} km" : "Undefined",
+                    // $"{solarSystem.MainStar.Name}",
+                    // solarSystem.MainStar.Radius > 0 ? $"{solarSystem.MainStar.Radius:N0} km" : "Undefined",
                     $"{solarSystem.Id}"
                 );
             }
 
-            // table.Columns[5].Width(10);
+            table.Columns[0].Width(20);
             AnsiConsole.Write(table);
         }
     }

@@ -22,21 +22,22 @@ namespace NebulaNexus
         public SolarSystem GenerateSolarSystem()
         {
             var radius = GenerateRadius();
-            var solarSystem = new SolarSystem(GenerateName(), radius, GenerateCoord(radius));
-            solarSystem.MainStar = sgManager.CreateStar(solarSystem);
-            CoordinateGenerator.AssignCoordianates(solarSystem);
+            var solarSystem1 = new SolarSystem(GenerateName(), radius);
+            solarSystem1.MainStar = sgManager.CreateStar(solarSystem1);
+            solarSystem1.Coordinates = CoordinateGenerator.PossibleCoordsSystem(radius, solarSystem1);
 
             if (pgManager.PossiblePlanetNames.Count > 0)
             {
                 var modifier = rnd.Next(1, pgManager.PossiblePlanetNames.Count / rnd.Next(1, pgManager.PossiblePlanetNames.Count));
                 AssignedPlanetsModifier.Add(modifier);
+                modifier = 2;
                 for (int i = 0; i < modifier; i++)
                 {
-                    solarSystem.Planets.Add(pgManager.CreatePlanet(solarSystem));
+                    solarSystem1.Planets.Add(pgManager.CreatePlanet(solarSystem1));
                 }
             }
 
-            return solarSystem;
+            return solarSystem1;
         }
 
         private string GenerateName()
@@ -44,15 +45,6 @@ namespace NebulaNexus
             var chosenName = PossibleSolarSystems[rnd.Next(PossibleSolarSystems.Count)];
             PossibleSolarSystems.Remove(chosenName);
             return chosenName;
-        }
-
-        private Coordinate GenerateCoord(long radius)
-        {
-            var x = CoordinateGenerator.CheckSystemCoordinates(radius, "x");
-            var y = CoordinateGenerator.CheckSystemCoordinates(radius, "y");
-            var z = CoordinateGenerator.CheckSystemCoordinates(radius, "z");
-
-            return new Coordinate(x, y, z);
         }
 
         private long GenerateRadius()

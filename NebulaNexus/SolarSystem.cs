@@ -9,18 +9,18 @@ namespace NebulaNexus
     {
         public string Name { get; }
         public int Id { get; }
-        public Coordinate Coordinates { get; }
+        public Coordinate Coordinates { get; set; }
         public float RadiusLY { get; }
         public long Radius { get; }
         public List<Planet> Planets { get; set; }
         public Star MainStar { get; set; }
 
-        public SolarSystem(string name, long radius, Coordinate coordinates)
+        public SolarSystem(string name, long radius)
         {
             Planets = new List<Planet>();
             Name = name;
             Id = UniqueID.GenerateID();
-            Coordinates = coordinates;
+            Coordinates = new Coordinate();
             Radius = radius;
             RadiusLY = (float) (radius / 9.461e12);
         }

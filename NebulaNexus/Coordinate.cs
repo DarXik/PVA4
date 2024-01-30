@@ -21,10 +21,64 @@ namespace NebulaNexus
     {
         private static readonly Dictionary<SolarSystem, long[,]> UsedSystemCoordinates = new Dictionary<SolarSystem, long[,]>();
 
-        // minValue = long[0]; maxValue = long[1]
-        public static void AssignCoordianates(SolarSystem solarSystem)
+
+        private static long GenerateCoordinate(int counter)
         {
-            var coordinatesArray = new long[,]
+            int seed = (int) DateTime.Now.Ticks;
+            Random rnd = new Random(seed);
+            return ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, counter) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
+        }
+
+        public static Coordinate PossibleCoordsSystem(long radius, SolarSystem solarSystem)
+        {
+            Coordinate createdCoordinates = new Coordinate(0, 0, 0);
+
+            if (UsedSystemCoordinates.Count > 0)
+            {
+                long x = 0;
+                long y = 0;
+                long z = 0;
+
+                foreach (var value in UsedSystemCoordinates.Values)
+                {
+                    int counter = 10;
+                    do
+                    {
+                        x = GenerateCoordinate(counter);
+                        counter++;
+                    } while (x >= value[0, 0] + (value[0, 0] < 0 ? -radius : radius) && x <= value[1, 0] + (value[1, 0] > 0 ? radius : -radius));
+
+                }
+
+                foreach (var value in UsedSystemCoordinates.Values)
+                {
+                    int counter = 10;
+                    do
+                    {
+                        y = GenerateCoordinate(counter);
+                        counter++;
+                    } while (y >= value[1, 0] + (value[0, 0] < 0 ? -radius : radius) && y <= value[1, 0] + (value[1, 1] < 0 ? -radius : radius));
+                }
+
+                foreach (var value in UsedSystemCoordinates.Values)
+                {
+                    int counter = 10;
+                    do
+                    {
+                        z = GenerateCoordinate(counter);
+                        counter++;
+                    } while (z >= value[2, 0] + (value[0, 0] < 0 ? -radius : radius) && z <= value[1, 0] + (value[2, 1] < 0 ? -radius : radius));
+                }
+
+
+                createdCoordinates = new Coordinate(x, y, z);
+            }
+            else
+            {
+                createdCoordinates = new Coordinate(GenerateCoordinate(30), GenerateCoordinate(30), GenerateCoordinate(30));
+            }
+
+            var coordinatesArray = new[,]
             {
                 {
                     (long) (solarSystem.Coordinates.X + solarSystem.MainStar.Radius + 5 * Math.Pow(10, 6)),
@@ -41,58 +95,11 @@ namespace NebulaNexus
             };
 
             UsedSystemCoordinates.Add(solarSystem, coordinatesArray);
-        }
-        private static int seed = (int) DateTime.Now.Ticks;
-        private static Random rnd = new Random(seed);
-        public static long CheckSystemCoordinates(long radius, string identifier)
-        {
-            if (UsedSystemCoordinates.Count > 0)
-            {
-                long result = 0;
-                if (identifier.ToLower() == "x")
-                {
-                    foreach (var value in UsedSystemCoordinates.Values)
-                    {
-                        do
-                        {
-                            result = ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
-                        } while (result >= value[0, 0] + (value[0, 0] < 0 ? -radius : radius) && result <= value[1, 0] + (value[1, 0] < 0 ? -radius : radius));
-                    }
 
-                    return result;
-                }
-                else if (identifier.ToLower() == "y")
-                {
-                    foreach (var value in UsedSystemCoordinates.Values)
-                    {
-                        do
-                        {
-                            result = ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
-                        } while (result >= value[1, 0] + (value[0, 0] < 0 ? -radius : radius) && result <= value[1, 0] + (value[1, 1] < 0 ? -radius : radius));
-                    }
-
-                    return result;
-                }
-                else if (identifier.ToLower() == "z")
-                {
-                    foreach (var value in UsedSystemCoordinates.Values)
-                    {
-                        do
-                        {
-                            result = ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
-                        } while (result >= value[2, 0] + (value[0, 0] < 0 ? -radius : radius) && result <= value[1, 0] + (value[2, 1] < 0 ? -radius : radius));
-                    }
-
-                    return result;
-                }
-
-                return 0;
-            }
-
-            return ((long) rnd.Next(int.MinValue, 10000000) << rnd.Next(0, 30) | (uint) rnd.Next(10000000)) * (rnd.Next(0, 2) == 0 ? -1 : 1);
+            return createdCoordinates;
         }
 
-        public static long[] CheckCoordinates(SolarSystem solarSystem, string identifier)
+        public static long[] PossibleCoordsPlanet(SolarSystem solarSystem, string identifier)
         {
             if (UsedSystemCoordinates.TryGetValue(solarSystem, out var coordinates))
             {

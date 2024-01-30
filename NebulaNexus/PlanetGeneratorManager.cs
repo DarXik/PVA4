@@ -210,19 +210,19 @@ namespace NebulaNexus
         private Coordinate GenerateCoord(SolarSystem solarSystem, int planetRadius)
         {
             var coordX = (long)
-                         (rnd.NextDouble() * (CoordinateGenerator.CheckCoordinates(solarSystem, "x")[1] - planetRadius -
-                                              CoordinateGenerator.CheckCoordinates(solarSystem, "x")[0])) +
-                         CoordinateGenerator.CheckCoordinates(solarSystem, "x")[0];
+                         (rnd.NextDouble() * (CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "x")[1] - planetRadius -
+                                              CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "x")[0])) +
+                         CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "x")[0];
 
             var coordY = (long)
-                         (rnd.NextDouble() * (CoordinateGenerator.CheckCoordinates(solarSystem, "y")[1] - planetRadius -
-                                              CoordinateGenerator.CheckCoordinates(solarSystem, "y")[0])) +
-                         CoordinateGenerator.CheckCoordinates(solarSystem, "y")[0];
+                         (rnd.NextDouble() * (CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "y")[1] - planetRadius -
+                                              CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "y")[0])) +
+                         CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "y")[0];
 
             var coordZ = (long)
-                         (rnd.NextDouble() * (CoordinateGenerator.CheckCoordinates(solarSystem, "z")[1] - planetRadius -
-                                              CoordinateGenerator.CheckCoordinates(solarSystem, "z")[0])) +
-                         CoordinateGenerator.CheckCoordinates(solarSystem, "z")[0];
+                         (rnd.NextDouble() * (CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "z")[1] - planetRadius -
+                                              CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "z")[0])) +
+                         CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "z")[0];
 
             return new Coordinate(coordX, coordY, coordZ);
         }
