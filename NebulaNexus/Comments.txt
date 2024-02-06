@@ -29,3 +29,23 @@
     //         WaterAvailability = false;
     //     }
     // }
+
+
+    //     double[] probabilities = {0.20, 0.25, 0.5, 0.05};
+            //     var probabilitiesSum = probabilities.Sum();
+            //     int[] possibleDividers = {2, 3, 4, 5};
+            //
+            //     var randomValue = rnd.NextDouble() * probabilitiesSum;
+            //
+            //     int maxCount = 2;
+            //
+            //     for (int i = 0; i < possibleDividers.Length; i++)
+            //     {
+            //         randomValue -= probabilities[i];
+            //
+            //         if (randomValue <= 0)
+            //         {
+            //             maxCount = remainingPlanetsCount / possibleDividers[i];
+            //             Debugger.AssignedPlanetsModifier.Add(i);
+            //         }
+            //     }

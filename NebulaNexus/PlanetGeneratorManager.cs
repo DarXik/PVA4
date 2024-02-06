@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
+using System.Net.Http;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace NebulaNexus
 {
@@ -9,16 +11,7 @@ namespace NebulaNexus
     {
         private static int seed = (int) DateTime.Now.Ticks;
         private Random rnd = new Random(seed);
-
-        public readonly List<string> PossiblePlanetNames = new List<string>()
-        {
-            "Aetheria", "Aldoria", "Arden", "Astoria", "Astralis", "Astrionex", "Aurora", "Aurorion", "Bespin", "Celestaria", "Celestria", "Crest", "Dagobah", "Elysium", "Eos",
-            "Emberlyn", "Endor", "Epsilon", "Gala", "Galeos", "Galactis", "HB", "Haven", "Iris", "K-10", "Kashyyk", "Korp", "Lagoon", "Larkspire", "Lunarastra", "Lunaris",
-            "Lunaris Prime", "Maris", "Mars", "Nova", "Nebulon", "Nexus", "Nyx", "Orion", "Orionis", "Phantasmagora", "Pluto", "Rigel", "Rufus", "Romeo", "Solarnyx", "Solstice",
-            "Spectra", "Sylvaris", "Umbraflux", "Voltria", "Xenepha", "Zephyron", "Zephyria", "Zyra", "Aquila", "Borealis", "Calypso", "Cygnus", "Draco", "Fornax", "Lyra",
-            "Oberon", "Triton", "Vega", "L-3", "Lambda-1", "Epsilon Eridani b", "Dream Land", "Dara", "Akira Nami", "Hoth", "Naboo", "Exegol", "Gloas" , "Gliese 876 d"
-        };
-
+        public readonly List<string> PossiblePlanetNames = Program.PossiblePlanetNames;
 
         public Planet CreatePlanet(SolarSystem solarSystem)
         {
@@ -209,22 +202,7 @@ namespace NebulaNexus
 
         private Coordinate GenerateCoord(SolarSystem solarSystem, int planetRadius)
         {
-            var coordX = (long)
-                         (rnd.NextDouble() * (CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "x")[1] - planetRadius -
-                                              CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "x")[0])) +
-                         CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "x")[0];
-
-            var coordY = (long)
-                         (rnd.NextDouble() * (CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "y")[1] - planetRadius -
-                                              CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "y")[0])) +
-                         CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "y")[0];
-
-            var coordZ = (long)
-                         (rnd.NextDouble() * (CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "z")[1] - planetRadius -
-                                              CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "z")[0])) +
-                         CoordinateGenerator.PossibleCoordsPlanet(solarSystem, "z")[0];
-
-            return new Coordinate(coordX, coordY, coordZ);
+            return CoordinateGenerator.PossibleCoordsPlanet(solarSystem, planetRadius);
         }
     }
 }

@@ -101,7 +101,7 @@ namespace NebulaNexus
                     $"{planet.Id}"
                 );
             }
-            table.Columns[0].Width(20);
+            table.Columns[0].Width(30);
             // table.Collapse();
             AnsiConsole.Write(table);
             // foreach (Planet planet in planetsList)
@@ -183,7 +183,7 @@ namespace NebulaNexus
                 );
             }
 
-            table.Columns[0].Width(20);
+            table.Columns[0].Width(30);
             AnsiConsole.Write(table);
         }
     }

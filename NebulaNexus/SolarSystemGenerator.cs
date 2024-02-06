@@ -12,7 +12,6 @@ namespace NebulaNexus
             "Andromeda", "Nuovo Ecliptic Realm", "Hyperion Star Cluster", "Astralis", "Shili", "Nova System", "Umbraflora Haven", "Galaxion"
         };
 
-        private static HashSet<Planet> usedPlanets = new HashSet<Planet>();
         private static int seed = (int) DateTime.Now.Ticks;
         private Random rnd = new Random(seed);
 
@@ -28,10 +27,10 @@ namespace NebulaNexus
 
             if (pgManager.PossiblePlanetNames.Count > 0)
             {
-                var modifier = rnd.Next(1, pgManager.PossiblePlanetNames.Count / rnd.Next(1, pgManager.PossiblePlanetNames.Count));
+                var modifier = rnd.Next(1, pgManager.PossiblePlanetNames.Count / 2);
                 AssignedPlanetsModifier.Add(modifier);
-                modifier = 2;
-                for (int i = 0; i < modifier; i++)
+                // modifier = 2;
+                for (var i = 0; i < modifier; i++)
                 {
                     solarSystem1.Planets.Add(pgManager.CreatePlanet(solarSystem1));
                 }
@@ -51,53 +50,8 @@ namespace NebulaNexus
         {
             var maxValue = 1.51e12;
             var minValue = 5.1e4;
-            var value = (minValue + rnd.NextDouble() * (maxValue - minValue));
+            var value = minValue + rnd.NextDouble() * (maxValue - minValue);
             return (long) value;
         }
-
-        // public static List<Planet> AssignPlanets(List<Planet> planets)
-        // {
-        //     var rnd = new Random();
-        //
-        //     int remainingPlanetsCount = planets.Count - usedPlanets.Count;
-        //
-        //
-        //     double[] probabilities = {0.20, 0.25, 0.5, 0.05};
-        //     var probabilitiesSum = probabilities.Sum();
-        //     int[] possibleDividers = {2, 3, 4, 5};
-        //
-        //     var randomValue = rnd.NextDouble() * probabilitiesSum;
-        //
-        //     int maxCount = 2;
-        //
-        //     for (int i = 0; i < possibleDividers.Length; i++)
-        //     {
-        //         randomValue -= probabilities[i];
-        //
-        //         if (randomValue <= 0)
-        //         {
-        //             maxCount = remainingPlanetsCount / possibleDividers[i];
-        //             Debugger.AssignedPlanetsModifier.Add(i);
-        //         }
-        //     }
-        //
-        //     List<Planet> localList = new List<Planet>();
-        //
-        //     // EnsureSystem(planets, usedPlanets);
-        //
-        //     while (localList.Count < maxCount && usedPlanets.Count < planets.Count)
-        //     {
-        //         var randomIndex = rnd.Next(planets.Count);
-        //         var item = planets[randomIndex];
-        //
-        //         if (!usedPlanets.Contains(item))
-        //         {
-        //             localList.Add(item);
-        //             usedPlanets.Add(item);
-        //         }
-        //     }
-        //
-        //     return localList;
-        // }
     }
 }

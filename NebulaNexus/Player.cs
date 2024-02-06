@@ -24,7 +24,7 @@ namespace NebulaNexus
             HomePlanet = homePlanet;
             CurrentShip = null;
             CurrentPlanet = homePlanet;
-            Id = UniqueID.GenerateID();
+            Id = UniqueId.GenerateId();
             TechnologicalLevel = homePlanet.TechnologicalLevel;
             DiplomacyLevel = 0;
             Trustworthiness = 10;

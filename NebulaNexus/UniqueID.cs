@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 namespace NebulaNexus
 {
-    public static class UniqueID
+    public static class UniqueId
     {
-        public static HashSet<int> IDs = new HashSet<int>();
-        private static int currentIteration = 10;
+        public static readonly HashSet<int> Ids = new HashSet<int>();
+        private static int _currentIteration = 1;
 
-        public static int GenerateID()
+        public static int GenerateId()
         {
-            DateTime dt = DateTime.Now;
-            Random rnd = new Random();
-            var uniqueID = Math.Abs(rnd.Next(currentIteration, currentIteration + 5) * dt.Millisecond) / 10;
+            // DateTime dt = DateTime.Now;
+            // Random rnd = new Random();
+            // var uniqueID = Math.Abs(rnd.Next(currentIteration, currentIteration + 5) * dt.Millisecond) / 10;
+            var uniqueId = _currentIteration;
+            // while (Ids.Contains(uniqueID))
+            // {
+            //     uniqueID = Math.Abs(rnd.Next(currentIteration, currentIteration + 5) * dt.Millisecond) / 10;
+            // }
 
-            while (IDs.Contains(uniqueID))
-            {
-                uniqueID = Math.Abs(rnd.Next(currentIteration, currentIteration + 5) * dt.Millisecond) / 10;
-            }
-
-            IDs.Add(uniqueID);
-            currentIteration++;
-            return uniqueID;
+            Ids.Add(uniqueId);
+            _currentIteration++;
+            return uniqueId;
         }
     }
 }

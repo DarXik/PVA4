@@ -24,7 +24,7 @@ namespace NebulaNexus
             Temperature = temperature;
             Age = age;
             AvailableEnergy = availableEnergy;
-            Id = UniqueID.GenerateID();
+            Id = UniqueId.GenerateId();
             Name = name;
             Type = type;
             SolarSystem = solarSystem;

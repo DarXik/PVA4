@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Spectre.Console;
 
@@ -13,20 +15,44 @@ namespace NebulaNexus
         private static List<Star> StarsList = new List<Star>();
         private static List<Ship> AvailableShips = new List<Ship>();
         private static List<SolarSystem> SolarSystemsList = new List<SolarSystem>();
+        public static readonly List<string> PossiblePlanetNames = new List<string>();
+
         // ReSharper disable once InconsistentNaming
         private static Player Player1;
 
-        public static Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            Setup();
-
+            await Setup();
             GeneratePlayer();
-            return Introduction();
+            Introduction();
         }
 
-
-        private static void Setup()
+        private static async Task HttpHandler()
         {
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetStringAsync("https://nebula-api.vercel.app/api/names/65be74a1b05bf22c7b972ed3");
+                    var names = response.Substring(response.IndexOf("[")).Split(',');
+
+                    foreach (var name in names)
+                    {
+                        var cleanName = Regex.Replace(name, "[^a-zA-Z0-9 ]", "");
+                        PossiblePlanetNames.Add(cleanName);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+        }
+
+        private static async Task Setup()
+        {
+            await HttpHandler();
             var systemGenerator = new SolarSystemGenerator();
             var numberOfSystems = SolarSystemGenerator.PossibleSolarSystems.Count;
 

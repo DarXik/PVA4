@@ -20,7 +20,7 @@ namespace NebulaNexus
             Population = population;
             TechnologicalLevel = technologicalLevel;
             IsDemocratic = isDemocratic;
-            Id = UniqueID.GenerateID();
+            Id = UniqueId.GenerateId();
             MilitaryPower = militaryPower;
             Name = name;
             Radius = radius;

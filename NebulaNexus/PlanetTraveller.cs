@@ -69,7 +69,7 @@ namespace NebulaNexus
 
                     var planetInSystem =
                         new SelectionPrompt<Planet>()
-                            .Title($"You know about these planets in {chosenSystem.Name}")
+                            .Title($"You know these planets in {chosenSystem.Name}")
                             .PageSize(3);
 
                     foreach (var planet in planetsList)

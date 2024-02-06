@@ -21,11 +21,13 @@ namespace NebulaNexus
             {
                 Console.Write(modifier + " ");
             }
+
+            Console.WriteLine("");
             Console.WriteLine($"Number of generated planets: {GeneratedPlanets}");
             Console.WriteLine($"Number of generated stars: {GeneratedStars}");
             Console.WriteLine($"Number of generated systems: {GeneratedSystems}");
 
-            var localIDs = UniqueID.IDs.OrderBy(x => x);
+            var localIDs = UniqueId.Ids.OrderBy(x => x);
             Console.WriteLine("ids: " + localIDs.Count());
             foreach (var id in localIDs)
             {
