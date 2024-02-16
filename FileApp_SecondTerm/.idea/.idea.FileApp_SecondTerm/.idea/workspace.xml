@@ -8,25 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5b828-4846-4688-b9cd-9113c23aa3c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FileApp_SecondTerm.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FileApp_SecondTerm.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Properties/AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/FileApp_SecondTerm.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/FileApp_SecondTerm.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NebulaNexus/.idea/.idea.NebulaNexus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/.idea/.idea.NebulaNexus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../NebulaNexus/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FileApp_SecondTerm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/FileApp_SecondTerm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/FileApp_SecondTerm.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/FileApp_SecondTerm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/FileApp_SecondTerm.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/FileApp_SecondTerm.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2bUoOndVczcnHFR4V0TrjeuA3s2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -62,7 +48,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -102,6 +88,9 @@
       <option name="presentableId" value="Default" />
       <updated>1706278990268</updated>
       <workItem from="1706278991673" duration="1219000" />
+      <workItem from="1708074400509" duration="33000" />
+      <workItem from="1708074498825" duration="62000" />
+      <workItem from="1708074610873" duration="116000" />
     </task>
     <servers />
   </component>
