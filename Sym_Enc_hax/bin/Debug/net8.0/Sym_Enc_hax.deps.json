@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Sym_Enc_hax/1.0.0": {
+        "runtime": {
+          "Sym_Enc_hax.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sym_Enc_hax/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
