@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\Del_Events\bin\Debug\Del_Events.exe
+C:\Users\pitra\Desktop\PVA4\Del_Events\bin\Debug\Del_Events.pdb
+C:\Users\pitra\Desktop\PVA4\Del_Events\obj\Debug\Del_Events.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\Del_Events\obj\Debug\Del_Events.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Del_Events\obj\Debug\Del_Events.exe
+C:\Users\pitra\Desktop\PVA4\Del_Events\obj\Debug\Del_Events.pdb

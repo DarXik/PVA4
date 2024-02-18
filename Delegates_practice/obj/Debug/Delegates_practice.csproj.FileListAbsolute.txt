@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\Delegates_practice\bin\Debug\Delegates_practice.exe
+C:\Users\pitra\Desktop\PVA4\Delegates_practice\bin\Debug\Delegates_practice.pdb
+C:\Users\pitra\Desktop\PVA4\Delegates_practice\obj\Debug\Delegates_practice.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\Delegates_practice\obj\Debug\Delegates_practice.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Delegates_practice\obj\Debug\Delegates_practice.exe
+C:\Users\pitra\Desktop\PVA4\Delegates_practice\obj\Debug\Delegates_practice.pdb
