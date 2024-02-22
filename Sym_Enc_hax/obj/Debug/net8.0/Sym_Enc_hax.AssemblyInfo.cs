@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sym_Enc_hax")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c76986b7305b050ed4474dd77ed13e501a16090a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sym_Enc_hax")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sym_Enc_hax")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
