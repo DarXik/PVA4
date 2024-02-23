@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sym_Enc_hax")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e920ba49a502a3b0b51c933374a3c1da60d5bed")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("Sym_Enc_hax")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sym_Enc_hax")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

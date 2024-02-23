@@ -98,7 +98,7 @@ for (int i = 0; i < flag2.Length; i += 6)
     var column = Convert.ToInt32(chunk.Substring(1, 4), 2);
 
     var sBoxNumber = (i / 6) % 8; // Determine which S-Box to use based on the chunk index
-    Console.WriteLine(sBoxNumber);
+    // Console.WriteLine(sBoxNumber);
     var substitution = 0;
 
     switch (sBoxNumber)
