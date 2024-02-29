@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\events_23-2\bin\Debug\events_23_2.exe
+C:\Users\pitra\Desktop\PVA4\events_23-2\bin\Debug\events_23_2.pdb
+C:\Users\pitra\Desktop\PVA4\events_23-2\obj\Debug\events_23-2.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\events_23-2\obj\Debug\events_23-2.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\events_23-2\obj\Debug\events_23_2.exe
+C:\Users\pitra\Desktop\PVA4\events_23-2\obj\Debug\events_23_2.pdb

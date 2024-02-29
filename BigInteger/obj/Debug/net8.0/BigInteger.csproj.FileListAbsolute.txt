@@ -1,0 +1,15 @@
+C:\Users\pitra\Desktop\PVA4\BigInteger\bin\Debug\net8.0\BigInteger.exe
+C:\Users\pitra\Desktop\PVA4\BigInteger\bin\Debug\net8.0\BigInteger.deps.json
+C:\Users\pitra\Desktop\PVA4\BigInteger\bin\Debug\net8.0\BigInteger.runtimeconfig.json
+C:\Users\pitra\Desktop\PVA4\BigInteger\bin\Debug\net8.0\BigInteger.dll
+C:\Users\pitra\Desktop\PVA4\BigInteger\bin\Debug\net8.0\BigInteger.pdb
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.AssemblyInfoInputs.cache
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.AssemblyInfo.cs
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.sourcelink.json
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.dll
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\refint\BigInteger.dll
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.pdb
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\BigInteger.genruntimeconfig.cache
+C:\Users\pitra\Desktop\PVA4\BigInteger\obj\Debug\net8.0\ref\BigInteger.dll
