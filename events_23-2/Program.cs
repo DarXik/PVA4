@@ -9,7 +9,8 @@ namespace events_23_2
         public static void Main(string[] args)
         {
             var bulb = new Lightbulb();
-
+            bulb.IsShortCircuitedEventHandler += () => Console.WriteLine("Zkrat nastal.");
+            bulb.IsOnEventHandler += () => Console.WriteLine("Žárovka je zapnutá.");
             while (true)
             {
                 Console.WriteLine("Zadejte příkaz (on/off):");
@@ -18,13 +19,11 @@ namespace events_23_2
                 if (command == "on")
                 {
                     bulb.TurnOn();
-                    Console.WriteLine($"Stav žárovky: {bulb.GetState()}");
                     bulb.SimulateShortCircuit();
                 }
                 else if (command == "off")
                 {
                     bulb.TurnOff();
-                    Console.WriteLine($"Stav žárovky: {bulb.GetState()}");
                     bulb.SimulateShortCircuit();
                 }
                 else
@@ -32,6 +31,7 @@ namespace events_23_2
                     Console.WriteLine("Neplatný příkaz.");
                 }
             }
+
         }
     }
 
@@ -40,20 +40,18 @@ namespace events_23_2
     class Lightbulb
     {
         private bool isOn;
-        private bool isShortCircuited;
         public event eventHandler IsShortCircuitedEventHandler;
         public event eventHandler IsOnEventHandler;
 
         public Lightbulb()
         {
             isOn = false;
-            isShortCircuited = false;
         }
 
         public void TurnOn()
         {
             isOn = true;
-            Console.WriteLine("Žárovka je zapnutá.");
+            IsOnEventHandler?.Invoke();
         }
 
         public void TurnOff()
@@ -62,44 +60,14 @@ namespace events_23_2
             Console.WriteLine("Žárovka je vypnutá.");
         }
 
-        public string GetState()
-        {
-
-            if (isShortCircuited)
-            {
-                return "zkrat";
-            }
-            else if (isOn)
-            {
-                IsOnEventHandler?.Invoke();
-
-                return "svítí";
-            }
-            else
-            {
-
-                return "zhasnutá";
-            }
-        }
-
-        public void ShortCircuited()
-        {
-            isShortCircuited = true;
-            Console.WriteLine("Došlo ke zkratu!");
-        }
-
         public void SimulateShortCircuit()
         {
             var random = new Random();
-            var randomNumber = random.Next(1, 10); // Náhodné číslo od 1 do 9
+            var randomNumber = random.Next(1, 10);
 
-            if (randomNumber == 5) // Zkrat nastane, pokud náhodné číslo je rovno 5
+            if (randomNumber == 5)
             {
                 IsShortCircuitedEventHandler?.Invoke();
-            }
-            else
-            {
-                // dořešit zkrat, chci vyřešit, nejprve zhasnout žárovku, jinak zkrat zůstane
             }
         }
     }
