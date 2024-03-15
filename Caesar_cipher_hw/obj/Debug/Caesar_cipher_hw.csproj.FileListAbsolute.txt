@@ -1,0 +1,6 @@
+C:\Users\pitra\Desktop\PVA4\Caesar_cipher_hw\bin\Debug\Caesar_cipher_hw.exe
+C:\Users\pitra\Desktop\PVA4\Caesar_cipher_hw\bin\Debug\Caesar_cipher_hw.pdb
+C:\Users\pitra\Desktop\PVA4\Caesar_cipher_hw\obj\Debug\Caesar_cipher_hw.csproj.AssemblyReference.cache
+C:\Users\pitra\Desktop\PVA4\Caesar_cipher_hw\obj\Debug\Caesar_cipher_hw.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Caesar_cipher_hw\obj\Debug\Caesar_cipher_hw.exe
+C:\Users\pitra\Desktop\PVA4\Caesar_cipher_hw\obj\Debug\Caesar_cipher_hw.pdb
