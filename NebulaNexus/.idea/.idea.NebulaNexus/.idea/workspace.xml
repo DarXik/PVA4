@@ -8,11 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d299e358-a641-4ced-a159-f6cc82d7ae36" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/NebulaNexus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Caesar_cipher_hw/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Caesar_cipher_hw/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Caesar_cipher_hw/bin/Debug/Caesar_cipher_hw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Caesar_cipher_hw/bin/Debug/Caesar_cipher_hw.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Caesar_cipher_hw/bin/Debug/Caesar_cipher_hw.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Caesar_cipher_hw/bin/Debug/Caesar_cipher_hw.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Caesar_cipher_hw/obj/Debug/Caesar_cipher_hw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Caesar_cipher_hw/obj/Debug/Caesar_cipher_hw.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Caesar_cipher_hw/obj/Debug/Caesar_cipher_hw.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Caesar_cipher_hw/obj/Debug/Caesar_cipher_hw.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NebulaNexus.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +146,7 @@
       <workItem from="1708011312705" duration="30000" />
       <workItem from="1708679667758" duration="216000" />
       <workItem from="1709283419539" duration="124000" />
+      <workItem from="1711340841986" duration="35000" />
     </task>
     <servers />
   </component>

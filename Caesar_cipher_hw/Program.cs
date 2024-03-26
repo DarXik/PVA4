@@ -27,27 +27,32 @@ namespace Caesar_cipher_hw
 
             while (true)
             {
-                Console.WriteLine("Enter 1 to encrypt or 2 to decrypt: ");
-                switch (int.Parse(Console.ReadLine()))
+                Console.WriteLine("[1] encrypt \n[2] decrypt \n[3] bruteforce");
+                switch (Console.ReadLine())
                 {
-                    case 1:
+                    case "1":
                         Console.WriteLine("Enter plain text: ");
                         var input = Console.ReadLine()?.ToUpper();
 
                         Console.WriteLine("Enter shift: ");
                         var shift = int.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Encrypted message: " + encrypt_message(input, shift));
+                        EncryptMessage(input, shift);
                         break;
 
-                    case 2:
+                    case "2":
                         Console.WriteLine("Enter cipher text: ");
                         input = Console.ReadLine()?.ToUpper();
 
                         Console.WriteLine("Enter shift: ");
                         shift = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Decrypted text: " + DecryptMessage(input, shift));
+                        break;
+                    case "3":
+                        Console.WriteLine("Enter cipher text: ");
+                        input = Console.ReadLine()?.ToUpper();
 
-                        Console.WriteLine("Decrypted message: " + decrypt_message(input, shift));
+                        Bruteforce(input);
                         break;
                     default:
                         Console.WriteLine("Wrong input");
@@ -56,18 +61,33 @@ namespace Caesar_cipher_hw
             }
         }
 
-        private static string encrypt_message(string text, int shift)
+        private static void Bruteforce(string input)
+        {
+            try
+            {
+                for (int i = 0; i < 26; i++)
+                {
+                    Console.WriteLine($"{DecryptMessage(input, i)} : {i}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        private static void EncryptMessage(string text, int shift)
         {
             var cipherText = new StringBuilder();
 
             foreach (var t in text)
             {
-                if (alphabet.Contains(t.ToString()))
+                if (alphabet.Contains(t.ToString()) || t.ToString() == " ")
                 {
                     if (t.ToString() != " ")
                     {
-                        var pos = Array.IndexOf(alphabet, t.ToString()) + shift % 26;
-                        Console.WriteLine($"{t.ToString()} -> {alphabet[pos]} : {pos}");
+                        var pos = (Array.IndexOf(alphabet, t.ToString()) + shift) % 26;
                         cipherText.Append(alphabet[pos]);
                     }
                     else
@@ -77,20 +97,25 @@ namespace Caesar_cipher_hw
                 }
                 else
                 {
-                    return text;
+                    Console.WriteLine(text);
                 }
             }
 
-            return cipherText.ToString();
+            if (text.ToUpper() == cipherText.ToString().ToUpper())
+            {
+                Console.WriteLine("your shift won't encrypt the plain text... try different one");
+            }
+
+            Console.WriteLine("Decrypted message: " + cipherText);
         }
 
-        private static string decrypt_message(string text, int shift)
+        private static string DecryptMessage(string text, int shift)
         {
             var decipherText = new StringBuilder();
 
             foreach (var t in text)
             {
-                if (alphabet.Contains(t.ToString()))
+                if (alphabet.Contains(t.ToString()) || t.ToString() == " ")
                 {
                     if (t.ToString() != " ")
                     {
