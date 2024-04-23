@@ -1,0 +1,6 @@
+C:\Users\pitra\Documents\PVA4\Maturita_prep\bin\Debug\Maturita_prep.exe
+C:\Users\pitra\Documents\PVA4\Maturita_prep\bin\Debug\Maturita_prep.pdb
+C:\Users\pitra\Documents\PVA4\Maturita_prep\obj\Debug\Maturita_prep.csproj.AssemblyReference.cache
+C:\Users\pitra\Documents\PVA4\Maturita_prep\obj\Debug\Maturita_prep.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Documents\PVA4\Maturita_prep\obj\Debug\Maturita_prep.exe
+C:\Users\pitra\Documents\PVA4\Maturita_prep\obj\Debug\Maturita_prep.pdb

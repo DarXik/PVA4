@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Sym_Enc_hax
-build_property.ProjectDir = C:\Users\pitra\Desktop\PVA4\Sym_Enc_hax\
+build_property.ProjectDir = C:\Users\pitra\Documents\PVA4\Sym_Enc_hax\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
