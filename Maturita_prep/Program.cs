@@ -9,42 +9,54 @@ namespace Maturita_prep
     {
         public static void Main(string[] args)
         {
-            while (true)
-            {
-                Console.WriteLine("Zadej číslo pro operaci: ");
-                var input = Console.ReadLine();
-                if (int.TryParse(input, out var inputInt))
-                {
-                    switch (inputInt)
-                    {
-                        case 1:
-                            Time_1();
-                            break;
-                        case 2:
-                            Contains_2();
-                            break;
-                        case 3:
-                            Moon_Gravity_3();
-                            break;
-                        case 4:
-                            Array_Check_4();
-                            break;
-                        case 5:
-                            String_Reverse_5();
-                            break;
-                        case 6:
-                            Symmetric_Array_6();
-                            break;
-                        default:
-                            Console.WriteLine("Špatná hodnota");
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Špatná hodnota");
-                }
-            }
+            // while (true)
+            // {
+            //     Console.WriteLine("Zadej číslo pro operaci: ");
+            //     var input = Console.ReadLine();
+            //     if (int.TryParse(input, out var inputInt))
+            //     {
+            //         switch (inputInt)
+            //         {
+            //             case 1:
+            //                 Time_1();
+            //                 break;
+            //             case 2:
+            //                 Contains_2();
+            //                 break;
+            //             case 3:
+            //                 Moon_Gravity_3();
+            //                 break;
+            //             case 4:
+            //                 Array_Check_4();
+            //                 break;
+            //             case 5:
+            //                 String_Reverse_5();
+            //                 break;
+            //             case 6:
+            //                 Symmetric_Array_6();
+            //                 break;
+            //             default:
+            //                 Console.WriteLine("Špatná hodnota");
+            //                 break;
+            //         }
+            //     }
+            //     else
+            //     {
+            //         Console.WriteLine("Špatná hodnota");
+            //     }
+            // }
+
+            // Base64_7();
+
+            // Console.WriteLine($"Číslo je {(Methods_8.EvenNumberChecker_8(7) ? "sudé" : "liché")}.");
+            // Console.WriteLine($"Rozdíl dvou čísel je {Methods_8.DecimalDifference_8(3.5, -2.5)}.");
+            // Console.WriteLine($"Převod stringu na int je {Methods_8.IsConvertible_8("5f")}.");
+            // Methods_8.StringSwap_8("hello", "world");
+            // Methods_8.StringToArray_8(["davídek", "pitrísek", "toníček", "auto"]).ToList()
+            //     .ForEach(x => Console.WriteLine(x));
+
+            // Quiz_9();
+            Quadratic_Football_10(105);
         }
 
         public static void Time_1()
@@ -249,7 +261,129 @@ namespace Maturita_prep
                     }
                 }
             }
+        }
 
+        public static void Base64_7()
+        {
+            Console.WriteLine("Úkol 7 - En/Dekodování base64");
+
+            Console.WriteLine("e - encode, d - decode: ");
+            var inputOption = Console.ReadLine();
+            Console.WriteLine("Zadej string: ");
+            var input = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(inputOption))
+            {
+                if (inputOption == "e")
+                {
+                    var plaintTextBytes = System.Text.Encoding.UTF8.GetBytes(input);
+                    var encodedText = System.Convert.ToBase64String(plaintTextBytes);
+                    Console.WriteLine("Enkodování: " + encodedText);
+                }
+                else if (inputOption == "d")
+                {
+                    var base64EncodedBytes = System.Convert.FromBase64String(input);
+                    var decodedText = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+                    Console.WriteLine("Dekodování: " + decodedText);
+                }
+                else
+                {
+                    Console.WriteLine("Neplatná operace!");
+                }
+            }
+        }
+
+        public static void Quiz_9()
+        {
+            Console.WriteLine("Úkol 9 - Kvíz");
+
+            Console.WriteLine("Která země je největší? \na: Rusko \nb: Kanada \nc: USA \nd: Japonsko ");
+            var input = Console.ReadLine();
+            Console.WriteLine(input == "a" ? "Správně! " : "Nesprávná odpověď.");
+
+            Console.WriteLine(
+                "Jakým způsobem se správně deklaruje celočíselná proměnná v C#? \na: int 1x = 10; \nb: int x = 10; \nc: float x = 10.0f; \nd: string x = \"10\";");
+            input = Console.ReadLine();
+            Console.WriteLine(input == "b" ? "Správně! " : "Nesprávná odpověď.");
+        }
+
+        public static float Factorial(float n)
+        {
+            var fact = n;
+            for (int i = 1; i < n; i++)
+            {
+                fact *= i;
+            }
+
+            return fact;
+        }
+
+        public static void Quadratic_Football_10(int n)
+        {
+            // var factN = Factorial(n);
+            // var factN2 = Factorial(n - 2);
+            // var fact2 = Factorial(2);
+            // var matches= factN / (factN2 * fact2);
+            //
+            // Console.WriteLine("Počet utkání: " + matches);
+
+            // nebo
+            if (n > 2)
+            {
+                for (int i = 2; i < 100; i++)
+                {
+                    var maxMatches = (i * (i - 1) / 2);
+                    if (n < maxMatches)
+                    {
+                        Console.WriteLine("Počet týmů pro " + n + " utkání: " + (i - 1));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("2");
+            }
+
+        }
+    }
+
+    static class Methods_8
+    {
+        public static bool EvenNumberChecker_8(int number)
+        {
+            return number % 2 == 0;
+        }
+
+        public static double DecimalDifference_8(double number1, double number2)
+        {
+            return number1 - number2;
+        }
+
+        public static int IsConvertible_8(string input)
+        {
+            return int.TryParse(input, out var out1) ? out1 : int.MinValue;
+        }
+
+        public static void StringSwap_8(string t, string s)
+        {
+            Console.WriteLine(t + s);
+
+            (t, s) = (s, t); // swap via destruction
+            Console.WriteLine("Po změně: ");
+            Console.WriteLine(t + s);
+        }
+
+        public static int[] StringToArray_8(string[] s)
+        {
+            int[] output = new int[s.Length];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                output[i] = s[i].Length;
+            }
+
+            return output;
         }
     }
 }
