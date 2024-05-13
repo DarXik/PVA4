@@ -342,7 +342,7 @@ namespace Maturita_prep
             }
             else
             {
-                Console.WriteLine("2");
+                Console.WriteLine("2 nebo 0");
             }
 
         }
