@@ -56,7 +56,7 @@ namespace Maturita_prep
             //     .ForEach(x => Console.WriteLine(x));
 
             // Quiz_9();
-            Quadratic_Football_10(105);
+            // Quadratic_Football_10(105);
         }
 
         public static void Time_1()

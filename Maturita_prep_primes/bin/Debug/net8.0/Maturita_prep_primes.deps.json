@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Maturita_prep_primes/1.0.0": {
+        "runtime": {
+          "Maturita_prep_primes.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Maturita_prep_primes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

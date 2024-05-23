@@ -1,0 +1,15 @@
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.AssemblyInfoInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.AssemblyInfo.cs
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.sourcelink.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\bin\Debug\net8.0\Maturita_prep_primes.exe
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\bin\Debug\net8.0\Maturita_prep_primes.deps.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\bin\Debug\net8.0\Maturita_prep_primes.runtimeconfig.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\bin\Debug\net8.0\Maturita_prep_primes.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\bin\Debug\net8.0\Maturita_prep_primes.pdb
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\refint\Maturita_prep_primes.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.pdb
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\Maturita_prep_primes.genruntimeconfig.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_primes\obj\Debug\net8.0\ref\Maturita_prep_primes.dll

@@ -1,0 +1,15 @@
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\bin\Debug\net8.0\Maturita_prep_regex.exe
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\bin\Debug\net8.0\Maturita_prep_regex.deps.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\bin\Debug\net8.0\Maturita_prep_regex.runtimeconfig.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\bin\Debug\net8.0\Maturita_prep_regex.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\bin\Debug\net8.0\Maturita_prep_regex.pdb
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.AssemblyInfoInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.AssemblyInfo.cs
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.sourcelink.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\refint\Maturita_prep_regex.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.pdb
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\Maturita_prep_regex.genruntimeconfig.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\obj\Debug\net8.0\ref\Maturita_prep_regex.dll
