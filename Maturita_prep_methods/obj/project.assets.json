@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_methods\\Maturita_prep_methods.csproj",
+      "projectUniqueName": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_methods\\Maturita_prep_methods.csproj",
       "projectName": "Maturita_prep_methods",
-      "projectPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_methods\\Maturita_prep_methods.csproj",
+      "projectPath": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_methods\\Maturita_prep_methods.csproj",
       "packagesPath": "C:\\Users\\pitra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_methods\\obj\\",
+      "outputPath": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_methods\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pitra\\AppData\\Roaming\\NuGet\\NuGet.Config",

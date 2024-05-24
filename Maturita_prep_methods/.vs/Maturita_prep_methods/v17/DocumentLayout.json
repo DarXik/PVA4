@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_methods\\",
+  "WorkspaceRootPath": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_methods\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F01A3520-E21B-4635-B789-A35B17CC9511}|Maturita_prep_methods.csproj|c:\\users\\pitra\\desktop\\pva4\\maturita_prep_methods\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F01A3520-E21B-4635-B789-A35B17CC9511}|Maturita_prep_methods.csproj|c:\\users\\pitra\\documents\\pva4\\maturita_prep_methods\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F01A3520-E21B-4635-B789-A35B17CC9511}|Maturita_prep_methods.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_methods\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_methods\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_methods\\Program.cs",
+              "ToolTip": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_methods\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAYwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T11:50:31.799Z",
               "EditorCaption": ""
