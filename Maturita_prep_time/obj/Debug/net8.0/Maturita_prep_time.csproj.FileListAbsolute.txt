@@ -1,0 +1,15 @@
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\bin\Debug\net8.0\Maturita_prep_time.exe
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\bin\Debug\net8.0\Maturita_prep_time.deps.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\bin\Debug\net8.0\Maturita_prep_time.runtimeconfig.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\bin\Debug\net8.0\Maturita_prep_time.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\bin\Debug\net8.0\Maturita_prep_time.pdb
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.AssemblyInfoInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.AssemblyInfo.cs
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.csproj.CoreCompileInputs.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.sourcelink.json
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\refint\Maturita_prep_time.dll
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.pdb
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\Maturita_prep_time.genruntimeconfig.cache
+C:\Users\pitra\Desktop\PVA4\Maturita_prep_time\obj\Debug\net8.0\ref\Maturita_prep_time.dll
