@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Maturita_prep_regex")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c84474cdded891acfc0c3ff21bc3974120d443d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54a731dbdc456e3155c5c37ee542788110531029")]
 [assembly: System.Reflection.AssemblyProductAttribute("Maturita_prep_regex")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Maturita_prep_regex")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

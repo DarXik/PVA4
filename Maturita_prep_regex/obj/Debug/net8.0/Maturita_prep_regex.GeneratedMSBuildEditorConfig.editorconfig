@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Maturita_prep_regex
-build_property.ProjectDir = C:\Users\pitra\Desktop\PVA4\Maturita_prep_regex\
+build_property.ProjectDir = C:\Users\pitra\Documents\PVA4\Maturita_prep_regex\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_regex\\",
+  "WorkspaceRootPath": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_regex\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ABCCD9F8-B2E3-4798-AFE3-E6A27CC0DC82}|Maturita_prep_regex.csproj|c:\\users\\pitra\\desktop\\pva4\\maturita_prep_regex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABCCD9F8-B2E3-4798-AFE3-E6A27CC0DC82}|Maturita_prep_regex.csproj|c:\\users\\pitra\\documents\\pva4\\maturita_prep_regex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABCCD9F8-B2E3-4798-AFE3-E6A27CC0DC82}|Maturita_prep_regex.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_regex\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_regex\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_regex\\Program.cs",
+              "ToolTip": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_regex\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB8AAAAhAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T09:26:11.713Z",
               "EditorCaption": ""

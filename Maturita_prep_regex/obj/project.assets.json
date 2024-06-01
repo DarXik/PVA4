@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_regex\\Maturita_prep_regex.csproj",
+      "projectUniqueName": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_regex\\Maturita_prep_regex.csproj",
       "projectName": "Maturita_prep_regex",
-      "projectPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_regex\\Maturita_prep_regex.csproj",
+      "projectPath": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_regex\\Maturita_prep_regex.csproj",
       "packagesPath": "C:\\Users\\pitra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pitra\\Desktop\\PVA4\\Maturita_prep_regex\\obj\\",
+      "outputPath": "C:\\Users\\pitra\\Documents\\PVA4\\Maturita_prep_regex\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pitra\\AppData\\Roaming\\NuGet\\NuGet.Config",
